@@ -1,0 +1,19 @@
+{
+  "pouOffsets": {
+    "FB_11_MixingTank": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 1,
+      "endLine": 14
+    },
+    "FB_1_Process": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 16,
+      "endLine": 18
+    },
+    "main": {
+      "kind": "PROGRAM",
+      "startLine": 20,
+      "endLine": 33
+    }
+  }
+}
