@@ -3,11 +3,11 @@
   "protocol": "opcua",
   "opcuaServerConfig": {
     "server": {
-      "enabled": false,
+      "enabled": true,
       "name": "OpenPLC OPC UA Server",
       "applicationUri": "urn:openplc:opcua:server",
       "productUri": "urn:openplc:runtime",
-      "bindAddress": "0.0.0.0",
+      "bindAddress": "127.0.0.1",
       "port": 4840,
       "endpointPath": "/openplc/opcua"
     },
@@ -34,7 +34,40 @@
     "cycleTimeMs": 100,
     "addressSpace": {
       "namespaceUri": "urn:openplc:opcua:namespace",
-      "nodes": []
+      "nodes": [
+        {
+          "id": "9758bf97-987e-467c-b903-7b43fc5cdab3",
+          "pouName": "main",
+          "variablePath": "In",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.In",
+          "browseName": "In",
+          "displayName": "In",
+          "description": "",
+          "permissions": {
+            "viewer": "rw",
+            "operator": "rw",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "e93df693-b89d-422a-91e5-7096d3c445fb",
+          "pouName": "main",
+          "variablePath": "Out",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Out",
+          "browseName": "Out",
+          "displayName": "Out",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        }
+      ]
     }
   }
 }

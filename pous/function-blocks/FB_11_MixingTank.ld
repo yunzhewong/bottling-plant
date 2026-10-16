@@ -17,7 +17,6 @@ FUNCTION_BLOCK FB_11_MixingTank
     ExternalTemperature : REAL := 50;
   END_VAR
 
-
 {
   "name": "FB_11_MixingTank",
   "rungs": []

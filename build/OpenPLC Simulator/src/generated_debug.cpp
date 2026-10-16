@@ -17,8 +17,6 @@ extern ::strucpp::Configuration_CONFIG0 g_config;
 namespace strucpp { namespace debug {
 
 const Entry debug_arr_0[15] STRUCPP_DEBUG_FLASH = {
-    { (void*)&g_config.INSTANCE0.IN, TAG_BOOL, 0 },  // INSTANCE0.IN
-    { (void*)&g_config.INSTANCE0.OUT, TAG_BOOL, 0 },  // INSTANCE0.OUT
     { (void*)&g_config.INSTANCE0.TON0.IN, TAG_BOOL, 0 },  // INSTANCE0.TON0.IN
     { (void*)&g_config.INSTANCE0.TON0.PT, TAG_TIME, 0 },  // INSTANCE0.TON0.PT
     { (void*)&g_config.INSTANCE0.TON0.Q, TAG_BOOL, 0 },  // INSTANCE0.TON0.Q
@@ -32,6 +30,8 @@ const Entry debug_arr_0[15] STRUCPP_DEBUG_FLASH = {
     { (void*)&g_config.INSTANCE0.PID0.TD, TAG_REAL, 0 },  // INSTANCE0.PID0.TD
     { (void*)&g_config.INSTANCE0.PID0.CYCLE, TAG_TIME, 0 },  // INSTANCE0.PID0.CYCLE
     { (void*)&g_config.INSTANCE0.PID0.XOUT, TAG_REAL, 0 },  // INSTANCE0.PID0.XOUT
+    { (void*)&g_config.INSTANCE0.IN, TAG_BOOL, 0 },  // INSTANCE0.IN
+    { (void*)&g_config.INSTANCE0.OUT, TAG_BOOL, 0 },  // INSTANCE0.OUT
 };
 
 const Entry* const debug_arrays[1] STRUCPP_DEBUG_FLASH = {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "md5": "3ceff74a49b2e36ba58988ba06e82dce",
+  "md5": "f988636c00715d0d827f8a70cd56f4ea",
   "typeTags": {
     "BOOL": 0,
     "SINT": 1,
@@ -34,107 +34,107 @@
     {
       "arrayIdx": 0,
       "elemIdx": 0,
-      "path": "INSTANCE0.IN",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 1,
-      "path": "INSTANCE0.OUT",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 2,
       "path": "INSTANCE0.TON0.IN",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 3,
+      "elemIdx": 1,
       "path": "INSTANCE0.TON0.PT",
       "type": "TIME",
       "size": 8
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 4,
+      "elemIdx": 2,
       "path": "INSTANCE0.TON0.Q",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 5,
+      "elemIdx": 3,
       "path": "INSTANCE0.TON0.ET",
       "type": "TIME",
       "size": 8
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 6,
+      "elemIdx": 4,
       "path": "INSTANCE0.PID0.AUTO",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 7,
+      "elemIdx": 5,
       "path": "INSTANCE0.PID0.PV",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 8,
+      "elemIdx": 6,
       "path": "INSTANCE0.PID0.SP",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 9,
+      "elemIdx": 7,
       "path": "INSTANCE0.PID0.X0",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 10,
+      "elemIdx": 8,
       "path": "INSTANCE0.PID0.KP",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 11,
+      "elemIdx": 9,
       "path": "INSTANCE0.PID0.TR",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 12,
+      "elemIdx": 10,
       "path": "INSTANCE0.PID0.TD",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 13,
+      "elemIdx": 11,
       "path": "INSTANCE0.PID0.CYCLE",
       "type": "TIME",
       "size": 8
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 14,
+      "elemIdx": 12,
       "path": "INSTANCE0.PID0.XOUT",
       "type": "REAL",
       "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 13,
+      "path": "INSTANCE0.IN",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 14,
+      "path": "INSTANCE0.OUT",
+      "type": "BOOL",
+      "size": 1
     }
   ]
 }

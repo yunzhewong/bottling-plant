@@ -53,6 +53,8 @@ constexpr size_t LIST_LENGTH = 254;
 
 namespace strucpp {
 
+class FB_11_MIXINGTANK;
+class FB_1_PROCESS;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
@@ -169,16 +171,57 @@ public:
 };
 
 
+class FB_11_MIXINGTANK;
+class FB_1_PROCESS;
 class Program_MAIN;
 class Configuration_CONFIG0;
+
+class FB_11_MIXINGTANK {
+public:
+    // Outputs
+    IEC_REAL LEVEL_RBV;
+    IEC_REAL TEMP_RBV;
+    // Inputs
+    IEC_REAL LEVEL_SP;
+    IEC_REAL TEMP_SP;
+    IEC_REAL INLETFLOW_SP;
+    IEC_REAL OUTLETFLOW_SP;
+    IEC_REAL EXTERNALTEMPERATURE;
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_11_MIXINGTANK();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_11_MIXINGTANK() = default;
+};
+
+class FB_1_PROCESS {
+public:
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_1_PROCESS();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_1_PROCESS() = default;
+};
 
 class Program_MAIN : public ProgramBase {
 public:
     // Local variables
-    IEC_BOOL IN;
-    IEC_BOOL OUT;
     TON TON0;
     PID PID0;
+    IEC_BOOL IN;
+    IEC_BOOL OUT;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
