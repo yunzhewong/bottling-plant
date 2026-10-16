@@ -1,0 +1,140 @@
+{
+  "version": 2,
+  "md5": "3ceff74a49b2e36ba58988ba06e82dce",
+  "typeTags": {
+    "BOOL": 0,
+    "SINT": 1,
+    "USINT": 2,
+    "INT": 3,
+    "UINT": 4,
+    "DINT": 5,
+    "UDINT": 6,
+    "LINT": 7,
+    "ULINT": 8,
+    "REAL": 9,
+    "LREAL": 10,
+    "BYTE": 11,
+    "WORD": 12,
+    "DWORD": 13,
+    "LWORD": 14,
+    "TIME": 15,
+    "DATE": 16,
+    "TOD": 17,
+    "DT": 18,
+    "STRING": 19,
+    "WSTRING": 20
+  },
+  "arrays": [
+    {
+      "index": 0,
+      "count": 15
+    }
+  ],
+  "leaves": [
+    {
+      "arrayIdx": 0,
+      "elemIdx": 0,
+      "path": "INSTANCE0.IN",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 1,
+      "path": "INSTANCE0.OUT",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 2,
+      "path": "INSTANCE0.TON0.IN",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 3,
+      "path": "INSTANCE0.TON0.PT",
+      "type": "TIME",
+      "size": 8
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 4,
+      "path": "INSTANCE0.TON0.Q",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 5,
+      "path": "INSTANCE0.TON0.ET",
+      "type": "TIME",
+      "size": 8
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 6,
+      "path": "INSTANCE0.PID0.AUTO",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 7,
+      "path": "INSTANCE0.PID0.PV",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 8,
+      "path": "INSTANCE0.PID0.SP",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 9,
+      "path": "INSTANCE0.PID0.X0",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 10,
+      "path": "INSTANCE0.PID0.KP",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 11,
+      "path": "INSTANCE0.PID0.TR",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 12,
+      "path": "INSTANCE0.PID0.TD",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 13,
+      "path": "INSTANCE0.PID0.CYCLE",
+      "type": "TIME",
+      "size": 8
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 14,
+      "path": "INSTANCE0.PID0.XOUT",
+      "type": "REAL",
+      "size": 4
+    }
+  ]
+}
