@@ -6,86 +6,20 @@
 namespace strucpp {
 
 // Library: additional-function-blocks
-INTEGRAL::INTEGRAL() {
+HYSTERESIS::HYSTERESIS()
+    : Q(false)
+{
     // Initialize variables
 }
 
-void INTEGRAL::operator()() {
-    Q = !R1;
-    if (R1) {
-        XOUT = X0;
-    } else if (RUN) {
-        XOUT = XOUT + XIN * TO_REAL(TIME_TO_MS(CYCLE));
-    }
-}
-
-DERIVATIVE::DERIVATIVE() {
-    // Initialize variables
-}
-
-void DERIVATIVE::operator()() {
-    if (RUN) {
-        XOUT = (3.0 * (XIN - X3) + X1 - X2) / (10.0 * TO_REAL(TIME_TO_MS(CYCLE)));
-        X3 = X2;
-        X2 = X1;
-        X1 = XIN;
-    } else {
-        XOUT = 0.0;
-        X1 = XIN;
-        X2 = XIN;
-        X3 = XIN;
-    }
-}
-
-PID::PID() {
-    // Initialize variables
-}
-
-void PID::operator()() {
-    ERROR = PV - SP;
-    ITERM.RUN = AUTO;
-    ITERM.R1 = !AUTO;
-    ITERM.XIN = ERROR;
-    ITERM.X0 = TR * (X0 - ERROR);
-    ITERM.CYCLE = CYCLE;
-    ITERM();
-    ITERM.ENO = true;
-    DTERM.RUN = AUTO;
-    DTERM.XIN = ERROR;
-    DTERM.CYCLE = CYCLE;
-    DTERM();
-    DTERM.ENO = true;
-    XOUT = KP * (ERROR + ITERM.XOUT / TR + DTERM.XOUT * TD);
-}
-
-
-// Library: iec-standard-fb
-TON::TON() {
-    // Initialize variables
-}
-
-void TON::operator()() {
-    CURRENT_TIME = TIME();
-    if (((((STATE == 0)) & (NOT(PREV_IN))) & (IN))) {
-        STATE = 1;
-        Q = false;
-        START_TIME = CURRENT_TIME;
-    } else {
-        if ((NOT(IN))) {
-            ET = 0LL;
+void HYSTERESIS::operator()() {
+    if (Q) {
+        if (XIN1 < (XIN2 - EPS)) {
             Q = false;
-            STATE = 0;
-        } else if ((STATE == 1)) {
-            if (((START_TIME + PT) <= CURRENT_TIME)) {
-                STATE = 2;
-                Q = true;
-                ET = PT;
-            } else {
-                ET = CURRENT_TIME - START_TIME;
-            }
         }
+    } else if (XIN1 > (XIN2 + EPS)) {
+        Q = true;
     }
-    PREV_IN = IN;
 }
 
 

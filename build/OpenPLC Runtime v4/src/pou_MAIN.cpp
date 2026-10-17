@@ -6,12 +6,16 @@
 namespace strucpp {
 
 Program_MAIN::Program_MAIN()
-    : IN(0), OUT(0)
 {
 }
 
 void Program_MAIN::run() {
-    OUT = IN;
+    if (true) {
+        FB_11_MIXINGTANK0();
+        FB_11_MIXINGTANK0.ENO = true;
+    } else {
+        FB_11_MIXINGTANK0.ENO = false;
+    }
 }
 
 }  // namespace strucpp

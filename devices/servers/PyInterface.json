@@ -22,6 +22,18 @@
           "Anonymous"
         ],
         "anonymousRole": "viewer"
+      },
+      {
+        "id": "ef5409e6-0f0e-48aa-9f70-56e0b9af0583",
+        "name": "userpass",
+        "enabled": true,
+        "securityPolicy": "None",
+        "securityMode": "None",
+        "authMethods": [
+          "Anonymous",
+          "Username"
+        ],
+        "anonymousRole": "viewer"
       }
     ],
     "security": {
@@ -30,35 +42,109 @@
       "serverPrivateKeyCustom": null,
       "trustedClientCertificates": []
     },
-    "users": [],
+    "users": [
+      {
+        "id": "e1d469ed-dd5b-4156-9444-a695cbc8c09c",
+        "type": "password",
+        "username": "admin",
+        "password": "admin",
+        "passwordHash": null,
+        "certificateId": null,
+        "role": "engineer"
+      }
+    ],
     "cycleTimeMs": 100,
     "addressSpace": {
       "namespaceUri": "urn:openplc:opcua:namespace",
       "nodes": [
         {
-          "id": "9758bf97-987e-467c-b903-7b43fc5cdab3",
+          "id": "3b6b6f95-f5e5-4c74-bce6-b566bc432f56",
           "pouName": "main",
-          "variablePath": "In",
-          "variableType": "BOOL",
-          "nodeId": "PLC.main.In",
-          "browseName": "In",
-          "displayName": "In",
+          "variablePath": "FB_11_MIXINGTANK0.LevelSetpoint_m",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.LevelSetpoint_m",
+          "browseName": "LevelSetpoint_m",
+          "displayName": "Level Setpoint M",
           "description": "",
           "permissions": {
-            "viewer": "rw",
-            "operator": "rw",
+            "viewer": "r",
+            "operator": "r",
             "engineer": "rw"
           },
           "nodeType": "variable"
         },
         {
-          "id": "e93df693-b89d-422a-91e5-7096d3c445fb",
+          "id": "6f712a32-f35b-4ba7-8a90-b7002ac84c37",
           "pouName": "main",
-          "variablePath": "Out",
+          "variablePath": "FB_11_MIXINGTANK0.LevelReadback_m",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.LevelReadback_m",
+          "browseName": "LevelReadback_m",
+          "displayName": "Level Readback M",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "dd977372-5114-4b5b-a077-4f6fefa22f94",
+          "pouName": "main",
+          "variablePath": "FB_11_MIXINGTANK0.TempSetpoint_degC",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempSetpoint_degC",
+          "browseName": "TempSetpoint_degC",
+          "displayName": "Temp Setpoint Deg C",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "aef923ac-cb7e-4ac7-b464-0daadf766d12",
+          "pouName": "main",
+          "variablePath": "FB_11_MIXINGTANK0.TempReadback_degC",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempReadback_degC",
+          "browseName": "TempReadback_degC",
+          "displayName": "Temp Readback Deg C",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "3d8eca4d-8e77-422e-9d69-92900e6de485",
+          "pouName": "main",
+          "variablePath": "FB_11_MIXINGTANK0.InletOpen",
           "variableType": "BOOL",
-          "nodeId": "PLC.main.Out",
-          "browseName": "Out",
-          "displayName": "Out",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.InletOpen",
+          "browseName": "InletOpen",
+          "displayName": "Inlet Open",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "e37da0e7-8b28-471f-bc96-627f250fb057",
+          "pouName": "main",
+          "variablePath": "FB_11_MIXINGTANK0.HeaterOn",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.HeaterOn",
+          "browseName": "HeaterOn",
+          "displayName": "Heater On",
           "description": "",
           "permissions": {
             "viewer": "r",

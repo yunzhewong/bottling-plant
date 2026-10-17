@@ -1,7 +1,7 @@
 import asyncio
 from dataclasses import dataclass
-from typing import Optional
-from asyncua import Client, ua, Node
+
+from asyncua import Client, Node, ua
 
 URL = "opc.tcp://127.0.0.1:4840/openplc/opcua"
 NS_URI = "urn:openplc:opcua:namespace"

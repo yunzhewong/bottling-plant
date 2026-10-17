@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "md5": "f988636c00715d0d827f8a70cd56f4ea",
+  "md5": "a3194c5013667a059d8fcd34d07f2ebd",
   "typeTags": {
     "BOOL": 0,
     "SINT": 1,
@@ -27,114 +27,121 @@
   "arrays": [
     {
       "index": 0,
-      "count": 15
+      "count": 16
     }
   ],
   "leaves": [
     {
       "arrayIdx": 0,
       "elemIdx": 0,
-      "path": "INSTANCE0.TON0.IN",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 1,
-      "path": "INSTANCE0.TON0.PT",
-      "type": "TIME",
-      "size": 8
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 2,
-      "path": "INSTANCE0.TON0.Q",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 3,
-      "path": "INSTANCE0.TON0.ET",
-      "type": "TIME",
-      "size": 8
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 4,
-      "path": "INSTANCE0.PID0.AUTO",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 5,
-      "path": "INSTANCE0.PID0.PV",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELTOLERANCE_M",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
+      "elemIdx": 1,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPTOLERANCE_M",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 2,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.XIN1",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 3,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.XIN2",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 4,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.EPS",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 5,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.Q",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
       "elemIdx": 6,
-      "path": "INSTANCE0.PID0.SP",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.XIN1",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 7,
-      "path": "INSTANCE0.PID0.X0",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.XIN2",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 8,
-      "path": "INSTANCE0.PID0.KP",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.EPS",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 9,
-      "path": "INSTANCE0.PID0.TR",
-      "type": "REAL",
-      "size": 4
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.Q",
+      "type": "BOOL",
+      "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 10,
-      "path": "INSTANCE0.PID0.TD",
-      "type": "REAL",
-      "size": 4
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.INLETOPEN",
+      "type": "BOOL",
+      "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 11,
-      "path": "INSTANCE0.PID0.CYCLE",
-      "type": "TIME",
-      "size": 8
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.HEATERON",
+      "type": "BOOL",
+      "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 12,
-      "path": "INSTANCE0.PID0.XOUT",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELSETPOINT_M",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 13,
-      "path": "INSTANCE0.IN",
-      "type": "BOOL",
-      "size": 1
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELREADBACK_M",
+      "type": "REAL",
+      "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 14,
-      "path": "INSTANCE0.OUT",
-      "type": "BOOL",
-      "size": 1
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPSETPOINT_DEGC",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 15,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPREADBACK_DEGC",
+      "type": "REAL",
+      "size": 4
     }
   ]
 }

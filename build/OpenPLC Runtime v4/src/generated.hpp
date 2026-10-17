@@ -59,115 +59,26 @@ class Program_MAIN;
 class Configuration_CONFIG0;
 
 // Library: additional-function-blocks
-class INTEGRAL;
-class DERIVATIVE;
-class PID;
-class INTEGRAL {
+class HYSTERESIS;
+class HYSTERESIS {
 public:
     // Inputs
-    IEC_BOOL RUN;
-    IEC_BOOL R1;
-    IEC_REAL XIN;
-    IEC_REAL X0;
-    IEC_TIME CYCLE;
+    IEC_REAL XIN1;
+    IEC_REAL XIN2;
+    IEC_REAL EPS;
     // Outputs
     IEC_BOOL Q;
-    IEC_REAL XOUT;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
 
     // Constructor
-    INTEGRAL();
+    HYSTERESIS();
 
     // Execute function block
     void operator()();
 
-    virtual ~INTEGRAL() = default;
-};
-
-class DERIVATIVE {
-public:
-    // Inputs
-    IEC_BOOL RUN;
-    IEC_REAL XIN;
-    IEC_TIME CYCLE;
-    // Outputs
-    IEC_REAL XOUT;
-    // Local variables
-    IEC_REAL X1;
-    IEC_REAL X2;
-    IEC_REAL X3;
-
-    // Implicit IEC 61131-3 ENO pin (mirrors EN)
-    IEC_BOOL ENO = true;
-
-    // Constructor
-    DERIVATIVE();
-
-    // Execute function block
-    void operator()();
-
-    virtual ~DERIVATIVE() = default;
-};
-
-class PID {
-public:
-    // Inputs
-    IEC_BOOL AUTO;
-    IEC_REAL PV;
-    IEC_REAL SP;
-    IEC_REAL X0;
-    IEC_REAL KP;
-    IEC_REAL TR;
-    IEC_REAL TD;
-    IEC_TIME CYCLE;
-    // Outputs
-    IEC_REAL XOUT;
-    // Local variables
-    IEC_REAL ERROR;
-    INTEGRAL ITERM;
-    DERIVATIVE DTERM;
-
-    // Implicit IEC 61131-3 ENO pin (mirrors EN)
-    IEC_BOOL ENO = true;
-
-    // Constructor
-    PID();
-
-    // Execute function block
-    void operator()();
-
-    virtual ~PID() = default;
-};
-
-
-// Library: iec-standard-fb
-class TON;
-class TON {
-public:
-    // Inputs
-    IEC_BOOL IN;
-    IEC_TIME PT;
-    // Outputs
-    IEC_BOOL Q;
-    IEC_TIME ET;
-    // Local variables
-    IEC_SINT STATE;
-    IEC_BOOL PREV_IN;
-    IEC_TIME CURRENT_TIME;
-    IEC_TIME START_TIME;
-
-    // Implicit IEC 61131-3 ENO pin (mirrors EN)
-    IEC_BOOL ENO = true;
-
-    // Constructor
-    TON();
-
-    // Execute function block
-    void operator()();
-
-    virtual ~TON() = default;
+    virtual ~HYSTERESIS() = default;
 };
 
 
@@ -178,15 +89,19 @@ class Configuration_CONFIG0;
 
 class FB_11_MIXINGTANK {
 public:
+    // Local variables
+    IEC_REAL LEVELTOLERANCE_M;
+    IEC_REAL TEMPTOLERANCE_M;
+    HYSTERESIS LEVELHYSTERESIS;
+    HYSTERESIS TEMPHYSTERESIS;
     // Outputs
-    IEC_REAL LEVEL_RBV;
-    IEC_REAL TEMP_RBV;
+    IEC_BOOL INLETOPEN;
+    IEC_BOOL HEATERON;
     // Inputs
-    IEC_REAL LEVEL_SP;
-    IEC_REAL TEMP_SP;
-    IEC_REAL INLETFLOW_SP;
-    IEC_REAL OUTLETFLOW_SP;
-    IEC_REAL EXTERNALTEMPERATURE;
+    IEC_REAL LEVELSETPOINT_M;
+    IEC_REAL LEVELREADBACK_M;
+    IEC_REAL TEMPSETPOINT_DEGC;
+    IEC_REAL TEMPREADBACK_DEGC;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
@@ -218,10 +133,7 @@ public:
 class Program_MAIN : public ProgramBase {
 public:
     // Local variables
-    TON TON0;
-    PID PID0;
-    IEC_BOOL IN;
-    IEC_BOOL OUT;
+    FB_11_MIXINGTANK FB_11_MIXINGTANK0;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
