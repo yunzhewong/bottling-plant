@@ -40,10 +40,10 @@ class NodeBuilder():
         return NodeRef(node=node, node_type=node_type)
 
 SCAN_PERIOD_S = 20e-3
-INLET_FLOWRATE_M3S = 1
+INLET_FLOWRATE_M3S = 0.1
 AMBIENT_TEMPERATURE = 25
 HEATER_TEMPERATURE = 100
-TEMP_COEFFICIENT = 0.25
+TEMP_COEFFICIENT = 0.01
 
 class MixingTank():
     def __init__(self, node_builder: NodeBuilder):
