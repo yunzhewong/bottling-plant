@@ -6,6 +6,10 @@ from asyncua import Client, ua, Node
 URL = "opc.tcp://127.0.0.1:4840/openplc/opcua"
 NS_URI = "urn:openplc:opcua:namespace"
 
+# this could be in a .env, but I'm that's not the point of this exercise
+USERNAME = "admin"
+PASSWORD = "admin"
+
 BASE_NODEID = "PLC.main"
 
 def get_variant_type(node_type: type):
@@ -70,7 +74,11 @@ class MixingTank():
 
 
 async def main():
-    async with Client(URL) as client:
+    client = Client(URL)
+    client.set_user(USERNAME)
+    client.set_password(PASSWORD)
+
+    async with client:
         idx = await client.get_namespace_index(NS_URI)
         node_builder = NodeBuilder(client=client, idx=idx)
 
