@@ -27,6 +27,21 @@
         "globalVariables": []
       }
     },
-    "libraries": []
+    "libraries": [],
+    "debugVariables": {
+      "pous": {
+        "FB_11_MixingTank": [
+          "Running",
+          "Start",
+          "Stop"
+        ],
+        "FB_11_MixingTank_TempLevelControl": [
+          "LevelSetpoint_m",
+          "LevelReadback_m",
+          "TempSetpoint_degC",
+          "TempReadback_degC"
+        ]
+      }
+    }
   }
 }

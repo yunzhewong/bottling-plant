@@ -58,11 +58,59 @@
       "namespaceUri": "urn:openplc:opcua:namespace",
       "nodes": [
         {
-          "id": "3b6b6f95-f5e5-4c74-bce6-b566bc432f56",
+          "id": "2f40deed-55cc-457a-bd38-8bc2a8ef118d",
           "pouName": "main",
-          "variablePath": "FB_11_MIXINGTANK0.LevelSetpoint_m",
+          "variablePath": "FB_11_MIXINGTANK0.Running",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.Running",
+          "browseName": "Running",
+          "displayName": "Running",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "r"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "d4b278c8-05a2-4bb4-a5b6-09e8306856b5",
+          "pouName": "main",
+          "variablePath": "FB_11_MIXINGTANK0.Start",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.Start",
+          "browseName": "Start",
+          "displayName": "Start",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "b9adcf13-e7ca-4d00-a05a-7a87853552d1",
+          "pouName": "main",
+          "variablePath": "FB_11_MIXINGTANK0.Stop",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.Stop",
+          "browseName": "Stop",
+          "displayName": "Stop",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "0ee831a7-817f-4a2f-99b8-64cf7044dd78",
+          "pouName": "main",
+          "variablePath": "FB_11_MIXINGTANK0.TempControl.LevelSetpoint_m",
           "variableType": "REAL",
-          "nodeId": "PLC.main.FB_11_MIXINGTANK0.LevelSetpoint_m",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempControl.LevelSetpoint_m",
           "browseName": "LevelSetpoint_m",
           "displayName": "Level Setpoint M",
           "description": "",
@@ -74,11 +122,11 @@
           "nodeType": "variable"
         },
         {
-          "id": "6f712a32-f35b-4ba7-8a90-b7002ac84c37",
+          "id": "dd26033a-c6e6-409a-8d8a-ce2916b4dd96",
           "pouName": "main",
-          "variablePath": "FB_11_MIXINGTANK0.LevelReadback_m",
+          "variablePath": "FB_11_MIXINGTANK0.TempControl.LevelReadback_m",
           "variableType": "REAL",
-          "nodeId": "PLC.main.FB_11_MIXINGTANK0.LevelReadback_m",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempControl.LevelReadback_m",
           "browseName": "LevelReadback_m",
           "displayName": "Level Readback M",
           "description": "",
@@ -90,11 +138,11 @@
           "nodeType": "variable"
         },
         {
-          "id": "dd977372-5114-4b5b-a077-4f6fefa22f94",
+          "id": "e407db0e-43fb-4a91-b037-3795cc2e3822",
           "pouName": "main",
-          "variablePath": "FB_11_MIXINGTANK0.TempSetpoint_degC",
+          "variablePath": "FB_11_MIXINGTANK0.TempControl.TempSetpoint_degC",
           "variableType": "REAL",
-          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempSetpoint_degC",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempControl.TempSetpoint_degC",
           "browseName": "TempSetpoint_degC",
           "displayName": "Temp Setpoint Deg C",
           "description": "",
@@ -106,11 +154,11 @@
           "nodeType": "variable"
         },
         {
-          "id": "aef923ac-cb7e-4ac7-b464-0daadf766d12",
+          "id": "2a593516-db59-4c3b-9ced-e89fdc7af4d4",
           "pouName": "main",
-          "variablePath": "FB_11_MIXINGTANK0.TempReadback_degC",
+          "variablePath": "FB_11_MIXINGTANK0.TempControl.TempReadback_degC",
           "variableType": "REAL",
-          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempReadback_degC",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempControl.TempReadback_degC",
           "browseName": "TempReadback_degC",
           "displayName": "Temp Readback Deg C",
           "description": "",
@@ -122,34 +170,34 @@
           "nodeType": "variable"
         },
         {
-          "id": "3d8eca4d-8e77-422e-9d69-92900e6de485",
+          "id": "29286a35-b5b6-4eab-948a-e8f534e9aec7",
           "pouName": "main",
-          "variablePath": "FB_11_MIXINGTANK0.InletOpen",
+          "variablePath": "FB_11_MIXINGTANK0.TempControl.InletOpen",
           "variableType": "BOOL",
-          "nodeId": "PLC.main.FB_11_MIXINGTANK0.InletOpen",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempControl.InletOpen",
           "browseName": "InletOpen",
           "displayName": "Inlet Open",
           "description": "",
           "permissions": {
             "viewer": "r",
             "operator": "r",
-            "engineer": "rw"
+            "engineer": "r"
           },
           "nodeType": "variable"
         },
         {
-          "id": "e37da0e7-8b28-471f-bc96-627f250fb057",
+          "id": "3992e9bf-2b1b-44e5-8049-40d6009c3635",
           "pouName": "main",
-          "variablePath": "FB_11_MIXINGTANK0.HeaterOn",
+          "variablePath": "FB_11_MIXINGTANK0.TempControl.HeaterOn",
           "variableType": "BOOL",
-          "nodeId": "PLC.main.FB_11_MIXINGTANK0.HeaterOn",
+          "nodeId": "PLC.main.FB_11_MIXINGTANK0.TempControl.HeaterOn",
           "browseName": "HeaterOn",
           "displayName": "Heater On",
           "description": "",
           "permissions": {
             "viewer": "r",
             "operator": "r",
-            "engineer": "rw"
+            "engineer": "r"
           },
           "nodeType": "variable"
         }

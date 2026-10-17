@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "md5": "a3194c5013667a059d8fcd34d07f2ebd",
+  "md5": "f56681d75f3ce621e03a4055afe15a74",
   "typeTags": {
     "BOOL": 0,
     "SINT": 1,
@@ -27,121 +27,151 @@
   "arrays": [
     {
       "index": 0,
-      "count": 16
+      "count": 20
     }
   ],
   "leaves": [
     {
       "arrayIdx": 0,
       "elemIdx": 0,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELTOLERANCE_M",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.XIN1",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 1,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPTOLERANCE_M",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.XIN2",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 2,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.XIN1",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.EPS",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 3,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.XIN2",
-      "type": "REAL",
-      "size": 4
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.Q",
+      "type": "BOOL",
+      "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 4,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.EPS",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.XIN1",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 5,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELHYSTERESIS.Q",
-      "type": "BOOL",
-      "size": 1
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.XIN2",
+      "type": "REAL",
+      "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 6,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.XIN1",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.EPS",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 7,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.XIN2",
-      "type": "REAL",
-      "size": 4
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.Q",
+      "type": "BOOL",
+      "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 8,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.EPS",
-      "type": "REAL",
-      "size": 4
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.INLETOPEN",
+      "type": "BOOL",
+      "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 9,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPHYSTERESIS.Q",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.HEATERON",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 10,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.INLETOPEN",
-      "type": "BOOL",
-      "size": 1
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELSETPOINT_M",
+      "type": "REAL",
+      "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 11,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.HEATERON",
-      "type": "BOOL",
-      "size": 1
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELREADBACK_M",
+      "type": "REAL",
+      "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 12,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELSETPOINT_M",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPSETPOINT_DEGC",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 13,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELREADBACK_M",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPREADBACK_DEGC",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 14,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPSETPOINT_DEGC",
-      "type": "REAL",
-      "size": 4
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.ACTIVE",
+      "type": "BOOL",
+      "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 15,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPREADBACK_DEGC",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELTOLERANCE_M",
       "type": "REAL",
-      "size": 4
+      "size": 4,
+      "readOnly": true
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 16,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPTOLERANCE_DEGC",
+      "type": "REAL",
+      "size": 4,
+      "readOnly": true
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 17,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.RUNNING",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 18,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.START",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 19,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.STOP",
+      "type": "BOOL",
+      "size": 1
     }
   ]
 }

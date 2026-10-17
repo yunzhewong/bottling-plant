@@ -18,8 +18,8 @@ PROGRAM main
         100
       ],
       "reactFlowViewport": [
-        622,
-        254
+        598,
+        174
       ],
       "nodes": [
         {
@@ -111,7 +111,7 @@ PROGRAM main
           "dragging": false
         },
         {
-          "id": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
+          "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
           "type": "block",
           "position": {
             "x": 143,
@@ -146,7 +146,7 @@ PROGRAM main
                   "x": 0,
                   "y": 76
                 },
-                "id": "LevelSetpoint_m",
+                "id": "Start",
                 "position": "left",
                 "type": "target",
                 "isConnectable": false,
@@ -164,7 +164,7 @@ PROGRAM main
                   "x": 0,
                   "y": 116
                 },
-                "id": "LevelReadback_m",
+                "id": "Stop",
                 "position": "left",
                 "type": "target",
                 "isConnectable": false,
@@ -175,47 +175,11 @@ PROGRAM main
               },
               {
                 "glbPosition": {
-                  "x": 143,
-                  "y": 170
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 156
-                },
-                "id": "TempSetpoint_degC",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 156,
-                  "left": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 143,
-                  "y": 210
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 196
-                },
-                "id": "TempReadback_degC",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 196,
-                  "left": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 359,
+                  "x": 335,
                   "y": 50
                 },
                 "relPosition": {
-                  "x": 216,
+                  "x": 192,
                   "y": 36
                 },
                 "id": "ENO",
@@ -229,37 +193,19 @@ PROGRAM main
               },
               {
                 "glbPosition": {
-                  "x": 359,
+                  "x": 335,
                   "y": 90
                 },
                 "relPosition": {
-                  "x": 216,
+                  "x": 192,
                   "y": 76
                 },
-                "id": "InletOpen",
+                "id": "Running",
                 "position": "right",
                 "type": "source",
                 "isConnectable": false,
                 "style": {
                   "top": 76,
-                  "right": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 359,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 216,
-                  "y": 116
-                },
-                "id": "HeaterOn",
-                "position": "right",
-                "type": "source",
-                "isConnectable": false,
-                "style": {
-                  "top": 116,
                   "right": 0
                 }
               }
@@ -292,7 +238,7 @@ PROGRAM main
                   "x": 0,
                   "y": 76
                 },
-                "id": "LevelSetpoint_m",
+                "id": "Start",
                 "position": "left",
                 "type": "target",
                 "isConnectable": false,
@@ -310,7 +256,7 @@ PROGRAM main
                   "x": 0,
                   "y": 116
                 },
-                "id": "LevelReadback_m",
+                "id": "Stop",
                 "position": "left",
                 "type": "target",
                 "isConnectable": false,
@@ -318,52 +264,16 @@ PROGRAM main
                   "top": 116,
                   "left": 0
                 }
-              },
-              {
-                "glbPosition": {
-                  "x": 143,
-                  "y": 170
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 156
-                },
-                "id": "TempSetpoint_degC",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 156,
-                  "left": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 143,
-                  "y": 210
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 196
-                },
-                "id": "TempReadback_degC",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 196,
-                  "left": 0
-                }
               }
             ],
             "outputHandles": [
               {
                 "glbPosition": {
-                  "x": 359,
+                  "x": 335,
                   "y": 50
                 },
                 "relPosition": {
-                  "x": 216,
+                  "x": 192,
                   "y": 36
                 },
                 "id": "ENO",
@@ -377,37 +287,19 @@ PROGRAM main
               },
               {
                 "glbPosition": {
-                  "x": 359,
+                  "x": 335,
                   "y": 90
                 },
                 "relPosition": {
-                  "x": 216,
+                  "x": 192,
                   "y": 76
                 },
-                "id": "InletOpen",
+                "id": "Running",
                 "position": "right",
                 "type": "source",
                 "isConnectable": false,
                 "style": {
                   "top": 76,
-                  "right": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 359,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 216,
-                  "y": 116
-                },
-                "id": "HeaterOn",
-                "position": "right",
-                "type": "source",
-                "isConnectable": false,
-                "style": {
-                  "top": 116,
                   "right": 0
                 }
               }
@@ -432,11 +324,11 @@ PROGRAM main
             },
             "outputConnector": {
               "glbPosition": {
-                "x": 359,
+                "x": 335,
                 "y": 50
               },
               "relPosition": {
-                "x": 216,
+                "x": 192,
                 "y": 36
               },
               "id": "ENO",
@@ -448,7 +340,7 @@ PROGRAM main
                 "right": 0
               }
             },
-            "numericId": "488359",
+            "numericId": "3274288",
             "variant": {
               "name": "FB_11_MixingTank",
               "documentation": "Mixing Tank of Fluids and Temperature",
@@ -471,44 +363,19 @@ PROGRAM main
                   }
                 },
                 {
-                  "name": "LevelSetpoint_m",
-                  "class": "input",
-                  "type": {
-                    "value": "REAL",
-                    "definition": "base-type"
-                  },
-                  "location": "",
-                  "initialValue": "2",
-                  "documentation": "",
-                  "debug": false
-                },
-                {
-                  "name": "LevelReadback_m",
-                  "class": "input",
-                  "type": {
-                    "value": "REAL",
-                    "definition": "base-type"
-                  },
-                  "location": "",
-                  "initialValue": "2",
-                  "documentation": "",
-                  "debug": false
-                },
-                {
-                  "id": "965b6a12-de46-4d82-8e44-57ad80d02f81",
-                  "name": "LevelTolerance_m",
-                  "type": {
-                    "value": "REAL",
-                    "definition": "base-type"
-                  },
+                  "name": "TempControl",
                   "class": "local",
+                  "type": {
+                    "value": "FB_11_MIXINGTANK_TEMPLEVELCONTROL",
+                    "definition": "derived"
+                  },
                   "location": "",
+                  "initialValue": null,
                   "documentation": "",
-                  "debug": false,
-                  "initialValue": "0.02"
+                  "debug": false
                 },
                 {
-                  "name": "InletOpen",
+                  "name": "Running",
                   "class": "output",
                   "type": {
                     "value": "BOOL",
@@ -520,45 +387,8 @@ PROGRAM main
                   "debug": false
                 },
                 {
-                  "name": "TempSetpoint_degC",
+                  "name": "Start",
                   "class": "input",
-                  "type": {
-                    "value": "REAL",
-                    "definition": "base-type"
-                  },
-                  "location": "",
-                  "initialValue": "50",
-                  "documentation": "",
-                  "debug": false
-                },
-                {
-                  "name": "TempReadback_degC",
-                  "class": "input",
-                  "type": {
-                    "value": "REAL",
-                    "definition": "base-type"
-                  },
-                  "location": "",
-                  "initialValue": "50",
-                  "documentation": "",
-                  "debug": false
-                },
-                {
-                  "id": "965b6a12-de46-4d82-8e44-57ad80d02f81",
-                  "name": "TempTolerance_m",
-                  "type": {
-                    "value": "REAL",
-                    "definition": "base-type"
-                  },
-                  "class": "local",
-                  "location": "",
-                  "documentation": "",
-                  "debug": false,
-                  "initialValue": "0.02"
-                },
-                {
-                  "name": "HeaterOn",
-                  "class": "output",
                   "type": {
                     "value": "BOOL",
                     "definition": "base-type"
@@ -569,99 +399,37 @@ PROGRAM main
                   "debug": false
                 },
                 {
-                  "id": "965b6a12-de46-4d82-8e44-57ad80d02f81",
-                  "name": "LevelHysteresis",
+                  "name": "Stop",
+                  "class": "input",
                   "type": {
-                    "definition": "user-data-type",
-                    "value": "HYSTERESIS"
+                    "value": "BOOL",
+                    "definition": "base-type"
                   },
-                  "class": "local",
                   "location": "",
-                  "documentation": "",
-                  "debug": false
-                },
-                {
-                  "id": "3342bd2a-af91-49d5-9653-407e9abf335d",
-                  "name": "TempHysteresis",
-                  "type": {
-                    "definition": "user-data-type",
-                    "value": "HYSTERESIS"
-                  },
-                  "class": "local",
-                  "location": "",
+                  "initialValue": "TRUE",
                   "documentation": "",
                   "debug": false
                 }
               ]
             },
             "variable": {
-              "id": "06c51ae2-39bb-4205-82ae-129defea7476",
               "name": "FB_11_MIXINGTANK0",
+              "class": "local",
               "type": {
                 "definition": "derived",
                 "value": "FB_11_MixingTank"
               },
-              "class": "local",
               "location": "",
+              "initialValue": null,
               "documentation": "",
               "debug": false
             },
             "executionOrder": 0,
             "executionControl": true,
-            "lockExecutionControl": true,
+            "lockExecutionControl": false,
             "connectedVariables": [
               {
-                "handleId": "InletOpen",
-                "type": "output",
-                "variable": {
-                  "id": "7f069b54-bfc9-4932-9a55-7ca1962c45c8",
-                  "name": "MixInletOpen",
-                  "type": {
-                    "definition": "base-type",
-                    "value": "BOOL"
-                  },
-                  "class": "local",
-                  "location": "",
-                  "documentation": "",
-                  "debug": false,
-                  "initialValue": "False"
-                }
-              },
-              {
-                "handleId": "TempReadback_degC",
-                "type": "input",
-                "variable": {
-                  "id": "ba429951-dffb-4c51-8b9b-1f2f566d9e10",
-                  "name": "MixTempReadback_degC",
-                  "type": {
-                    "definition": "base-type",
-                    "value": "REAL"
-                  },
-                  "class": "local",
-                  "location": "",
-                  "documentation": "",
-                  "debug": true,
-                  "initialValue": "50"
-                }
-              },
-              {
-                "handleId": "LevelSetpoint_m",
-                "type": "input",
-                "variable": {
-                  "id": "",
-                  "name": ""
-                }
-              },
-              {
-                "handleId": "LevelReadback_m",
-                "type": "input",
-                "variable": {
-                  "id": "",
-                  "name": ""
-                }
-              },
-              {
-                "handleId": "TempSetpoint_degC",
+                "handleId": "Start",
                 "type": "input",
                 "variable": {
                   "id": "",
@@ -673,11 +441,11 @@ PROGRAM main
             "selectable": true,
             "deletable": true
           },
-          "width": 216,
-          "height": 220,
+          "width": 192,
+          "height": 140,
           "measured": {
-            "width": 216,
-            "height": 220
+            "width": 192,
+            "height": 140
           },
           "draggable": true,
           "selectable": true,
@@ -688,7 +456,7 @@ PROGRAM main
           "id": "right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
           "type": "powerRail",
           "position": {
-            "x": 619,
+            "x": 595,
             "y": 30
           },
           "data": {
@@ -710,7 +478,7 @@ PROGRAM main
                   "top": 20,
                   "left": -3
                 },
-                "x": 619
+                "x": 595
               }
             ],
             "inputHandles": [
@@ -774,7 +542,7 @@ PROGRAM main
           "dragging": false
         },
         {
-          "id": "VARIABLE_893f9014-0cc9-4a21-a1cd-a611233fd2b9",
+          "id": "VARIABLE_7fd8d5ca-494c-473a-ac55-aa7499dddabf",
           "type": "variable",
           "position": {
             "x": 33,
@@ -834,7 +602,7 @@ PROGRAM main
               "isConnectable": false,
               "type": "source"
             },
-            "numericId": "1829999",
+            "numericId": "9927456",
             "variable": {
               "id": "",
               "name": ""
@@ -842,387 +610,11 @@ PROGRAM main
             "executionOrder": 0,
             "variant": "input",
             "block": {
-              "id": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-              "handleId": "LevelSetpoint_m",
+              "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
+              "handleId": "Start",
               "variableType": {
-                "name": "LevelSetpoint_m",
+                "name": "Start",
                 "class": "input",
-                "type": {
-                  "value": "REAL",
-                  "definition": "base-type"
-                },
-                "location": "",
-                "initialValue": "2",
-                "documentation": "",
-                "debug": false
-              }
-            },
-            "draggable": false,
-            "selectable": true,
-            "deletable": false
-          },
-          "deletable": false,
-          "selectable": true,
-          "draggable": false,
-          "selected": false,
-          "dragging": false
-        },
-        {
-          "id": "VARIABLE_de81b101-441d-42c5-8894-7370fa65687b",
-          "type": "variable",
-          "position": {
-            "x": 33,
-            "y": 114
-          },
-          "width": 80,
-          "height": 32,
-          "measured": {
-            "width": 80,
-            "height": 32
-          },
-          "data": {
-            "handles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "inputHandles": [],
-            "outputHandles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "outputConnector": {
-              "glbPosition": {
-                "x": 193,
-                "y": 130
-              },
-              "relPosition": {
-                "x": 80,
-                "y": 16
-              },
-              "id": "output",
-              "position": "right",
-              "isConnectable": false,
-              "type": "source"
-            },
-            "numericId": "1842545",
-            "variable": {
-              "id": "",
-              "name": ""
-            },
-            "executionOrder": 0,
-            "variant": "input",
-            "block": {
-              "id": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-              "handleId": "LevelReadback_m",
-              "variableType": {
-                "name": "LevelReadback_m",
-                "class": "input",
-                "type": {
-                  "value": "REAL",
-                  "definition": "base-type"
-                },
-                "location": "",
-                "initialValue": "2",
-                "documentation": "",
-                "debug": false
-              }
-            },
-            "draggable": false,
-            "selectable": true,
-            "deletable": false
-          },
-          "deletable": false,
-          "selectable": true,
-          "draggable": false,
-          "selected": false,
-          "dragging": false
-        },
-        {
-          "id": "VARIABLE_ceb6ddd7-f213-485f-897a-b755db6c8b9e",
-          "type": "variable",
-          "position": {
-            "x": 33,
-            "y": 154
-          },
-          "width": 80,
-          "height": 32,
-          "measured": {
-            "width": 80,
-            "height": 32
-          },
-          "data": {
-            "handles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 170
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "inputHandles": [],
-            "outputHandles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 170
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "outputConnector": {
-              "glbPosition": {
-                "x": 193,
-                "y": 170
-              },
-              "relPosition": {
-                "x": 80,
-                "y": 16
-              },
-              "id": "output",
-              "position": "right",
-              "isConnectable": false,
-              "type": "source"
-            },
-            "numericId": "3905688",
-            "variable": {
-              "id": "",
-              "name": ""
-            },
-            "executionOrder": 0,
-            "variant": "input",
-            "block": {
-              "id": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-              "handleId": "TempSetpoint_degC",
-              "variableType": {
-                "name": "TempSetpoint_degC",
-                "class": "input",
-                "type": {
-                  "value": "REAL",
-                  "definition": "base-type"
-                },
-                "location": "",
-                "initialValue": "50",
-                "documentation": "",
-                "debug": false
-              }
-            },
-            "draggable": false,
-            "selectable": true,
-            "deletable": false
-          },
-          "deletable": false,
-          "selectable": true,
-          "draggable": false,
-          "selected": false,
-          "dragging": false
-        },
-        {
-          "id": "VARIABLE_0dde9618-e795-41a2-9c7e-c94ff457e616",
-          "type": "variable",
-          "position": {
-            "x": 33,
-            "y": 194
-          },
-          "width": 80,
-          "height": 32,
-          "measured": {
-            "width": 80,
-            "height": 32
-          },
-          "data": {
-            "handles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 210
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "inputHandles": [],
-            "outputHandles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 210
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "outputConnector": {
-              "glbPosition": {
-                "x": 193,
-                "y": 210
-              },
-              "relPosition": {
-                "x": 80,
-                "y": 16
-              },
-              "id": "output",
-              "position": "right",
-              "isConnectable": false,
-              "type": "source"
-            },
-            "numericId": "9297852",
-            "variable": {
-              "id": "",
-              "name": ""
-            },
-            "executionOrder": 0,
-            "variant": "input",
-            "block": {
-              "id": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-              "handleId": "TempReadback_degC",
-              "variableType": {
-                "name": "TempReadback_degC",
-                "class": "input",
-                "type": {
-                  "value": "REAL",
-                  "definition": "base-type"
-                },
-                "location": "",
-                "initialValue": "50",
-                "documentation": "",
-                "debug": false
-              }
-            },
-            "draggable": false,
-            "selectable": true,
-            "deletable": false
-          },
-          "deletable": false,
-          "selectable": true,
-          "draggable": false,
-          "selected": false,
-          "dragging": false
-        },
-        {
-          "id": "VARIABLE_e0cb108a-367b-49aa-9358-0a0a28292148",
-          "type": "variable",
-          "position": {
-            "x": 389,
-            "y": 74
-          },
-          "width": 80,
-          "height": 32,
-          "measured": {
-            "width": 80,
-            "height": 32
-          },
-          "data": {
-            "handles": [
-              {
-                "glbPosition": {
-                  "x": 389,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 16
-                },
-                "id": "input",
-                "position": "left",
-                "isConnectable": false,
-                "type": "target"
-              }
-            ],
-            "inputHandles": [
-              {
-                "glbPosition": {
-                  "x": 389,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 16
-                },
-                "id": "input",
-                "position": "left",
-                "isConnectable": false,
-                "type": "target"
-              }
-            ],
-            "outputHandles": [],
-            "inputConnector": {
-              "glbPosition": {
-                "x": 389,
-                "y": 90
-              },
-              "relPosition": {
-                "x": 0,
-                "y": 16
-              },
-              "id": "input",
-              "position": "left",
-              "isConnectable": false,
-              "type": "target"
-            },
-            "numericId": "9046339",
-            "variable": {
-              "id": "",
-              "name": ""
-            },
-            "executionOrder": 0,
-            "variant": "output",
-            "block": {
-              "id": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-              "handleId": "InletOpen",
-              "variableType": {
-                "name": "InletOpen",
-                "class": "output",
                 "type": {
                   "value": "BOOL",
                   "definition": "base-type"
@@ -1244,10 +636,10 @@ PROGRAM main
           "dragging": false
         },
         {
-          "id": "VARIABLE_1503aa40-8319-4b4b-9b0e-6a3421bbb843",
+          "id": "VARIABLE_71e6b5bd-d490-473e-9028-64a62196c5c9",
           "type": "variable",
           "position": {
-            "x": 389,
+            "x": 33,
             "y": 114
           },
           "width": 80,
@@ -1260,8 +652,101 @@ PROGRAM main
             "handles": [
               {
                 "glbPosition": {
-                  "x": 389,
+                  "x": 193,
                   "y": 130
+                },
+                "relPosition": {
+                  "x": 80,
+                  "y": 16
+                },
+                "id": "output",
+                "position": "right",
+                "isConnectable": false,
+                "type": "source"
+              }
+            ],
+            "inputHandles": [],
+            "outputHandles": [
+              {
+                "glbPosition": {
+                  "x": 193,
+                  "y": 130
+                },
+                "relPosition": {
+                  "x": 80,
+                  "y": 16
+                },
+                "id": "output",
+                "position": "right",
+                "isConnectable": false,
+                "type": "source"
+              }
+            ],
+            "outputConnector": {
+              "glbPosition": {
+                "x": 193,
+                "y": 130
+              },
+              "relPosition": {
+                "x": 80,
+                "y": 16
+              },
+              "id": "output",
+              "position": "right",
+              "isConnectable": false,
+              "type": "source"
+            },
+            "numericId": "1427434",
+            "variable": {
+              "name": ""
+            },
+            "executionOrder": 0,
+            "variant": "input",
+            "block": {
+              "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
+              "handleId": "Stop",
+              "variableType": {
+                "name": "Stop",
+                "class": "input",
+                "type": {
+                  "value": "BOOL",
+                  "definition": "base-type"
+                },
+                "location": "",
+                "initialValue": "TRUE",
+                "documentation": "",
+                "debug": false
+              }
+            },
+            "draggable": false,
+            "selectable": true,
+            "deletable": false
+          },
+          "deletable": false,
+          "selectable": true,
+          "draggable": false,
+          "selected": false,
+          "dragging": false
+        },
+        {
+          "id": "VARIABLE_2e47c655-3b28-4e28-8963-33b218f97c3f",
+          "type": "variable",
+          "position": {
+            "x": 365,
+            "y": 74
+          },
+          "width": 80,
+          "height": 32,
+          "measured": {
+            "width": 80,
+            "height": 32
+          },
+          "data": {
+            "handles": [
+              {
+                "glbPosition": {
+                  "x": 365,
+                  "y": 90
                 },
                 "relPosition": {
                   "x": 0,
@@ -1276,8 +761,8 @@ PROGRAM main
             "inputHandles": [
               {
                 "glbPosition": {
-                  "x": 389,
-                  "y": 130
+                  "x": 365,
+                  "y": 90
                 },
                 "relPosition": {
                   "x": 0,
@@ -1292,8 +777,8 @@ PROGRAM main
             "outputHandles": [],
             "inputConnector": {
               "glbPosition": {
-                "x": 389,
-                "y": 130
+                "x": 365,
+                "y": 90
               },
               "relPosition": {
                 "x": 0,
@@ -1304,18 +789,17 @@ PROGRAM main
               "isConnectable": false,
               "type": "target"
             },
-            "numericId": "9977029",
+            "numericId": "2934833",
             "variable": {
-              "id": "",
               "name": ""
             },
             "executionOrder": 0,
             "variant": "output",
             "block": {
-              "id": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-              "handleId": "HeaterOn",
+              "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
+              "handleId": "Running",
               "variableType": {
-                "name": "HeaterOn",
+                "name": "Running",
                 "class": "output",
                 "type": {
                   "value": "BOOL",
@@ -1340,59 +824,38 @@ PROGRAM main
       ],
       "edges": [
         {
-          "id": "e_left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9__left-rail_???",
+          "id": "e_left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd__left-rail_???",
           "source": "left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
-          "target": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
+          "target": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
           "sourceHandle": "left-rail",
           "targetHandle": "EN"
         },
         {
-          "id": "e_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9_right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c__???_right-rail",
-          "source": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
+          "id": "e_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd_right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c__???_right-rail",
+          "source": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
           "target": "right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
           "sourceHandle": "ENO",
           "targetHandle": "right-rail"
         },
         {
-          "id": "e_VARIABLE_893f9014-0cc9-4a21-a1cd-a611233fd2b9_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9__output_LevelSetpoint_m",
-          "source": "VARIABLE_893f9014-0cc9-4a21-a1cd-a611233fd2b9",
-          "target": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
+          "id": "e_VARIABLE_7fd8d5ca-494c-473a-ac55-aa7499dddabf_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd__output_Start",
+          "source": "VARIABLE_7fd8d5ca-494c-473a-ac55-aa7499dddabf",
+          "target": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
           "sourceHandle": "output",
-          "targetHandle": "LevelSetpoint_m"
+          "targetHandle": "Start"
         },
         {
-          "id": "e_VARIABLE_de81b101-441d-42c5-8894-7370fa65687b_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9__output_LevelReadback_m",
-          "source": "VARIABLE_de81b101-441d-42c5-8894-7370fa65687b",
-          "target": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
+          "id": "e_VARIABLE_71e6b5bd-d490-473e-9028-64a62196c5c9_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd__output_Stop",
+          "source": "VARIABLE_71e6b5bd-d490-473e-9028-64a62196c5c9",
+          "target": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
           "sourceHandle": "output",
-          "targetHandle": "LevelReadback_m"
+          "targetHandle": "Stop"
         },
         {
-          "id": "e_VARIABLE_ceb6ddd7-f213-485f-897a-b755db6c8b9e_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9__output_TempSetpoint_degC",
-          "source": "VARIABLE_ceb6ddd7-f213-485f-897a-b755db6c8b9e",
-          "target": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-          "sourceHandle": "output",
-          "targetHandle": "TempSetpoint_degC"
-        },
-        {
-          "id": "e_VARIABLE_0dde9618-e795-41a2-9c7e-c94ff457e616_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9__output_TempReadback_degC",
-          "source": "VARIABLE_0dde9618-e795-41a2-9c7e-c94ff457e616",
-          "target": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-          "sourceHandle": "output",
-          "targetHandle": "TempReadback_degC"
-        },
-        {
-          "id": "e_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9_VARIABLE_e0cb108a-367b-49aa-9358-0a0a28292148__InletOpen_input",
-          "source": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-          "target": "VARIABLE_e0cb108a-367b-49aa-9358-0a0a28292148",
-          "sourceHandle": "InletOpen",
-          "targetHandle": "input"
-        },
-        {
-          "id": "e_BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9_VARIABLE_1503aa40-8319-4b4b-9b0e-6a3421bbb843__HeaterOn_input",
-          "source": "BLOCK_bcdeecac-6e25-4144-837a-47f48f62c8e9",
-          "target": "VARIABLE_1503aa40-8319-4b4b-9b0e-6a3421bbb843",
-          "sourceHandle": "HeaterOn",
+          "id": "e_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd_VARIABLE_2e47c655-3b28-4e28-8963-33b218f97c3f__Running_input",
+          "source": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
+          "target": "VARIABLE_2e47c655-3b28-4e28-8963-33b218f97c3f",
+          "sourceHandle": "Running",
           "targetHandle": "input"
         }
       ],

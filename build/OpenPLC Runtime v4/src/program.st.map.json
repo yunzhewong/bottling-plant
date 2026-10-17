@@ -1,19 +1,24 @@
 {
   "pouOffsets": {
-    "FB_11_MixingTank": {
+    "FB_11_MixingTank_TempLevelControl": {
       "kind": "FUNCTION_BLOCK",
       "startLine": 1,
-      "endLine": 23
+      "endLine": 29
+    },
+    "FB_11_MixingTank": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 31,
+      "endLine": 45
     },
     "FB_1_Process": {
       "kind": "FUNCTION_BLOCK",
-      "startLine": 25,
-      "endLine": 27
+      "startLine": 47,
+      "endLine": 49
     },
     "main": {
       "kind": "PROGRAM",
-      "startLine": 29,
-      "endLine": 35
+      "startLine": 51,
+      "endLine": 57
     }
   }
 }

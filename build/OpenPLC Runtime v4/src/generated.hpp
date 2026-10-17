@@ -53,6 +53,7 @@ constexpr size_t LIST_LENGTH = 254;
 
 namespace strucpp {
 
+class FB_11_MIXINGTANK_TEMPLEVELCONTROL;
 class FB_11_MIXINGTANK;
 class FB_1_PROCESS;
 class Program_MAIN;
@@ -82,16 +83,15 @@ public:
 };
 
 
+class FB_11_MIXINGTANK_TEMPLEVELCONTROL;
 class FB_11_MIXINGTANK;
 class FB_1_PROCESS;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
-class FB_11_MIXINGTANK {
+class FB_11_MIXINGTANK_TEMPLEVELCONTROL {
 public:
     // Local variables
-    IEC_REAL LEVELTOLERANCE_M;
-    IEC_REAL TEMPTOLERANCE_M;
     HYSTERESIS LEVELHYSTERESIS;
     HYSTERESIS TEMPHYSTERESIS;
     // Outputs
@@ -102,17 +102,21 @@ public:
     IEC_REAL LEVELREADBACK_M;
     IEC_REAL TEMPSETPOINT_DEGC;
     IEC_REAL TEMPREADBACK_DEGC;
+    IEC_BOOL ACTIVE;
+    // Local variables
+    IEC_REAL LEVELTOLERANCE_M;
+    IEC_REAL TEMPTOLERANCE_DEGC;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
 
     // Constructor
-    FB_11_MIXINGTANK();
+    FB_11_MIXINGTANK_TEMPLEVELCONTROL();
 
     // Execute function block
     void operator()();
 
-    virtual ~FB_11_MIXINGTANK() = default;
+    virtual ~FB_11_MIXINGTANK_TEMPLEVELCONTROL() = default;
 };
 
 class FB_1_PROCESS {
@@ -128,6 +132,28 @@ public:
     void operator()();
 
     virtual ~FB_1_PROCESS() = default;
+};
+
+class FB_11_MIXINGTANK {
+public:
+    // Local variables
+    FB_11_MIXINGTANK_TEMPLEVELCONTROL TEMPCONTROL;
+    // Outputs
+    IEC_BOOL RUNNING;
+    // Inputs
+    IEC_BOOL START;
+    IEC_BOOL STOP;
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_11_MIXINGTANK();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_11_MIXINGTANK() = default;
 };
 
 class Program_MAIN : public ProgramBase {

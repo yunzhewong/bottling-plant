@@ -62,7 +62,7 @@ HEATER_TEMPERATURE = 100
 TEMP_COEFFICIENT = 0.01
 
 
-class MixingTank:
+class TempControl:
     def __init__(self, node_builder: NodeBuilder):
         self.level_setpoint = node_builder.create_node_ref(
             suffix=".LevelSetpoint_m", node_type=float
@@ -102,6 +102,21 @@ class MixingTank:
                 TEMP_COEFFICIENT * (HEATER_TEMPERATURE - readback) * SCAN_PERIOD_S
             )
         await self.temp_readback.set(readback)
+
+
+class MixingTank:
+    def __init__(self, node_builder: NodeBuilder):
+        self.temp_control = TempControl(
+            node_builder=node_builder.extend(".TempControl")
+        )
+        self.start_node = node_builder.create_node_ref(suffix=".Start", node_type=bool)
+        self.stop_node = node_builder.create_node_ref(suffix=".Stop", node_type=bool)
+        self.running_node = node_builder.create_node_ref(
+            suffix=".Running", node_type=bool
+        )
+
+    async def scan(self):
+        await self.temp_control.scan()
 
 
 async def main():
