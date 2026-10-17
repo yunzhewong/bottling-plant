@@ -14,7 +14,11 @@ async def main():
         print("In: ", await in_node.read_value())
         print("Out:", await out_node.read_value())
 
-        # Write a BOOL (specify the type explicitly)
-        await in_node.write_value(ua.DataValue(ua.Variant(True, ua.VariantType.Boolean)))
+        value = True
+        while True:
+            # Write a BOOL (specify the type explicitly)
+            await in_node.write_value(ua.DataValue(ua.Variant(value, ua.VariantType.Boolean)))
+            await asyncio.sleep(1)
+            value = not value
 
 asyncio.run(main())
