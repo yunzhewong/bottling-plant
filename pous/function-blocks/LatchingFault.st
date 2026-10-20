@@ -9,7 +9,6 @@ FUNCTION_BLOCK LatchingFault
     LatchedOutput : BOOL := FALSE;
   END_VAR
 
-
 LatchedOutput := Active OR (LatchedOutput AND NOT Reset);
 
 END_FUNCTION_BLOCK

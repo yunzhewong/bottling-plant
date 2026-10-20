@@ -1,6 +1,6 @@
 PROGRAM main
   VAR
-    FB_11_MIXINGTANK0 : FB_11_MixingTank;
+    Process : FB_1_Process;
   END_VAR
   VAR_INPUT
   END_VAR
@@ -11,19 +11,19 @@ PROGRAM main
   "name": "main",
   "rungs": [
     {
-      "id": "rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
+      "id": "rung_main_8335eb45-697a-44e1-8a30-26bf1dd719e0",
       "comment": "",
       "defaultBounds": [
         300,
         100
       ],
       "reactFlowViewport": [
-        598,
-        120
+        580,
+        134
       ],
       "nodes": [
         {
-          "id": "left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
+          "id": "left-rail-rung_main_8335eb45-697a-44e1-8a30-26bf1dd719e0",
           "type": "powerRail",
           "position": {
             "x": 0,
@@ -89,7 +89,7 @@ PROGRAM main
                 "right": -3
               }
             },
-            "numericId": "2506730",
+            "numericId": "2675838",
             "variant": "left",
             "variable": {
               "name": ""
@@ -111,7 +111,7 @@ PROGRAM main
           "dragging": false
         },
         {
-          "id": "BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf",
+          "id": "BLOCK_c905aa87-b172-405c-a716-b9724413937c",
           "type": "block",
           "position": {
             "x": 143,
@@ -139,11 +139,11 @@ PROGRAM main
               },
               {
                 "glbPosition": {
-                  "x": 335,
+                  "x": 317,
                   "y": 50
                 },
                 "relPosition": {
-                  "x": 192,
+                  "x": 174,
                   "y": 36
                 },
                 "id": "ENO",
@@ -152,6 +152,24 @@ PROGRAM main
                 "isConnectable": false,
                 "style": {
                   "top": 36,
+                  "right": 0
+                }
+              },
+              {
+                "glbPosition": {
+                  "x": 317,
+                  "y": 90
+                },
+                "relPosition": {
+                  "x": 174,
+                  "y": 76
+                },
+                "id": "BufferLevel",
+                "position": "right",
+                "type": "source",
+                "isConnectable": false,
+                "style": {
+                  "top": 76,
                   "right": 0
                 }
               }
@@ -179,11 +197,11 @@ PROGRAM main
             "outputHandles": [
               {
                 "glbPosition": {
-                  "x": 335,
+                  "x": 317,
                   "y": 50
                 },
                 "relPosition": {
-                  "x": 192,
+                  "x": 174,
                   "y": 36
                 },
                 "id": "ENO",
@@ -192,6 +210,24 @@ PROGRAM main
                 "isConnectable": false,
                 "style": {
                   "top": 36,
+                  "right": 0
+                }
+              },
+              {
+                "glbPosition": {
+                  "x": 317,
+                  "y": 90
+                },
+                "relPosition": {
+                  "x": 174,
+                  "y": 76
+                },
+                "id": "BufferLevel",
+                "position": "right",
+                "type": "source",
+                "isConnectable": false,
+                "style": {
+                  "top": 76,
                   "right": 0
                 }
               }
@@ -216,11 +252,11 @@ PROGRAM main
             },
             "outputConnector": {
               "glbPosition": {
-                "x": 335,
+                "x": 317,
                 "y": 50
               },
               "relPosition": {
-                "x": 192,
+                "x": 174,
                 "y": 36
               },
               "id": "ENO",
@@ -232,10 +268,10 @@ PROGRAM main
                 "right": 0
               }
             },
-            "numericId": "1015970",
+            "numericId": "2300947",
             "variant": {
-              "name": "FB_11_MixingTank",
-              "documentation": "Mixing Tank of Fluids and Temperature",
+              "name": "FB_1_Process",
+              "documentation": "",
               "type": "function-block",
               "variables": [
                 {
@@ -255,10 +291,10 @@ PROGRAM main
                   }
                 },
                 {
-                  "name": "TempControl",
+                  "name": "MixingTank",
                   "class": "local",
                   "type": {
-                    "value": "BANGBANGCONTROL",
+                    "value": "FB_11_MIXINGTANK",
                     "definition": "derived"
                   },
                   "location": "",
@@ -267,10 +303,10 @@ PROGRAM main
                   "initialValue": ""
                 },
                 {
-                  "name": "LevelControl",
+                  "name": "TransferPump",
                   "class": "local",
                   "type": {
-                    "value": "BANGBANGCONTROL",
+                    "value": "FB_12_TRANSFERPUMP",
                     "definition": "derived"
                   },
                   "location": "",
@@ -279,52 +315,28 @@ PROGRAM main
                   "initialValue": ""
                 },
                 {
-                  "id": "2dcd7e69-eba9-4754-a121-fc3cbb7a1007",
-                  "name": "FaultActive",
+                  "name": "BufferLevel",
+                  "class": "output",
                   "type": {
-                    "value": "BOOL",
+                    "value": "REAL",
                     "definition": "base-type"
                   },
-                  "class": "local",
                   "location": "",
                   "documentation": "",
-                  "debug": false
-                },
-                {
-                  "id": "2dcd7e69-eba9-4754-a121-fc3cbb7a1007",
-                  "name": "Reset",
-                  "type": {
-                    "value": "BOOL",
-                    "definition": "base-type"
-                  },
-                  "class": "local",
-                  "location": "",
-                  "documentation": "",
-                  "debug": false
-                },
-                {
-                  "id": "2dcd7e69-eba9-4754-a121-fc3cbb7a1007",
-                  "name": "LatchedFault",
-                  "type": {
-                    "value": "BOOL",
-                    "definition": "base-type"
-                  },
-                  "class": "local",
-                  "location": "",
-                  "documentation": "",
-                  "debug": false
+                  "debug": false,
+                  "initialValue": ""
                 }
               ]
             },
             "variable": {
-              "name": "FB_11_MIXINGTANK0",
-              "class": "local",
+              "id": "357ef9c7-096e-47f4-b7e6-d3981bcd6356",
+              "name": "Process",
               "type": {
                 "definition": "derived",
-                "value": "FB_11_MixingTank"
+                "value": "FB_1_Process"
               },
+              "class": "local",
               "location": "",
-              "initialValue": null,
               "documentation": "",
               "debug": false
             },
@@ -336,11 +348,11 @@ PROGRAM main
             "selectable": true,
             "deletable": true
           },
-          "width": 192,
-          "height": 60,
+          "width": 174,
+          "height": 100,
           "measured": {
-            "width": 192,
-            "height": 60
+            "width": 174,
+            "height": 100
           },
           "draggable": true,
           "selectable": true,
@@ -348,10 +360,10 @@ PROGRAM main
           "dragging": false
         },
         {
-          "id": "right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
+          "id": "right-rail-rung_main_8335eb45-697a-44e1-8a30-26bf1dd719e0",
           "type": "powerRail",
           "position": {
-            "x": 595,
+            "x": 577,
             "y": 30
           },
           "data": {
@@ -373,7 +385,7 @@ PROGRAM main
                   "top": 20,
                   "left": -3
                 },
-                "x": 595
+                "x": 577
               }
             ],
             "inputHandles": [
@@ -415,7 +427,7 @@ PROGRAM main
                 "left": -3
               }
             },
-            "numericId": "8661298",
+            "numericId": "2003881",
             "variant": "right",
             "variable": {
               "name": ""
@@ -435,26 +447,125 @@ PROGRAM main
           "selectable": false,
           "selected": false,
           "dragging": false
+        },
+        {
+          "id": "VARIABLE_67177e0d-9700-4b77-99c8-d9ced6acf7d8",
+          "type": "variable",
+          "position": {
+            "x": 347,
+            "y": 74
+          },
+          "width": 80,
+          "height": 32,
+          "measured": {
+            "width": 80,
+            "height": 32
+          },
+          "data": {
+            "handles": [
+              {
+                "glbPosition": {
+                  "x": 347,
+                  "y": 90
+                },
+                "relPosition": {
+                  "x": 0,
+                  "y": 16
+                },
+                "id": "input",
+                "position": "left",
+                "isConnectable": false,
+                "type": "target"
+              }
+            ],
+            "inputHandles": [
+              {
+                "glbPosition": {
+                  "x": 347,
+                  "y": 90
+                },
+                "relPosition": {
+                  "x": 0,
+                  "y": 16
+                },
+                "id": "input",
+                "position": "left",
+                "isConnectable": false,
+                "type": "target"
+              }
+            ],
+            "outputHandles": [],
+            "inputConnector": {
+              "glbPosition": {
+                "x": 347,
+                "y": 90
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 16
+              },
+              "id": "input",
+              "position": "left",
+              "isConnectable": false,
+              "type": "target"
+            },
+            "numericId": "2155062",
+            "variable": {
+              "name": ""
+            },
+            "executionOrder": 0,
+            "variant": "output",
+            "block": {
+              "id": "BLOCK_c905aa87-b172-405c-a716-b9724413937c",
+              "handleId": "BufferLevel",
+              "variableType": {
+                "name": "BufferLevel",
+                "class": "output",
+                "type": {
+                  "value": "REAL",
+                  "definition": "base-type"
+                },
+                "location": "",
+                "documentation": "",
+                "debug": false,
+                "initialValue": ""
+              }
+            },
+            "draggable": false,
+            "selectable": true,
+            "deletable": false
+          },
+          "deletable": false,
+          "selectable": true,
+          "draggable": false,
+          "selected": false,
+          "dragging": false
         }
       ],
       "edges": [
         {
-          "id": "e_left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c_BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf__left-rail_???",
-          "source": "left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
-          "target": "BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf",
+          "id": "e_left-rail-rung_main_8335eb45-697a-44e1-8a30-26bf1dd719e0_BLOCK_c905aa87-b172-405c-a716-b9724413937c__left-rail_???",
+          "source": "left-rail-rung_main_8335eb45-697a-44e1-8a30-26bf1dd719e0",
+          "target": "BLOCK_c905aa87-b172-405c-a716-b9724413937c",
           "sourceHandle": "left-rail",
           "targetHandle": "EN"
         },
         {
-          "id": "e_BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf_right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c__???_right-rail",
-          "source": "BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf",
-          "target": "right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
+          "id": "e_BLOCK_c905aa87-b172-405c-a716-b9724413937c_right-rail-rung_main_8335eb45-697a-44e1-8a30-26bf1dd719e0__???_right-rail",
+          "source": "BLOCK_c905aa87-b172-405c-a716-b9724413937c",
+          "target": "right-rail-rung_main_8335eb45-697a-44e1-8a30-26bf1dd719e0",
           "sourceHandle": "ENO",
           "targetHandle": "right-rail"
+        },
+        {
+          "id": "e_BLOCK_c905aa87-b172-405c-a716-b9724413937c_VARIABLE_67177e0d-9700-4b77-99c8-d9ced6acf7d8__BufferLevel_input",
+          "source": "BLOCK_c905aa87-b172-405c-a716-b9724413937c",
+          "target": "VARIABLE_67177e0d-9700-4b77-99c8-d9ced6acf7d8",
+          "sourceHandle": "BufferLevel",
+          "targetHandle": "input"
         }
       ],
-      "selectedNodes": [],
-      "handleBranches": []
+      "selectedNodes": []
     }
   ]
 }

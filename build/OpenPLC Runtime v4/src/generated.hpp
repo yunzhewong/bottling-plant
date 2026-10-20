@@ -57,6 +57,7 @@ class BANGBANGCONTROL;
 class LATCHINGFAULT;
 class FB_11_MIXINGTANK;
 class FB_1_PROCESS;
+class FB_12_TRANSFERPUMP;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
@@ -88,19 +89,20 @@ class BANGBANGCONTROL;
 class LATCHINGFAULT;
 class FB_11_MIXINGTANK;
 class FB_1_PROCESS;
+class FB_12_TRANSFERPUMP;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
 class BANGBANGCONTROL {
 public:
     // Local variables
-    HYSTERESIS HYSTERESIS0;
+    class HYSTERESIS HYSTERESIS_;
+    // Inputs
     IEC_REAL SETPOINT;
-    IEC_REAL READBACK;
     IEC_REAL TOLERANCE;
-    IEC_BOOL ACTIVE;
-    IEC_BOOL SHOULDACTUATE;
-    IEC_BOOL ACTUATING;
+    // Outputs
+    IEC_REAL READBACK;
+    IEC_DINT SHOULDACTUATE;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
@@ -134,28 +136,18 @@ public:
     virtual ~LATCHINGFAULT() = default;
 };
 
-class FB_1_PROCESS {
-public:
-
-    // Implicit IEC 61131-3 ENO pin (mirrors EN)
-    IEC_BOOL ENO = true;
-
-    // Constructor
-    FB_1_PROCESS();
-
-    // Execute function block
-    void operator()();
-
-    virtual ~FB_1_PROCESS() = default;
-};
-
 class FB_11_MIXINGTANK {
 public:
     // Local variables
     BANGBANGCONTROL TEMPCONTROL;
     BANGBANGCONTROL LEVELCONTROL;
-    LATCHINGFAULT FAULT;
-    IEC_BOOL _TMP_NOT5838470_OUT;
+    IEC_BOOL REQUESTTEMPCONTROL;
+    IEC_BOOL REQUESTLEVELCONTROL;
+    class LATCHINGFAULT LATCHINGFAULT_;
+    IEC_BOOL OPENINLET;
+    IEC_BOOL HEATERON;
+    // Outputs
+    IEC_REAL LEVELREADBACK;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
@@ -169,10 +161,53 @@ public:
     virtual ~FB_11_MIXINGTANK() = default;
 };
 
+class FB_12_TRANSFERPUMP {
+public:
+    // Local variables
+    IEC_BOOL REQUESTMIXDRAIN;
+    IEC_BOOL MIXOUTLETOPEN;
+    // Inputs
+    IEC_REAL MIXLEVELREADBACK;
+    // Outputs
+    IEC_REAL BUFFERLEVELREADBACK;
+    class LATCHINGFAULT LATCHINGFAULT_;
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_12_TRANSFERPUMP();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_12_TRANSFERPUMP() = default;
+};
+
+class FB_1_PROCESS {
+public:
+    // Local variables
+    FB_11_MIXINGTANK MIXINGTANK;
+    FB_12_TRANSFERPUMP TRANSFERPUMP;
+    // Outputs
+    IEC_REAL BUFFERLEVEL;
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_1_PROCESS();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_1_PROCESS() = default;
+};
+
 class Program_MAIN : public ProgramBase {
 public:
     // Local variables
-    FB_11_MIXINGTANK FB_11_MIXINGTANK0;
+    FB_1_PROCESS PROCESS;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;

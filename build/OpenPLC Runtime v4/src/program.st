@@ -1,19 +1,18 @@
 FUNCTION_BLOCK BangBangControl
   VAR
-    HYSTERESIS0 : HYSTERESIS;
+    Hysteresis : HYSTERESIS;
+  END_VAR
+  VAR_INPUT
     Setpoint : REAL;
-    Readback : REAL;
     Tolerance : REAL;
-    Active : BOOL;
-    ShouldActuate : BOOL;
-    Actuating : BOOL;
+  END_VAR
+  VAR_OUTPUT
+    Readback : REAL;
+    ShouldActuate : DINT;
   END_VAR
 
-  HYSTERESIS0(EN := TRUE, XIN1 := Setpoint, XIN2 := Readback, EPS := Tolerance);
-  IF HYSTERESIS0.ENO THEN
-      ShouldActuate := HYSTERESIS0.Q;
-  END_IF;
-  Actuating := ShouldActuate AND Active;
+  Hysteresis( XIN1 := Setpoint, XIN2 := Readback, EPS := Tolerance);
+  ShouldActuate := Hysteresis.Q;
 END_FUNCTION_BLOCK
 
 FUNCTION_BLOCK LatchingFault
@@ -32,26 +31,63 @@ FUNCTION_BLOCK FB_11_MixingTank
   VAR
     TempControl : BANGBANGCONTROL;
     LevelControl : BANGBANGCONTROL;
-    Fault : LatchingFault;
-    _TMP_NOT5838470_OUT : BOOL;
+    RequestTempControl : BOOL;
+    RequestLevelControl : BOOL;
+    LatchingFault : LATCHINGFAULT;
+    OpenInlet : BOOL;
+    HeaterOn : BOOL;
+  END_VAR
+  VAR_OUTPUT
+    LevelReadback : REAL;
   END_VAR
 
-  Fault.Active := TempControl.Active AND LevelControl.Active;
-  _TMP_NOT5838470_OUT := NOT(Fault.LatchedOutput);
-  TempControl.Active := _TMP_NOT5838470_OUT;
+  TempControl(Tolerance := 1);
+  LevelControl(Tolerance := 0.2);
+
+  LatchingFault(Active := RequestTempControl AND RequestLevelControl);
+
+  HeaterOn := RequestTempControl AND TempControl.ShouldActuate AND NOT LatchingFault.LatchedOutput;
+  OpenInlet := RequestLevelControl AND LevelControl.ShouldActuate AND NOT LatchingFault.LatchedOutput;
+  LevelReadback := LevelControl.Readback;
 END_FUNCTION_BLOCK
 
 FUNCTION_BLOCK FB_1_Process
+  VAR
+    MixingTank : FB_11_MIXINGTANK;
+    TransferPump : FB_12_TRANSFERPUMP;
+  END_VAR
+  VAR_OUTPUT
+    BufferLevel : REAL;
+  END_VAR
 
+  MixingTank();
+  TransferPump(MixLevelReadback := MixingTank.LevelReadback);
+  BufferLevel := TransferPump.BufferLevelReadback;
 END_FUNCTION_BLOCK
 
 PROGRAM main
   VAR
-    FB_11_MIXINGTANK0 : FB_11_MixingTank;
+    Process : FB_1_Process;
   END_VAR
 
-  FB_11_MIXINGTANK0(EN := TRUE);
+  Process(EN := TRUE);
 END_PROGRAM
+
+FUNCTION_BLOCK FB_12_TransferPump
+  VAR
+    RequestMixDrain : BOOL;
+    MixOutletOpen : BOOL;
+  END_VAR
+  VAR_INPUT
+    MixLevelReadback : REAL;
+  END_VAR
+  VAR_OUTPUT
+    BufferLevelReadback : REAL;
+    LatchingFault : LATCHINGFAULT;
+  END_VAR
+
+  MixOutletOpen := RequestMixDrain AND MixLevelReadback > 1 AND NOT LatchingFault.LatchedOutput;
+END_FUNCTION_BLOCK
 
 
 CONFIGURATION Config0

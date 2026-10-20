@@ -10,7 +10,12 @@ FB_1_PROCESS::FB_1_PROCESS() {
 }
 
 void FB_1_PROCESS::operator()() {
-    // Empty function block body
+    MIXINGTANK();
+    MIXINGTANK.ENO = true;
+    TRANSFERPUMP.MIXLEVELREADBACK = MIXINGTANK.LEVELREADBACK;
+    TRANSFERPUMP();
+    TRANSFERPUMP.ENO = true;
+    BUFFERLEVEL = TRANSFERPUMP.BUFFERLEVELREADBACK;
 }
 
 }  // namespace strucpp

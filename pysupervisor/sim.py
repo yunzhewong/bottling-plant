@@ -3,7 +3,8 @@ import asyncio
 from asyncua.client.client import Client
 from pysupervisor.node_builder import NodeBuilder
 from pysupervisor.sim.constants import SCAN_PERIOD_S
-from pysupervisor.sim.mixing_tank import MixingTank
+from pysupervisor.sim.process.mixing_tank import MixingTank
+from pysupervisor.sim.process.transfer_pump import TransferPump
 
 URL = "opc.tcp://127.0.0.1:4840/openplc/opcua"
 NS_URI = "urn:openplc:opcua:namespace"
@@ -24,11 +25,18 @@ async def main():
         idx = await client.get_namespace_index(NS_URI)
         base_node_builder = NodeBuilder(client=client, prefix=BASE_NODEID, idx=idx)
 
-        mixing_tank = MixingTank(node_builder=base_node_builder.extend(".MixingTank"))
+        mixing_tank = MixingTank(
+            node_builder=base_node_builder.extend(".Process.MixingTank")
+        )
+        transfer_pump = TransferPump(
+            node_builder=base_node_builder.extend(".Process.TransferPump")
+        )
         await mixing_tank.initialise()
+        await transfer_pump.initialise()
 
         while True:
-            await mixing_tank.scan()
+            await mixing_tank.scan(await transfer_pump.is_mix_output_open())
+            await transfer_pump.scan()
             await asyncio.sleep(SCAN_PERIOD_S)
 
 

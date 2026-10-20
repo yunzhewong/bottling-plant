@@ -56,7 +56,136 @@
     "cycleTimeMs": 100,
     "addressSpace": {
       "namespaceUri": "urn:openplc:opcua:namespace",
-      "nodes": []
+      "nodes": [
+        {
+          "id": "3215db03-ece3-4191-936e-c86ae4dd297f",
+          "pouName": "main",
+          "variablePath": "Process.MixingTank.TempControl.Setpoint",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Process.MixingTank.TempControl.Setpoint",
+          "browseName": "Setpoint",
+          "displayName": "Setpoint",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "4f02181e-0271-494e-9e08-1a1cfb4cd2f8",
+          "pouName": "main",
+          "variablePath": "Process.MixingTank.TempControl.Readback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Process.MixingTank.TempControl.Readback",
+          "browseName": "Readback",
+          "displayName": "Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "a03bd4a3-3fa6-4cb2-be35-d7ff546755c7",
+          "pouName": "main",
+          "variablePath": "Process.MixingTank.LevelControl.Setpoint",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Process.MixingTank.LevelControl.Setpoint",
+          "browseName": "Setpoint",
+          "displayName": "Setpoint",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "08dfb544-8753-4e38-84a2-8ffdc55c0cdd",
+          "pouName": "main",
+          "variablePath": "Process.MixingTank.LevelControl.Readback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Process.MixingTank.LevelControl.Readback",
+          "browseName": "Readback",
+          "displayName": "Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "54dd2ecd-e5a5-48c0-84f7-0ef9da656552",
+          "pouName": "main",
+          "variablePath": "Process.MixingTank.OpenInlet",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Process.MixingTank.OpenInlet",
+          "browseName": "OpenInlet",
+          "displayName": "Open Inlet",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "06f4b920-55ed-4882-9ee5-9f2fe2afa83b",
+          "pouName": "main",
+          "variablePath": "Process.MixingTank.HeaterOn",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Process.MixingTank.HeaterOn",
+          "browseName": "HeaterOn",
+          "displayName": "Heater On",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "3a8fc87d-126f-4944-a0a5-66a74aa2d9f8",
+          "pouName": "main",
+          "variablePath": "Process.TransferPump.MixOutletOpen",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Process.TransferPump.MixOutletOpen",
+          "browseName": "MixOutletOpen",
+          "displayName": "Mix Outlet Open",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "ef3cfd80-2e55-49ca-b30f-a4acf6e38501",
+          "pouName": "main",
+          "variablePath": "Process.TransferPump.BufferLevelReadback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Process.TransferPump.BufferLevelReadback",
+          "browseName": "BufferLevelReadback",
+          "displayName": "Buffer Level Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        }
+      ]
     }
   }
 }

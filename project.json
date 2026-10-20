@@ -27,6 +27,20 @@
         "globalVariables": []
       }
     },
-    "libraries": []
+    "libraries": [],
+    "debugVariables": {
+      "pous": {
+        "FB_11_MixingTank": [
+          "TempControl",
+          "RequestTempControl",
+          "RequestLevelControl",
+          "LatchingFault",
+          "HeaterOn"
+        ],
+        "main": [
+          "Process"
+        ]
+      }
+    }
   }
 }

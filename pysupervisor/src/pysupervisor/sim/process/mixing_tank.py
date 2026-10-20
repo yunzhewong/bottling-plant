@@ -1,16 +1,23 @@
 from pysupervisor.node_builder import NodeBuilder
 from pysupervisor.sim.constants import SCAN_PERIOD_S
+from pysupervisor.sim.process.constants import OUTLET_FLOW_HEIGHT_RATE_M_S
 
-INLET_FLOWRATE_M3S = 0.1
+INLET_FLOW_HEIGHT_RATE_M_S = 0.1
 AMBIENT_TEMPERATURE = 25
 HEATER_TEMPERATURE = 100
 TEMP_COEFFICIENT = 0.01
 
 
-def iterate_level(current_level: float, inlet_open: bool):
-    if not inlet_open:
-        return current_level
-    return current_level + SCAN_PERIOD_S * INLET_FLOWRATE_M3S
+def iterate_level(current_level: float, inlet_open: bool, outlet_open: bool):
+    inlet_flow = 0
+    if inlet_open:
+        inlet_flow += SCAN_PERIOD_S * INLET_FLOW_HEIGHT_RATE_M_S
+
+    outlet_flow = 0
+    if outlet_open:
+        outlet_flow -= SCAN_PERIOD_S * OUTLET_FLOW_HEIGHT_RATE_M_S
+
+    return current_level + inlet_flow + outlet_flow
 
 
 def adjust_temperature(current_temp: float, adjustment_temp: float):
@@ -62,11 +69,12 @@ class MixingTank:
         await self.level_control.initialise(initial_value=5)
         await self.temp_control.initialise(initial_value=50)
 
-    async def scan(self):
+    async def scan(self, outlet_open: bool):
         await self.level_control.readback.set(
             iterate_level(
                 current_level=await self.level_control.readback.get(),
                 inlet_open=await self.inlet_open.get(),
+                outlet_open=outlet_open,
             )
         )
         await self.temp_control.readback.set(

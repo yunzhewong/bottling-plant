@@ -11,10 +11,10 @@ Program_MAIN::Program_MAIN()
 
 void Program_MAIN::run() {
     if (true) {
-        FB_11_MIXINGTANK0();
-        FB_11_MIXINGTANK0.ENO = true;
+        PROCESS();
+        PROCESS.ENO = true;
     } else {
-        FB_11_MIXINGTANK0.ENO = false;
+        PROCESS.ENO = false;
     }
 }
 

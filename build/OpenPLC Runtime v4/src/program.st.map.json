@@ -3,27 +3,32 @@
     "BangBangControl": {
       "kind": "FUNCTION_BLOCK",
       "startLine": 1,
-      "endLine": 17
+      "endLine": 16
     },
     "LatchingFault": {
       "kind": "FUNCTION_BLOCK",
-      "startLine": 19,
-      "endLine": 29
+      "startLine": 18,
+      "endLine": 28
     },
     "FB_11_MixingTank": {
       "kind": "FUNCTION_BLOCK",
-      "startLine": 31,
-      "endLine": 42
+      "startLine": 30,
+      "endLine": 52
     },
     "FB_1_Process": {
       "kind": "FUNCTION_BLOCK",
-      "startLine": 44,
-      "endLine": 46
+      "startLine": 54,
+      "endLine": 66
     },
     "main": {
       "kind": "PROGRAM",
-      "startLine": 48,
-      "endLine": 54
+      "startLine": 68,
+      "endLine": 74
+    },
+    "FB_12_TransferPump": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 76,
+      "endLine": 90
     }
   }
 }
