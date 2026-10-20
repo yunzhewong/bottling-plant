@@ -1,47 +1,44 @@
-FUNCTION_BLOCK FB_11_MixingTank_TempLevelControl
+FUNCTION_BLOCK BangBangControl
   VAR
-    LevelHysteresis : HYSTERESIS;
-    TempHysteresis : HYSTERESIS;
+    HYSTERESIS0 : HYSTERESIS;
+    Setpoint : REAL;
+    Readback : REAL;
+    Tolerance : REAL;
+    Active : BOOL;
+    ShouldActuate : BOOL;
+    Actuating : BOOL;
+  END_VAR
+
+  HYSTERESIS0(EN := TRUE, XIN1 := Setpoint, XIN2 := Readback, EPS := Tolerance);
+  IF HYSTERESIS0.ENO THEN
+      ShouldActuate := HYSTERESIS0.Q;
+  END_IF;
+  Actuating := ShouldActuate AND Active;
+END_FUNCTION_BLOCK
+
+FUNCTION_BLOCK LatchingFault
+  VAR_INPUT
+    Active : BOOL := FALSE;
+    Reset : BOOL := FALSE;
   END_VAR
   VAR_OUTPUT
-    InletOpen : BOOL := FALSE;
-    HeaterOn : BOOL := FALSE;
-  END_VAR
-  VAR_INPUT
-    LevelSetpoint_m : REAL := 2;
-    LevelReadback_m : REAL := 2;
-    TempSetpoint_degC : REAL := 50;
-    TempReadback_degC : REAL := 50;
-    Active : BOOL := 50;
-  END_VAR
-  VAR CONSTANT
-    LevelTolerance_m : REAL := 0.1;
-    TempTolerance_degC : REAL := 1;
+    LatchedOutput : BOOL := FALSE;
   END_VAR
 
-  // Hysteresis is documented to do be centred around XIN2, but in reality is around XIN1?
-
-  LevelHysteresis(XIN1 := LevelSetpoint_m, XIN2 := LevelReadback_m, EPS := LevelTolerance_m);
-  InletOpen := LevelHysteresis.Q AND Active; // If not active, force to 0 
-
-  TempHysteresis(XIN1 := TempSetpoint_degC, XIN2 := TempReadback_degC, EPS := TempTolerance_degC);
-  HeaterOn := TempHysteresis.Q AND Active; // If not active, force to 0
+  LatchedOutput := Active OR (LatchedOutput AND NOT Reset);
 END_FUNCTION_BLOCK
 
 FUNCTION_BLOCK FB_11_MixingTank
   VAR
-    TempControl : FB_11_MIXINGTANK_TEMPLEVELCONTROL;
-  END_VAR
-  VAR_OUTPUT
-    Running : BOOL := FALSE;
-  END_VAR
-  VAR_INPUT
-    Start : BOOL := FALSE;
-    Stop : BOOL := TRUE;
+    TempControl : BANGBANGCONTROL;
+    LevelControl : BANGBANGCONTROL;
+    Fault : LatchingFault;
+    _TMP_NOT5838470_OUT : BOOL;
   END_VAR
 
-  Running := Stop AND (Running OR Start);
-  TempControl(EN := TRUE, Active := Running);
+  Fault.Active := TempControl.Active AND LevelControl.Active;
+  _TMP_NOT5838470_OUT := NOT(Fault.LatchedOutput);
+  TempControl.Active := _TMP_NOT5838470_OUT;
 END_FUNCTION_BLOCK
 
 FUNCTION_BLOCK FB_1_Process

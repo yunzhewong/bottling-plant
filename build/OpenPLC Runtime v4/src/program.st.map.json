@@ -1,24 +1,29 @@
 {
   "pouOffsets": {
-    "FB_11_MixingTank_TempLevelControl": {
+    "BangBangControl": {
       "kind": "FUNCTION_BLOCK",
       "startLine": 1,
+      "endLine": 17
+    },
+    "LatchingFault": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 19,
       "endLine": 29
     },
     "FB_11_MixingTank": {
       "kind": "FUNCTION_BLOCK",
       "startLine": 31,
-      "endLine": 45
+      "endLine": 42
     },
     "FB_1_Process": {
       "kind": "FUNCTION_BLOCK",
-      "startLine": 47,
-      "endLine": 49
+      "startLine": 44,
+      "endLine": 46
     },
     "main": {
       "kind": "PROGRAM",
-      "startLine": 51,
-      "endLine": 57
+      "startLine": 48,
+      "endLine": 54
     }
   }
 }

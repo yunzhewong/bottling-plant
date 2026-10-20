@@ -5,21 +5,14 @@
 
 namespace strucpp {
 
-FB_11_MIXINGTANK::FB_11_MIXINGTANK()
-    : RUNNING(false), START(false), STOP(true)
-{
+FB_11_MIXINGTANK::FB_11_MIXINGTANK() {
     // Initialize variables
 }
 
 void FB_11_MIXINGTANK::operator()() {
-    RUNNING = (STOP) & (((RUNNING) | (START)));
-    TEMPCONTROL.ACTIVE = RUNNING;
-    if (true) {
-        TEMPCONTROL();
-        TEMPCONTROL.ENO = true;
-    } else {
-        TEMPCONTROL.ENO = false;
-    }
+    FAULT.ACTIVE = (TEMPCONTROL.ACTIVE) & (LEVELCONTROL.ACTIVE);
+    _TMP_NOT5838470_OUT = NOT(FAULT.LATCHEDOUTPUT);
+    TEMPCONTROL.ACTIVE = _TMP_NOT5838470_OUT;
 }
 
 }  // namespace strucpp

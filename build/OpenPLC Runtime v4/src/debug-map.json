@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "md5": "f56681d75f3ce621e03a4055afe15a74",
+  "md5": "0c83675430f1d7eb1319f31c6a71648f",
   "typeTags": {
     "BOOL": 0,
     "SINT": 1,
@@ -27,149 +27,175 @@
   "arrays": [
     {
       "index": 0,
-      "count": 20
+      "count": 24
     }
   ],
   "leaves": [
     {
       "arrayIdx": 0,
       "elemIdx": 0,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.XIN1",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.HYSTERESIS0.XIN1",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 1,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.XIN2",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.HYSTERESIS0.XIN2",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 2,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.EPS",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.HYSTERESIS0.EPS",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 3,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELHYSTERESIS.Q",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.HYSTERESIS0.Q",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 4,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.XIN1",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.SETPOINT",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 5,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.XIN2",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.READBACK",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 6,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.EPS",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TOLERANCE",
       "type": "REAL",
       "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 7,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPHYSTERESIS.Q",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 8,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.INLETOPEN",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 9,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.HEATERON",
-      "type": "BOOL",
-      "size": 1
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 10,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELSETPOINT_M",
-      "type": "REAL",
-      "size": 4
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 11,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELREADBACK_M",
-      "type": "REAL",
-      "size": 4
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 12,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPSETPOINT_DEGC",
-      "type": "REAL",
-      "size": 4
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 13,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPREADBACK_DEGC",
-      "type": "REAL",
-      "size": 4
-    },
-    {
-      "arrayIdx": 0,
-      "elemIdx": 14,
       "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.ACTIVE",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
-      "elemIdx": 15,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.LEVELTOLERANCE_M",
+      "elemIdx": 8,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.SHOULDACTUATE",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 9,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.ACTUATING",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 10,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.HYSTERESIS0.XIN1",
       "type": "REAL",
-      "size": 4,
-      "readOnly": true
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 11,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.HYSTERESIS0.XIN2",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 12,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.HYSTERESIS0.EPS",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 13,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.HYSTERESIS0.Q",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 14,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.SETPOINT",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 15,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.READBACK",
+      "type": "REAL",
+      "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 16,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.TEMPCONTROL.TEMPTOLERANCE_DEGC",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.TOLERANCE",
       "type": "REAL",
-      "size": 4,
-      "readOnly": true
+      "size": 4
     },
     {
       "arrayIdx": 0,
       "elemIdx": 17,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.RUNNING",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.ACTIVE",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 18,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.START",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.SHOULDACTUATE",
       "type": "BOOL",
       "size": 1
     },
     {
       "arrayIdx": 0,
       "elemIdx": 19,
-      "path": "INSTANCE0.FB_11_MIXINGTANK0.STOP",
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.LEVELCONTROL.ACTUATING",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 20,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.FAULT.ACTIVE",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 21,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.FAULT.RESET",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 22,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0.FAULT.LATCHEDOUTPUT",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 23,
+      "path": "INSTANCE0.FB_11_MIXINGTANK0._TMP_NOT5838470_OUT",
       "type": "BOOL",
       "size": 1
     }

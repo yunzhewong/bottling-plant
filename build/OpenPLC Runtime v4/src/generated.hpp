@@ -53,7 +53,8 @@ constexpr size_t LIST_LENGTH = 254;
 
 namespace strucpp {
 
-class FB_11_MIXINGTANK_TEMPLEVELCONTROL;
+class BANGBANGCONTROL;
+class LATCHINGFAULT;
 class FB_11_MIXINGTANK;
 class FB_1_PROCESS;
 class Program_MAIN;
@@ -83,40 +84,54 @@ public:
 };
 
 
-class FB_11_MIXINGTANK_TEMPLEVELCONTROL;
+class BANGBANGCONTROL;
+class LATCHINGFAULT;
 class FB_11_MIXINGTANK;
 class FB_1_PROCESS;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
-class FB_11_MIXINGTANK_TEMPLEVELCONTROL {
+class BANGBANGCONTROL {
 public:
     // Local variables
-    HYSTERESIS LEVELHYSTERESIS;
-    HYSTERESIS TEMPHYSTERESIS;
-    // Outputs
-    IEC_BOOL INLETOPEN;
-    IEC_BOOL HEATERON;
-    // Inputs
-    IEC_REAL LEVELSETPOINT_M;
-    IEC_REAL LEVELREADBACK_M;
-    IEC_REAL TEMPSETPOINT_DEGC;
-    IEC_REAL TEMPREADBACK_DEGC;
+    HYSTERESIS HYSTERESIS0;
+    IEC_REAL SETPOINT;
+    IEC_REAL READBACK;
+    IEC_REAL TOLERANCE;
     IEC_BOOL ACTIVE;
-    // Local variables
-    IEC_REAL LEVELTOLERANCE_M;
-    IEC_REAL TEMPTOLERANCE_DEGC;
+    IEC_BOOL SHOULDACTUATE;
+    IEC_BOOL ACTUATING;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
 
     // Constructor
-    FB_11_MIXINGTANK_TEMPLEVELCONTROL();
+    BANGBANGCONTROL();
 
     // Execute function block
     void operator()();
 
-    virtual ~FB_11_MIXINGTANK_TEMPLEVELCONTROL() = default;
+    virtual ~BANGBANGCONTROL() = default;
+};
+
+class LATCHINGFAULT {
+public:
+    // Inputs
+    IEC_BOOL ACTIVE;
+    IEC_BOOL RESET;
+    // Outputs
+    IEC_BOOL LATCHEDOUTPUT;
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    LATCHINGFAULT();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~LATCHINGFAULT() = default;
 };
 
 class FB_1_PROCESS {
@@ -137,12 +152,10 @@ public:
 class FB_11_MIXINGTANK {
 public:
     // Local variables
-    FB_11_MIXINGTANK_TEMPLEVELCONTROL TEMPCONTROL;
-    // Outputs
-    IEC_BOOL RUNNING;
-    // Inputs
-    IEC_BOOL START;
-    IEC_BOOL STOP;
+    BANGBANGCONTROL TEMPCONTROL;
+    BANGBANGCONTROL LEVELCONTROL;
+    LATCHINGFAULT FAULT;
+    IEC_BOOL _TMP_NOT5838470_OUT;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;

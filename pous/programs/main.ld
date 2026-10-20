@@ -19,7 +19,7 @@ PROGRAM main
       ],
       "reactFlowViewport": [
         598,
-        174
+        120
       ],
       "nodes": [
         {
@@ -111,7 +111,7 @@ PROGRAM main
           "dragging": false
         },
         {
-          "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
+          "id": "BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf",
           "type": "block",
           "position": {
             "x": 143,
@@ -139,42 +139,6 @@ PROGRAM main
               },
               {
                 "glbPosition": {
-                  "x": 143,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 76
-                },
-                "id": "Start",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 76,
-                  "left": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 143,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 116
-                },
-                "id": "Stop",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 116,
-                  "left": 0
-                }
-              },
-              {
-                "glbPosition": {
                   "x": 335,
                   "y": 50
                 },
@@ -188,24 +152,6 @@ PROGRAM main
                 "isConnectable": false,
                 "style": {
                   "top": 36,
-                  "right": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 335,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 192,
-                  "y": 76
-                },
-                "id": "Running",
-                "position": "right",
-                "type": "source",
-                "isConnectable": false,
-                "style": {
-                  "top": 76,
                   "right": 0
                 }
               }
@@ -228,42 +174,6 @@ PROGRAM main
                   "top": 36,
                   "left": 0
                 }
-              },
-              {
-                "glbPosition": {
-                  "x": 143,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 76
-                },
-                "id": "Start",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 76,
-                  "left": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 143,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 116
-                },
-                "id": "Stop",
-                "position": "left",
-                "type": "target",
-                "isConnectable": false,
-                "style": {
-                  "top": 116,
-                  "left": 0
-                }
               }
             ],
             "outputHandles": [
@@ -282,24 +192,6 @@ PROGRAM main
                 "isConnectable": false,
                 "style": {
                   "top": 36,
-                  "right": 0
-                }
-              },
-              {
-                "glbPosition": {
-                  "x": 335,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 192,
-                  "y": 76
-                },
-                "id": "Running",
-                "position": "right",
-                "type": "source",
-                "isConnectable": false,
-                "style": {
-                  "top": 76,
                   "right": 0
                 }
               }
@@ -340,7 +232,7 @@ PROGRAM main
                 "right": 0
               }
             },
-            "numericId": "3274288",
+            "numericId": "1015970",
             "variant": {
               "name": "FB_11_MixingTank",
               "documentation": "Mixing Tank of Fluids and Temperature",
@@ -366,47 +258,59 @@ PROGRAM main
                   "name": "TempControl",
                   "class": "local",
                   "type": {
-                    "value": "FB_11_MIXINGTANK_TEMPLEVELCONTROL",
+                    "value": "BANGBANGCONTROL",
                     "definition": "derived"
                   },
                   "location": "",
-                  "initialValue": null,
                   "documentation": "",
-                  "debug": false
+                  "debug": false,
+                  "initialValue": ""
                 },
                 {
-                  "name": "Running",
-                  "class": "output",
+                  "name": "LevelControl",
+                  "class": "local",
+                  "type": {
+                    "value": "BANGBANGCONTROL",
+                    "definition": "derived"
+                  },
+                  "location": "",
+                  "documentation": "",
+                  "debug": false,
+                  "initialValue": ""
+                },
+                {
+                  "id": "2dcd7e69-eba9-4754-a121-fc3cbb7a1007",
+                  "name": "FaultActive",
                   "type": {
                     "value": "BOOL",
                     "definition": "base-type"
                   },
+                  "class": "local",
                   "location": "",
-                  "initialValue": "FALSE",
                   "documentation": "",
                   "debug": false
                 },
                 {
-                  "name": "Start",
-                  "class": "input",
+                  "id": "2dcd7e69-eba9-4754-a121-fc3cbb7a1007",
+                  "name": "Reset",
                   "type": {
                     "value": "BOOL",
                     "definition": "base-type"
                   },
+                  "class": "local",
                   "location": "",
-                  "initialValue": "FALSE",
                   "documentation": "",
                   "debug": false
                 },
                 {
-                  "name": "Stop",
-                  "class": "input",
+                  "id": "2dcd7e69-eba9-4754-a121-fc3cbb7a1007",
+                  "name": "LatchedFault",
                   "type": {
                     "value": "BOOL",
                     "definition": "base-type"
                   },
+                  "class": "local",
                   "location": "",
-                  "initialValue": "TRUE",
                   "documentation": "",
                   "debug": false
                 }
@@ -426,26 +330,17 @@ PROGRAM main
             },
             "executionOrder": 0,
             "executionControl": true,
-            "lockExecutionControl": false,
-            "connectedVariables": [
-              {
-                "handleId": "Start",
-                "type": "input",
-                "variable": {
-                  "id": "",
-                  "name": ""
-                }
-              }
-            ],
+            "lockExecutionControl": true,
+            "connectedVariables": [],
             "draggable": true,
             "selectable": true,
             "deletable": true
           },
           "width": 192,
-          "height": 140,
+          "height": 60,
           "measured": {
             "width": 192,
-            "height": 140
+            "height": 60
           },
           "draggable": true,
           "selectable": true,
@@ -540,323 +435,22 @@ PROGRAM main
           "selectable": false,
           "selected": false,
           "dragging": false
-        },
-        {
-          "id": "VARIABLE_7fd8d5ca-494c-473a-ac55-aa7499dddabf",
-          "type": "variable",
-          "position": {
-            "x": 33,
-            "y": 74
-          },
-          "width": 80,
-          "height": 32,
-          "measured": {
-            "width": 80,
-            "height": 32
-          },
-          "data": {
-            "handles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "inputHandles": [],
-            "outputHandles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "outputConnector": {
-              "glbPosition": {
-                "x": 193,
-                "y": 90
-              },
-              "relPosition": {
-                "x": 80,
-                "y": 16
-              },
-              "id": "output",
-              "position": "right",
-              "isConnectable": false,
-              "type": "source"
-            },
-            "numericId": "9927456",
-            "variable": {
-              "id": "",
-              "name": ""
-            },
-            "executionOrder": 0,
-            "variant": "input",
-            "block": {
-              "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
-              "handleId": "Start",
-              "variableType": {
-                "name": "Start",
-                "class": "input",
-                "type": {
-                  "value": "BOOL",
-                  "definition": "base-type"
-                },
-                "location": "",
-                "initialValue": "FALSE",
-                "documentation": "",
-                "debug": false
-              }
-            },
-            "draggable": false,
-            "selectable": true,
-            "deletable": false
-          },
-          "deletable": false,
-          "selectable": true,
-          "draggable": false,
-          "selected": false,
-          "dragging": false
-        },
-        {
-          "id": "VARIABLE_71e6b5bd-d490-473e-9028-64a62196c5c9",
-          "type": "variable",
-          "position": {
-            "x": 33,
-            "y": 114
-          },
-          "width": 80,
-          "height": 32,
-          "measured": {
-            "width": 80,
-            "height": 32
-          },
-          "data": {
-            "handles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "inputHandles": [],
-            "outputHandles": [
-              {
-                "glbPosition": {
-                  "x": 193,
-                  "y": 130
-                },
-                "relPosition": {
-                  "x": 80,
-                  "y": 16
-                },
-                "id": "output",
-                "position": "right",
-                "isConnectable": false,
-                "type": "source"
-              }
-            ],
-            "outputConnector": {
-              "glbPosition": {
-                "x": 193,
-                "y": 130
-              },
-              "relPosition": {
-                "x": 80,
-                "y": 16
-              },
-              "id": "output",
-              "position": "right",
-              "isConnectable": false,
-              "type": "source"
-            },
-            "numericId": "1427434",
-            "variable": {
-              "name": ""
-            },
-            "executionOrder": 0,
-            "variant": "input",
-            "block": {
-              "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
-              "handleId": "Stop",
-              "variableType": {
-                "name": "Stop",
-                "class": "input",
-                "type": {
-                  "value": "BOOL",
-                  "definition": "base-type"
-                },
-                "location": "",
-                "initialValue": "TRUE",
-                "documentation": "",
-                "debug": false
-              }
-            },
-            "draggable": false,
-            "selectable": true,
-            "deletable": false
-          },
-          "deletable": false,
-          "selectable": true,
-          "draggable": false,
-          "selected": false,
-          "dragging": false
-        },
-        {
-          "id": "VARIABLE_2e47c655-3b28-4e28-8963-33b218f97c3f",
-          "type": "variable",
-          "position": {
-            "x": 365,
-            "y": 74
-          },
-          "width": 80,
-          "height": 32,
-          "measured": {
-            "width": 80,
-            "height": 32
-          },
-          "data": {
-            "handles": [
-              {
-                "glbPosition": {
-                  "x": 365,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 16
-                },
-                "id": "input",
-                "position": "left",
-                "isConnectable": false,
-                "type": "target"
-              }
-            ],
-            "inputHandles": [
-              {
-                "glbPosition": {
-                  "x": 365,
-                  "y": 90
-                },
-                "relPosition": {
-                  "x": 0,
-                  "y": 16
-                },
-                "id": "input",
-                "position": "left",
-                "isConnectable": false,
-                "type": "target"
-              }
-            ],
-            "outputHandles": [],
-            "inputConnector": {
-              "glbPosition": {
-                "x": 365,
-                "y": 90
-              },
-              "relPosition": {
-                "x": 0,
-                "y": 16
-              },
-              "id": "input",
-              "position": "left",
-              "isConnectable": false,
-              "type": "target"
-            },
-            "numericId": "2934833",
-            "variable": {
-              "name": ""
-            },
-            "executionOrder": 0,
-            "variant": "output",
-            "block": {
-              "id": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
-              "handleId": "Running",
-              "variableType": {
-                "name": "Running",
-                "class": "output",
-                "type": {
-                  "value": "BOOL",
-                  "definition": "base-type"
-                },
-                "location": "",
-                "initialValue": "FALSE",
-                "documentation": "",
-                "debug": false
-              }
-            },
-            "draggable": false,
-            "selectable": true,
-            "deletable": false
-          },
-          "deletable": false,
-          "selectable": true,
-          "draggable": false,
-          "selected": false,
-          "dragging": false
         }
       ],
       "edges": [
         {
-          "id": "e_left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd__left-rail_???",
+          "id": "e_left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c_BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf__left-rail_???",
           "source": "left-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
-          "target": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
+          "target": "BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf",
           "sourceHandle": "left-rail",
           "targetHandle": "EN"
         },
         {
-          "id": "e_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd_right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c__???_right-rail",
-          "source": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
+          "id": "e_BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf_right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c__???_right-rail",
+          "source": "BLOCK_843de292-dfa9-4d85-87b1-62faebbaedbf",
           "target": "right-rail-rung_main_07573b87-95c5-4e7b-bf30-252cc82d1d3c",
           "sourceHandle": "ENO",
           "targetHandle": "right-rail"
-        },
-        {
-          "id": "e_VARIABLE_7fd8d5ca-494c-473a-ac55-aa7499dddabf_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd__output_Start",
-          "source": "VARIABLE_7fd8d5ca-494c-473a-ac55-aa7499dddabf",
-          "target": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
-          "sourceHandle": "output",
-          "targetHandle": "Start"
-        },
-        {
-          "id": "e_VARIABLE_71e6b5bd-d490-473e-9028-64a62196c5c9_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd__output_Stop",
-          "source": "VARIABLE_71e6b5bd-d490-473e-9028-64a62196c5c9",
-          "target": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
-          "sourceHandle": "output",
-          "targetHandle": "Stop"
-        },
-        {
-          "id": "e_BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd_VARIABLE_2e47c655-3b28-4e28-8963-33b218f97c3f__Running_input",
-          "source": "BLOCK_27d13614-ccc4-42c1-9c60-0c13ece602dd",
-          "target": "VARIABLE_2e47c655-3b28-4e28-8963-33b218f97c3f",
-          "sourceHandle": "Running",
-          "targetHandle": "input"
         }
       ],
       "selectedNodes": [],
