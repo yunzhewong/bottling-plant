@@ -1,0 +1,1 @@
+SCAN_PERIOD_S = 20e-3
