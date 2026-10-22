@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "md5": "800049a2d508fb0a890c507d19e8ec4e",
+  "md5": "864724b6db7e8a524c23f50c877f302d",
   "typeTags": {
     "BOOL": 0,
     "SINT": 1,
@@ -27,7 +27,7 @@
   "arrays": [
     {
       "index": 0,
-      "count": 32
+      "count": 43
     }
   ],
   "leaves": [
@@ -253,6 +253,83 @@
       "elemIdx": 31,
       "path": "INSTANCE0.PROCESS.BUFFERLEVEL",
       "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 32,
+      "path": "INSTANCE0.PACKAGING.FILLER.FLOWRATESETPOINT_MM3_S",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 33,
+      "path": "INSTANCE0.PACKAGING.FILLER.FLOWRATEREADBACK_MM3_S",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 34,
+      "path": "INSTANCE0.PACKAGING.FILLER.FILLVOLUME_MM3",
+      "type": "REAL",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 35,
+      "path": "INSTANCE0.PACKAGING.FILLER.OVERFILLFAULT.ACTIVE",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 36,
+      "path": "INSTANCE0.PACKAGING.FILLER.OVERFILLFAULT.RESET",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 37,
+      "path": "INSTANCE0.PACKAGING.FILLER.OVERFILLFAULT.LATCHEDOUTPUT",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 38,
+      "path": "INSTANCE0.PACKAGING.FILLER.BOTTLEFULL",
+      "type": "BOOL",
+      "size": 1
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 39,
+      "path": "INSTANCE0.PACKAGING.CONVEYOR.BOTTLEFULL",
+      "type": "DINT",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 40,
+      "path": "INSTANCE0.PACKAGING.CONVEYOR.LOADBOTTLE",
+      "type": "DINT",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 41,
+      "path": "INSTANCE0.PACKAGING.CONVEYOR.BOTTLELOADED",
+      "type": "DINT",
+      "size": 4
+    },
+    {
+      "arrayIdx": 0,
+      "elemIdx": 42,
+      "path": "INSTANCE0.PACKAGING.CONVEYOR.LOADEDCOUNT",
+      "type": "DINT",
       "size": 4
     }
   ]

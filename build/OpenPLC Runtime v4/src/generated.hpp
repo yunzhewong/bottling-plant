@@ -60,6 +60,7 @@ class FB_12_TRANSFERPUMP;
 class FB_1_PROCESS;
 class FB_2_PACKAGING;
 class FB_2_PACKAGING_FILLER;
+class FB_2_PACKAGING_CONVEYOR;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
@@ -94,6 +95,7 @@ class FB_12_TRANSFERPUMP;
 class FB_1_PROCESS;
 class FB_2_PACKAGING;
 class FB_2_PACKAGING_FILLER;
+class FB_2_PACKAGING_CONVEYOR;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
@@ -140,34 +142,25 @@ public:
     virtual ~LATCHINGFAULT() = default;
 };
 
-class FB_2_PACKAGING {
+class FB_2_PACKAGING_CONVEYOR {
 public:
+    // Inputs
+    IEC_DINT BOTTLEFULL;
+    // Local variables
+    IEC_DINT LOADBOTTLE;
+    IEC_DINT BOTTLELOADED;
+    IEC_DINT LOADEDCOUNT;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;
 
     // Constructor
-    FB_2_PACKAGING();
+    FB_2_PACKAGING_CONVEYOR();
 
     // Execute function block
     void operator()();
 
-    virtual ~FB_2_PACKAGING() = default;
-};
-
-class FB_2_PACKAGING_FILLER {
-public:
-
-    // Implicit IEC 61131-3 ENO pin (mirrors EN)
-    IEC_BOOL ENO = true;
-
-    // Constructor
-    FB_2_PACKAGING_FILLER();
-
-    // Execute function block
-    void operator()();
-
-    virtual ~FB_2_PACKAGING_FILLER() = default;
+    virtual ~FB_2_PACKAGING_CONVEYOR() = default;
 };
 
 class FB_11_MIXINGTANK {
@@ -218,6 +211,28 @@ public:
     virtual ~FB_12_TRANSFERPUMP() = default;
 };
 
+class FB_2_PACKAGING_FILLER {
+public:
+    // Local variables
+    IEC_REAL FLOWRATESETPOINT_MM3_S;
+    IEC_REAL FLOWRATEREADBACK_MM3_S;
+    IEC_REAL FILLVOLUME_MM3;
+    LATCHINGFAULT OVERFILLFAULT;
+    // Outputs
+    IEC_BOOL BOTTLEFULL;
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_2_PACKAGING_FILLER();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_2_PACKAGING_FILLER() = default;
+};
+
 class FB_1_PROCESS {
 public:
     // Local variables
@@ -238,10 +253,29 @@ public:
     virtual ~FB_1_PROCESS() = default;
 };
 
+class FB_2_PACKAGING {
+public:
+    // Local variables
+    FB_2_PACKAGING_FILLER FILLER;
+    FB_2_PACKAGING_CONVEYOR CONVEYOR;
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_2_PACKAGING();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_2_PACKAGING() = default;
+};
+
 class Program_MAIN : public ProgramBase {
 public:
     // Local variables
     FB_1_PROCESS PROCESS;
+    FB_2_PACKAGING PACKAGING;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;

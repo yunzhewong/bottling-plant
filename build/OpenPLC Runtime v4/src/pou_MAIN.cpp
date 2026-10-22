@@ -16,6 +16,12 @@ void Program_MAIN::run() {
     } else {
         PROCESS.ENO = false;
     }
+    if (true) {
+        PACKAGING();
+        PACKAGING.ENO = true;
+    } else {
+        PACKAGING.ENO = false;
+    }
 }
 
 }  // namespace strucpp

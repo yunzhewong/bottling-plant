@@ -184,6 +184,54 @@
             "engineer": "rw"
           },
           "nodeType": "variable"
+        },
+        {
+          "id": "05e02b6b-8e96-419f-8ea2-9aad53eb1583",
+          "pouName": "main",
+          "variablePath": "Packaging.Filler.FlowRateSetpoint_mm3_s",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Packaging.Filler.FlowRateSetpoint_mm3_s",
+          "browseName": "FlowRateSetpoint_mm3_s",
+          "displayName": "Flow Rate Setpoint Mm3 S",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "c1b1b96b-bb2c-48d1-97f3-05c278e123c2",
+          "pouName": "main",
+          "variablePath": "Packaging.Filler.FlowRateReadback_mm3_s",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Packaging.Filler.FlowRateReadback_mm3_s",
+          "browseName": "FlowRateReadback_mm3_s",
+          "displayName": "Flow Rate Readback Mm3 S",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "36cd9d5d-f549-4a11-873e-bb3eee53087d",
+          "pouName": "main",
+          "variablePath": "Packaging.Filler.FillVolume_mm3",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Packaging.Filler.FillVolume_mm3",
+          "browseName": "FillVolume_mm3",
+          "displayName": "Fill Volume Mm3",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
         }
       ]
     }

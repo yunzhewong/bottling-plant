@@ -1,6 +1,7 @@
 PROGRAM main
   VAR
     Process : FB_1_Process;
+    Packaging : FB_2_Packaging;
   END_VAR
   VAR_INPUT
   END_VAR
@@ -294,8 +295,8 @@ PROGRAM main
                   "name": "MixingTank",
                   "class": "local",
                   "type": {
-                    "value": "FB_11_MIXINGTANK",
-                    "definition": "derived"
+                    "definition": "user-data-type",
+                    "value": "FB_11_MIXINGTANK"
                   },
                   "location": "",
                   "documentation": "",
@@ -306,8 +307,8 @@ PROGRAM main
                   "name": "TransferPump",
                   "class": "local",
                   "type": {
-                    "value": "FB_12_TRANSFERPUMP",
-                    "definition": "derived"
+                    "definition": "user-data-type",
+                    "value": "FB_12_TRANSFERPUMP"
                   },
                   "location": "",
                   "documentation": "",
@@ -563,6 +564,393 @@ PROGRAM main
           "target": "VARIABLE_67177e0d-9700-4b77-99c8-d9ced6acf7d8",
           "sourceHandle": "BufferLevel",
           "targetHandle": "input"
+        }
+      ],
+      "selectedNodes": [],
+      "handleBranches": []
+    },
+    {
+      "id": "rung_main_35b7a757-0654-48e3-a1a8-940540ce1890",
+      "comment": "",
+      "defaultBounds": [
+        300,
+        100
+      ],
+      "reactFlowViewport": [
+        574,
+        120
+      ],
+      "nodes": [
+        {
+          "id": "left-rail-rung_main_35b7a757-0654-48e3-a1a8-940540ce1890",
+          "type": "powerRail",
+          "position": {
+            "x": 0,
+            "y": 30
+          },
+          "data": {
+            "handles": [
+              {
+                "glbPosition": {
+                  "x": 3,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 3,
+                  "y": 20
+                },
+                "id": "left-rail",
+                "position": "right",
+                "type": "source",
+                "isConnectable": false,
+                "style": {
+                  "top": 20,
+                  "right": -3
+                }
+              }
+            ],
+            "inputHandles": [],
+            "outputHandles": [
+              {
+                "glbPosition": {
+                  "x": 3,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 3,
+                  "y": 20
+                },
+                "id": "left-rail",
+                "position": "right",
+                "type": "source",
+                "isConnectable": false,
+                "style": {
+                  "top": 20,
+                  "right": -3
+                }
+              }
+            ],
+            "outputConnector": {
+              "glbPosition": {
+                "x": 3,
+                "y": 50
+              },
+              "relPosition": {
+                "x": 3,
+                "y": 20
+              },
+              "id": "left-rail",
+              "position": "right",
+              "type": "source",
+              "isConnectable": false,
+              "style": {
+                "top": 20,
+                "right": -3
+              }
+            },
+            "numericId": "4157049",
+            "variant": "left",
+            "variable": {
+              "name": ""
+            },
+            "executionOrder": 0,
+            "draggable": false,
+            "selectable": false,
+            "deletable": false
+          },
+          "width": 3,
+          "height": 40,
+          "measured": {
+            "width": 3,
+            "height": 40
+          },
+          "draggable": false,
+          "selectable": false,
+          "selected": false,
+          "dragging": false
+        },
+        {
+          "id": "BLOCK_157f83c8-5f14-4d78-a7e6-6620eb5b48e1",
+          "type": "block",
+          "position": {
+            "x": 143,
+            "y": 14
+          },
+          "data": {
+            "handles": [
+              {
+                "glbPosition": {
+                  "x": 143,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 0,
+                  "y": 36
+                },
+                "id": "EN",
+                "position": "left",
+                "type": "target",
+                "isConnectable": false,
+                "style": {
+                  "top": 36,
+                  "left": 0
+                }
+              },
+              {
+                "glbPosition": {
+                  "x": 311,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 168,
+                  "y": 36
+                },
+                "id": "ENO",
+                "position": "right",
+                "type": "source",
+                "isConnectable": false,
+                "style": {
+                  "top": 36,
+                  "right": 0
+                }
+              }
+            ],
+            "inputHandles": [
+              {
+                "glbPosition": {
+                  "x": 143,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 0,
+                  "y": 36
+                },
+                "id": "EN",
+                "position": "left",
+                "type": "target",
+                "isConnectable": false,
+                "style": {
+                  "top": 36,
+                  "left": 0
+                }
+              }
+            ],
+            "outputHandles": [
+              {
+                "glbPosition": {
+                  "x": 311,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 168,
+                  "y": 36
+                },
+                "id": "ENO",
+                "position": "right",
+                "type": "source",
+                "isConnectable": false,
+                "style": {
+                  "top": 36,
+                  "right": 0
+                }
+              }
+            ],
+            "inputConnector": {
+              "glbPosition": {
+                "x": 143,
+                "y": 50
+              },
+              "relPosition": {
+                "x": 0,
+                "y": 36
+              },
+              "id": "EN",
+              "position": "left",
+              "type": "target",
+              "isConnectable": false,
+              "style": {
+                "top": 36,
+                "left": 0
+              }
+            },
+            "outputConnector": {
+              "glbPosition": {
+                "x": 311,
+                "y": 50
+              },
+              "relPosition": {
+                "x": 168,
+                "y": 36
+              },
+              "id": "ENO",
+              "position": "right",
+              "type": "source",
+              "isConnectable": false,
+              "style": {
+                "top": 36,
+                "right": 0
+              }
+            },
+            "numericId": "9250351",
+            "variant": {
+              "name": "FB_2_Packaging",
+              "type": "function-block",
+              "variables": [
+                {
+                  "name": "EN",
+                  "class": "input",
+                  "type": {
+                    "definition": "generic-type",
+                    "value": "BOOL"
+                  }
+                },
+                {
+                  "name": "ENO",
+                  "class": "output",
+                  "type": {
+                    "definition": "generic-type",
+                    "value": "BOOL"
+                  }
+                }
+              ],
+              "documentation": "",
+              "extensible": false
+            },
+            "variable": {
+              "id": "0dd44a3c-e4cd-4b05-aa3d-9789c932a342",
+              "name": "Packaging",
+              "type": {
+                "definition": "derived",
+                "value": "FB_2_Packaging"
+              },
+              "class": "local",
+              "location": "",
+              "documentation": "",
+              "debug": false
+            },
+            "executionOrder": 0,
+            "executionControl": true,
+            "lockExecutionControl": true,
+            "connectedVariables": [],
+            "draggable": true,
+            "selectable": true,
+            "deletable": true
+          },
+          "width": 168,
+          "height": 60,
+          "measured": {
+            "width": 168,
+            "height": 60
+          },
+          "draggable": true,
+          "selectable": true,
+          "selected": false,
+          "dragging": false
+        },
+        {
+          "id": "right-rail-rung_main_35b7a757-0654-48e3-a1a8-940540ce1890",
+          "type": "powerRail",
+          "position": {
+            "x": 571,
+            "y": 30
+          },
+          "data": {
+            "handles": [
+              {
+                "glbPosition": {
+                  "x": 297,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 3,
+                  "y": 20
+                },
+                "id": "right-rail",
+                "position": "left",
+                "type": "target",
+                "isConnectable": false,
+                "style": {
+                  "top": 20,
+                  "left": -3
+                },
+                "x": 571
+              }
+            ],
+            "inputHandles": [
+              {
+                "glbPosition": {
+                  "x": 297,
+                  "y": 50
+                },
+                "relPosition": {
+                  "x": 3,
+                  "y": 20
+                },
+                "id": "right-rail",
+                "position": "left",
+                "type": "target",
+                "isConnectable": false,
+                "style": {
+                  "top": 20,
+                  "left": -3
+                }
+              }
+            ],
+            "outputHandles": [],
+            "inputConnector": {
+              "glbPosition": {
+                "x": 297,
+                "y": 50
+              },
+              "relPosition": {
+                "x": 3,
+                "y": 20
+              },
+              "id": "right-rail",
+              "position": "left",
+              "type": "target",
+              "isConnectable": false,
+              "style": {
+                "top": 20,
+                "left": -3
+              }
+            },
+            "numericId": "6993418",
+            "variant": "right",
+            "variable": {
+              "name": ""
+            },
+            "executionOrder": 0,
+            "draggable": false,
+            "selectable": false,
+            "deletable": false
+          },
+          "width": 3,
+          "height": 40,
+          "measured": {
+            "width": 3,
+            "height": 40
+          },
+          "draggable": false,
+          "selectable": false,
+          "selected": false,
+          "dragging": false
+        }
+      ],
+      "edges": [
+        {
+          "id": "e_left-rail-rung_main_35b7a757-0654-48e3-a1a8-940540ce1890_BLOCK_157f83c8-5f14-4d78-a7e6-6620eb5b48e1__left-rail_???",
+          "source": "left-rail-rung_main_35b7a757-0654-48e3-a1a8-940540ce1890",
+          "target": "BLOCK_157f83c8-5f14-4d78-a7e6-6620eb5b48e1",
+          "sourceHandle": "left-rail",
+          "targetHandle": "EN"
+        },
+        {
+          "id": "e_BLOCK_157f83c8-5f14-4d78-a7e6-6620eb5b48e1_right-rail-rung_main_35b7a757-0654-48e3-a1a8-940540ce1890__???_right-rail",
+          "source": "BLOCK_157f83c8-5f14-4d78-a7e6-6620eb5b48e1",
+          "target": "right-rail-rung_main_35b7a757-0654-48e3-a1a8-940540ce1890",
+          "sourceHandle": "ENO",
+          "targetHandle": "right-rail"
         }
       ],
       "selectedNodes": []

@@ -10,7 +10,10 @@ FB_2_PACKAGING::FB_2_PACKAGING() {
 }
 
 void FB_2_PACKAGING::operator()() {
-    // Empty function block body
+    FILLER();
+    FILLER.ENO = true;
+    CONVEYOR();
+    CONVEYOR.ENO = true;
 }
 
 }  // namespace strucpp

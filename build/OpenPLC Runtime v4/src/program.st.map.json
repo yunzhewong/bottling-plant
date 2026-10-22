@@ -28,17 +28,22 @@
     "FB_2_Packaging": {
       "kind": "FUNCTION_BLOCK",
       "startLine": 84,
-      "endLine": 86
+      "endLine": 92
     },
     "FB_2_Packaging_Filler": {
       "kind": "FUNCTION_BLOCK",
-      "startLine": 88,
-      "endLine": 90
+      "startLine": 94,
+      "endLine": 109
     },
     "main": {
       "kind": "PROGRAM",
-      "startLine": 92,
-      "endLine": 98
+      "startLine": 111,
+      "endLine": 119
+    },
+    "FB_2_Packaging_Conveyor": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 121,
+      "endLine": 131
     }
   }
 }

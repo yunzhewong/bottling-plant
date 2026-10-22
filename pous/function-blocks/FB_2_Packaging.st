@@ -1,7 +1,10 @@
 FUNCTION_BLOCK FB_2_Packaging
   VAR
+    Filler : FB_2_PACKAGING_FILLER;
+    Conveyor : FB_2_PACKAGING_CONVEYOR;
   END_VAR
 
-
+Filler();
+Conveyor();
 
 END_FUNCTION_BLOCK

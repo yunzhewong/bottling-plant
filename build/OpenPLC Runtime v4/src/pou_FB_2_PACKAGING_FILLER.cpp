@@ -10,7 +10,12 @@ FB_2_PACKAGING_FILLER::FB_2_PACKAGING_FILLER() {
 }
 
 void FB_2_PACKAGING_FILLER::operator()() {
-    // Empty function block body
+    if (FILLVOLUME_MM3 > 100) {
+        BOTTLEFULL = true;
+    }
+    OVERFILLFAULT.ACTIVE = FILLVOLUME_MM3 > 120;
+    OVERFILLFAULT();
+    OVERFILLFAULT.ENO = true;
 }
 
 }  // namespace strucpp

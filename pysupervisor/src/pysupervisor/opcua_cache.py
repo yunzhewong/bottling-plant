@@ -22,7 +22,6 @@ class Value[T]:
     node_type: type[T]
 
     def set(self, value: T):
-        self.last_read = value
         self.last_write = ua.DataValue(
             Value=ua.Variant(value, get_variant_type(self.node_type))
         )
