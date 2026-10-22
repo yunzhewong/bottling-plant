@@ -56,8 +56,10 @@ namespace strucpp {
 class BANGBANGCONTROL;
 class LATCHINGFAULT;
 class FB_11_MIXINGTANK;
-class FB_1_PROCESS;
 class FB_12_TRANSFERPUMP;
+class FB_1_PROCESS;
+class FB_2_PACKAGING;
+class FB_2_PACKAGING_FILLER;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
@@ -88,8 +90,10 @@ public:
 class BANGBANGCONTROL;
 class LATCHINGFAULT;
 class FB_11_MIXINGTANK;
-class FB_1_PROCESS;
 class FB_12_TRANSFERPUMP;
+class FB_1_PROCESS;
+class FB_2_PACKAGING;
+class FB_2_PACKAGING_FILLER;
 class Program_MAIN;
 class Configuration_CONFIG0;
 
@@ -134,6 +138,36 @@ public:
     void operator()();
 
     virtual ~LATCHINGFAULT() = default;
+};
+
+class FB_2_PACKAGING {
+public:
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_2_PACKAGING();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_2_PACKAGING() = default;
+};
+
+class FB_2_PACKAGING_FILLER {
+public:
+
+    // Implicit IEC 61131-3 ENO pin (mirrors EN)
+    IEC_BOOL ENO = true;
+
+    // Constructor
+    FB_2_PACKAGING_FILLER();
+
+    // Execute function block
+    void operator()();
+
+    virtual ~FB_2_PACKAGING_FILLER() = default;
 };
 
 class FB_11_MIXINGTANK {

@@ -36,8 +36,9 @@ def iterate_temperature(current_temp: float, heater_on: float):
     return current_temp + ambient_adjustment + heater_adjustment
 
 
-class SetpointReadback:
-    def __init__(self, node_builder: opcua_cache.Builder):
+class SetpointReadback(opcua_cache.LookupBranch):
+    def __init__(self, node_builder: opcua_cache.Builder, initial_value: float):
+        self.initial_value = initial_value
         self.setpoint = node_builder.create_opcua_cache(
             suffix=".Setpoint", node_type=float
         )
@@ -45,9 +46,9 @@ class SetpointReadback:
             suffix=".Readback", node_type=float
         )
 
-    def initialise(self, initial_value: float):
-        self.setpoint.set(initial_value)
-        self.readback.set(initial_value)
+    def initialise(self):
+        self.setpoint.set(self.initial_value)
+        self.readback.set(self.initial_value)
 
 
 class MixingTank(opcua_cache.LookupBranch):
@@ -55,23 +56,19 @@ class MixingTank(opcua_cache.LookupBranch):
         self, node_builder: opcua_cache.Builder, outlet_open: opcua_cache.Value
     ):
         self.level_control = SetpointReadback(
-            node_builder=node_builder.extend(".LevelControl")
+            node_builder=node_builder.extend(".LevelControl"), initial_value=5
         )
         self.inlet_open = node_builder.create_opcua_cache(
             suffix=".OpenInlet", node_type=bool
         )
         self.temp_control = SetpointReadback(
-            node_builder=node_builder.extend(".TempControl")
+            node_builder=node_builder.extend(".TempControl"), initial_value=50
         )
         self.heater_on = node_builder.create_opcua_cache(
             suffix=".HeaterOn", node_type=bool
         )
 
         self._outlet_open = outlet_open
-
-    def initialise(self):
-        self.level_control.initialise(initial_value=5)
-        self.temp_control.initialise(initial_value=50)
 
     def scan(self):
         self.level_control.readback.set(

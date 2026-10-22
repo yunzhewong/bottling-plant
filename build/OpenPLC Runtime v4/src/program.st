@@ -51,28 +51,6 @@ FUNCTION_BLOCK FB_11_MixingTank
   LevelReadback := LevelControl.Readback;
 END_FUNCTION_BLOCK
 
-FUNCTION_BLOCK FB_1_Process
-  VAR
-    MixingTank : FB_11_MIXINGTANK;
-    TransferPump : FB_12_TRANSFERPUMP;
-  END_VAR
-  VAR_OUTPUT
-    BufferLevel : REAL;
-  END_VAR
-
-  MixingTank();
-  TransferPump(MixLevelReadback := MixingTank.LevelReadback);
-  BufferLevel := TransferPump.BufferLevelReadback;
-END_FUNCTION_BLOCK
-
-PROGRAM main
-  VAR
-    Process : FB_1_Process;
-  END_VAR
-
-  Process(EN := TRUE);
-END_PROGRAM
-
 FUNCTION_BLOCK FB_12_TransferPump
   VAR
     RequestMixDrain : BOOL;
@@ -88,6 +66,36 @@ FUNCTION_BLOCK FB_12_TransferPump
 
   MixOutletOpen := RequestMixDrain AND MixLevelReadback > 1 AND NOT LatchingFault.LatchedOutput;
 END_FUNCTION_BLOCK
+
+FUNCTION_BLOCK FB_1_Process
+  VAR
+    MixingTank : FB_11_MIXINGTANK;
+    TransferPump : FB_12_TRANSFERPUMP;
+  END_VAR
+  VAR_OUTPUT
+    BufferLevel : REAL;
+  END_VAR
+
+  MixingTank();
+  TransferPump(MixLevelReadback := MixingTank.LevelReadback);
+  BufferLevel := TransferPump.BufferLevelReadback;
+END_FUNCTION_BLOCK
+
+FUNCTION_BLOCK FB_2_Packaging
+
+END_FUNCTION_BLOCK
+
+FUNCTION_BLOCK FB_2_Packaging_Filler
+
+END_FUNCTION_BLOCK
+
+PROGRAM main
+  VAR
+    Process : FB_1_Process;
+  END_VAR
+
+  Process(EN := TRUE);
+END_PROGRAM
 
 
 CONFIGURATION Config0

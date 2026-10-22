@@ -7,7 +7,6 @@ FUNCTION_BLOCK FB_1_Process
     BufferLevel : REAL;
   END_VAR
 
-
 MixingTank();
 TransferPump(MixLevelReadback := MixingTank.LevelReadback);
 BufferLevel := TransferPump.BufferLevelReadback;

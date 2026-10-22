@@ -14,7 +14,6 @@ FUNCTION_BLOCK FB_11_MixingTank
     LevelReadback : REAL;
   END_VAR
 
-
 TempControl(Tolerance := 1);
 LevelControl(Tolerance := 0.2);
 

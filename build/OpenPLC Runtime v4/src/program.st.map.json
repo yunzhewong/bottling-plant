@@ -15,20 +15,30 @@
       "startLine": 30,
       "endLine": 52
     },
-    "FB_1_Process": {
+    "FB_12_TransferPump": {
       "kind": "FUNCTION_BLOCK",
       "startLine": 54,
-      "endLine": 66
+      "endLine": 68
+    },
+    "FB_1_Process": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 70,
+      "endLine": 82
+    },
+    "FB_2_Packaging": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 84,
+      "endLine": 86
+    },
+    "FB_2_Packaging_Filler": {
+      "kind": "FUNCTION_BLOCK",
+      "startLine": 88,
+      "endLine": 90
     },
     "main": {
       "kind": "PROGRAM",
-      "startLine": 68,
-      "endLine": 74
-    },
-    "FB_12_TransferPump": {
-      "kind": "FUNCTION_BLOCK",
-      "startLine": 76,
-      "endLine": 90
+      "startLine": 92,
+      "endLine": 98
     }
   }
 }

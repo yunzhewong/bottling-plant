@@ -1,3 +1,4 @@
+from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
@@ -72,10 +73,16 @@ class LookupBranch:
                 caches += obj.get_caches()
         return caches
 
-    def scan(self):
+    def _branch_recurse(self, fn: Callable[[LookupBranch], Any]):
         for obj in self._list_objects():
             if isinstance(obj, LookupBranch):
-                obj.scan()
+                fn(obj)
+
+    def initialise(self):
+        return self._branch_recurse(lambda lb: lb.initialise())
+
+    def scan(self):
+        return self._branch_recurse(lambda lb: lb.scan())
 
 
 class ScanVariables:

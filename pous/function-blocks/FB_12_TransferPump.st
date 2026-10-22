@@ -15,7 +15,6 @@ FUNCTION_BLOCK FB_12_TransferPump
     LatchingFault : LATCHINGFAULT;
   END_VAR
 
-
 MixOutletOpen := RequestMixDrain AND MixLevelReadback > 1 AND NOT LatchingFault.LatchedOutput;
 
 END_FUNCTION_BLOCK

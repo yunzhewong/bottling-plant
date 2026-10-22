@@ -38,6 +38,7 @@ async def main():
         node_builder = opcua_cache.Builder(client=client, prefix=BASE_NODEID, idx=idx)
 
         main = Main(node_builder=node_builder)
+        main.initialise()
 
         caches = opcua_cache.ScanVariables(values=main.get_caches())
 
