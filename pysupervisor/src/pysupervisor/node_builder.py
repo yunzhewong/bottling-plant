@@ -5,24 +5,10 @@ from asyncua.client.client import Client
 from asyncua.common.node import Node
 
 
-def get_variant_type(node_type: type):
-    if node_type == float:
-        return ua.VariantType.Float
-    return ua.VariantType.Boolean
-
-
 @dataclass(frozen=True)
 class NodeRef[T]:
     node: Node
     node_type: type[T]
-
-    async def get(self) -> T:
-        return await self.node.get_value()
-
-    async def set(self, value: T):
-        await self.node.write_value(
-            ua.DataValue(Value=ua.Variant(value, get_variant_type(self.node_type)))
-        )
 
 
 @dataclass
