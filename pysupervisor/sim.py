@@ -1,7 +1,8 @@
 import asyncio
 
 from asyncua.client.client import Client
-from pysupervisor.opcua_cache import Caches, NodeBuilder, OPCUALookupBranch
+
+from pysupervisor import opcua_cache
 from pysupervisor.sim.constants import SCAN_PERIOD_S
 from pysupervisor.sim.process.mixing_tank import MixingTank
 from pysupervisor.sim.process.transfer_pump import TransferPump
@@ -16,8 +17,8 @@ PASSWORD = "admin"
 BASE_NODEID = "PLC.main"
 
 
-class Main(OPCUALookupBranch):
-    def __init__(self, node_builder: NodeBuilder):
+class Main(opcua_cache.LookupBranch):
+    def __init__(self, node_builder: opcua_cache.Builder):
         self.transfer_pump = TransferPump(
             builder=node_builder.extend(".Process.TransferPump")
         )
@@ -34,11 +35,11 @@ async def main():
 
     async with client:
         idx = await client.get_namespace_index(NS_URI)
-        node_builder = NodeBuilder(client=client, prefix=BASE_NODEID, idx=idx)
+        node_builder = opcua_cache.Builder(client=client, prefix=BASE_NODEID, idx=idx)
 
         main = Main(node_builder=node_builder)
 
-        caches = Caches(as_list=main.get_caches())
+        caches = opcua_cache.ScanVariables(values=main.get_caches())
 
         while True:
             await caches.read(client)

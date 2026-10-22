@@ -1,7 +1,6 @@
+from pysupervisor import opcua_cache
 from pysupervisor.sim.constants import SCAN_PERIOD_S
 from pysupervisor.sim.process.constants import OUTLET_FLOW_HEIGHT_RATE_M_S
-
-from pysupervisor import opcua_cache
 
 INLET_FLOW_HEIGHT_RATE_M_S = 0.1
 AMBIENT_TEMPERATURE = 25
