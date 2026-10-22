@@ -1,4 +1,4 @@
-from pysupervisor.node_builder import NodeBuilder
+from pysupervisor.opcua_cache import CachedOPCUA, NodeBuilder, OPCUALookupBranch
 from pysupervisor.sim.constants import SCAN_PERIOD_S
 from pysupervisor.sim.process.constants import OUTLET_FLOW_HEIGHT_RATE_M_S
 
@@ -38,48 +38,50 @@ def iterate_temperature(current_temp: float, heater_on: float):
 
 class SetpointReadback:
     def __init__(self, node_builder: NodeBuilder):
-        self.setpoint = node_builder.create_node_ref(
+        self.setpoint = node_builder.create_opcua_cache(
             suffix=".Setpoint", node_type=float
         )
-        self.readback = node_builder.create_node_ref(
+        self.readback = node_builder.create_opcua_cache(
             suffix=".Readback", node_type=float
         )
 
-    async def initialise(self, initial_value: float):
-        await self.setpoint.set(initial_value)
-        await self.readback.set(initial_value)
+    def initialise(self, initial_value: float):
+        self.setpoint.set(initial_value)
+        self.readback.set(initial_value)
 
 
-class MixingTank:
-    def __init__(self, node_builder: NodeBuilder):
+class MixingTank(OPCUALookupBranch):
+    def __init__(self, node_builder: NodeBuilder, outlet_open: CachedOPCUA):
         self.level_control = SetpointReadback(
             node_builder=node_builder.extend(".LevelControl")
         )
-        self.inlet_open = node_builder.create_node_ref(
+        self.inlet_open = node_builder.create_opcua_cache(
             suffix=".OpenInlet", node_type=bool
         )
         self.temp_control = SetpointReadback(
             node_builder=node_builder.extend(".TempControl")
         )
-        self.heater_on = node_builder.create_node_ref(
+        self.heater_on = node_builder.create_opcua_cache(
             suffix=".HeaterOn", node_type=bool
         )
 
-    async def initialise(self):
-        await self.level_control.initialise(initial_value=5)
-        await self.temp_control.initialise(initial_value=50)
+        self._outlet_open = outlet_open
 
-    async def scan(self, outlet_open: bool):
-        await self.level_control.readback.set(
+    def initialise(self):
+        self.level_control.initialise(initial_value=5)
+        self.temp_control.initialise(initial_value=50)
+
+    def scan(self):
+        self.level_control.readback.set(
             iterate_level(
-                current_level=await self.level_control.readback.get(),
-                inlet_open=await self.inlet_open.get(),
-                outlet_open=outlet_open,
+                current_level=self.level_control.readback.get(),
+                inlet_open=self.inlet_open.get(),
+                outlet_open=self._outlet_open.get(),
             )
         )
-        await self.temp_control.readback.set(
+        self.temp_control.readback.set(
             iterate_temperature(
-                current_temp=await self.temp_control.readback.get(),
-                heater_on=await self.heater_on.get(),
+                current_temp=self.temp_control.readback.get(),
+                heater_on=self.heater_on.get(),
             )
         )

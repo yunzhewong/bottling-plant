@@ -5,8 +5,6 @@ from asyncua import ua
 from asyncua.client.client import Client
 from asyncua.common.node import Node
 
-from pysupervisor.node_builder import NodeRef
-
 
 def get_variant_type(node_type: type):
     if node_type == float:
@@ -23,6 +21,7 @@ class CachedOPCUA[T]:
     node_type: type[T]
 
     def set(self, value: T):
+        self.last_read = value
         self.last_write = ua.DataValue(
             Value=ua.Variant(value, get_variant_type(self.node_type))
         )
@@ -32,30 +31,53 @@ class CachedOPCUA[T]:
         return self.last_read
 
 
+@dataclass
+class NodeBuilder:
+    client: Client
+    prefix: str
+    idx: int
+
+    def create_opcua_cache(self, suffix: str, node_type: type):
+        node = self.client.get_node(
+            ua.NodeId(
+                Identifier=ua.String(f"{self.prefix}{suffix}"),
+                NamespaceIndex=ua.Int16(self.idx),
+            )
+        )
+        return CachedOPCUA(
+            node=node,
+            node_type=node_type,
+            last_read=None,
+            last_write=None,
+            has_write=False,
+        )
+
+    def extend(self, midfix: str):
+        return NodeBuilder(
+            client=self.client, prefix=self.prefix + midfix, idx=self.idx
+        )
+
+
 class OPCUALookupBranch:
     def __init__(self):
         self._lookup: dict[int, CachedOPCUA] = {}
 
-    def get_caches(self) -> list[CachedOPCUA]:
-        attributes = [attr for attr in dir(self) if not attr.startswith("__")]
+    def _list_objects(self):
+        return [getattr(self, attr) for attr in dir(self) if not attr.startswith("_")]
 
+    def get_caches(self) -> list[CachedOPCUA]:
         caches: list[CachedOPCUA] = []
-        for attribute in attributes:
-            obj = getattr(self, attribute)
-            if isinstance(obj, NodeRef):
-                caches.append(
-                    CachedOPCUA(
-                        node=obj.node,
-                        last_read=None,
-                        last_write=None,
-                        has_write=False,
-                        node_type=obj.node_type,
-                    )
-                )
+        for obj in self._list_objects():
+            if isinstance(obj, CachedOPCUA):
+                caches.append(obj)
             if isinstance(obj, OPCUALookupBranch):
                 caches += obj.get_caches()
-
         return caches
+
+    def scan(self):
+        for obj in self._list_objects():
+            if isinstance(obj, OPCUALookupBranch):
+                obj.scan()
 
 
 class Caches:
