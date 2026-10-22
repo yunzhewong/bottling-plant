@@ -1,2 +1,2 @@
-cd /home/yunzhewong/Install
-./OpenPLC.Editor-4.3.2\(1\).AppImage 
+cd ~/projects/install/
+./OpenPLC.Editor-4.3.2.AppImage
