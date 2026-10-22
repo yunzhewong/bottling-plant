@@ -1,3 +1,6 @@
+import time
+from enum import Enum
+
 from pysupervisor import opcua_cache
 
 FILL_RAMP_LIMIT = 0.01
@@ -32,9 +35,40 @@ class Filler(opcua_cache.LookupBranch):
         self.fill_volume.set(self.fill_volume.get() + self.flow_rate_readback.get())
 
 
+LOAD_TIME = 0.5
+
+
+class ConveyorState(Enum):
+    Idle = 0
+    Loading = 1
+
+
 class Conveyor(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
-        pass
+        self.load_bottle = builder.create_opcua_cache(".LoadBottle", node_type=bool)
+        self.bottle_loaded = builder.create_opcua_cache(".BottleLoaded", node_type=bool)
+        self.loaded_count = builder.create_opcua_cache(".LoadedCount", node_type=int)
+        self.state = ConveyorState.Idle
+        self.bottle_loaded_time = time.time() + LOAD_TIME
+
+    def initialise(self):
+        self.load_bottle.set(False)
+        self.bottle_loaded.set(False)
+        self.loaded_count.set(0)
+
+    def scan(self):
+        current_time = time.time()
+        match self.state:
+            case ConveyorState.Idle:
+                self.bottle_loaded.set(True)
+                if self.load_bottle.get():
+                    self.bottle_loaded_time = current_time + LOAD_TIME
+                    self.state = ConveyorState.Loading
+            case ConveyorState.Loading:
+                self.bottle_loaded.set(False)
+                if current_time > self.bottle_loaded_time:
+                    self.loaded_count.set(self.loaded_count.get() + 1)
+                    self.state = ConveyorState.Idle
 
 
 class Packaging(opcua_cache.LookupBranch):

@@ -8,6 +8,8 @@ from asyncua.common.node import Node
 
 
 def get_variant_type(node_type: type):
+    if node_type == int:
+        return ua.VariantType.Int32
     if node_type == float:
         return ua.VariantType.Float
     return ua.VariantType.Boolean

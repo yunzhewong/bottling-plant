@@ -1,0 +1,271 @@
+[
+  {
+    "name": "opcua_server",
+    "protocol": "OPC-UA",
+    "config": {
+      "format_version": 2,
+      "server": {
+        "name": "OpenPLC OPC UA Server",
+        "application_uri": "urn:openplc:opcua:server",
+        "product_uri": "urn:openplc:runtime",
+        "endpoint_url": "opc.tcp://127.0.0.1:4840/openplc/opcua",
+        "security_profiles": [
+          {
+            "name": "insecure",
+            "enabled": true,
+            "security_policy": "None",
+            "security_mode": "None",
+            "auth_methods": [
+              "Anonymous"
+            ],
+            "anonymous_role": "viewer"
+          },
+          {
+            "name": "userpass",
+            "enabled": true,
+            "security_policy": "None",
+            "security_mode": "None",
+            "auth_methods": [
+              "Anonymous",
+              "Username"
+            ],
+            "anonymous_role": "viewer"
+          }
+        ]
+      },
+      "security": {
+        "server_certificate_strategy": "auto_self_signed",
+        "server_certificate_custom": null,
+        "server_private_key_custom": null,
+        "trusted_client_certificates": []
+      },
+      "users": [
+        {
+          "type": "password",
+          "username": "admin",
+          "password_hash": "pbkdf2:sha256:600000$mbn61YGqdjYVCb3Kx5vDsA==$Sy8rOR0ABKileYreElCgAHxGyfjegt7YQ+xeJpQW/As=",
+          "certificate_id": null,
+          "role": "engineer"
+        }
+      ],
+      "cycle_time_ms": 100,
+      "address_space": {
+        "namespace_uri": "urn:openplc:opcua:namespace",
+        "variables": [
+          {
+            "node_id": "PLC.main.Process.MixingTank.TempControl.Setpoint",
+            "browse_name": "Setpoint",
+            "display_name": "Setpoint",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 4,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Process.MixingTank.TempControl.Readback",
+            "browse_name": "Readback",
+            "display_name": "Readback",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 6,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Process.MixingTank.LevelControl.Setpoint",
+            "browse_name": "Setpoint",
+            "display_name": "Setpoint",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 12,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Process.MixingTank.LevelControl.Readback",
+            "browse_name": "Readback",
+            "display_name": "Readback",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 14,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Process.MixingTank.OpenInlet",
+            "browse_name": "OpenInlet",
+            "display_name": "Open Inlet",
+            "datatype": "BOOL",
+            "size": 1,
+            "description": "",
+            "arr": 0,
+            "elem": 21,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Process.MixingTank.HeaterOn",
+            "browse_name": "HeaterOn",
+            "display_name": "Heater On",
+            "datatype": "BOOL",
+            "size": 1,
+            "description": "",
+            "arr": 0,
+            "elem": 22,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Process.TransferPump.MixOutletOpen",
+            "browse_name": "MixOutletOpen",
+            "display_name": "Mix Outlet Open",
+            "datatype": "BOOL",
+            "size": 1,
+            "description": "",
+            "arr": 0,
+            "elem": 25,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Process.TransferPump.BufferLevelReadback",
+            "browse_name": "BufferLevelReadback",
+            "display_name": "Buffer Level Readback",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 27,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Packaging.Filler.FlowRateSetpoint_mm3_s",
+            "browse_name": "FlowRateSetpoint_mm3_s",
+            "display_name": "Flow Rate Setpoint Mm3 S",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 32,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Packaging.Filler.FlowRateReadback_mm3_s",
+            "browse_name": "FlowRateReadback_mm3_s",
+            "display_name": "Flow Rate Readback Mm3 S",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 33,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Packaging.Filler.FillVolume_mm3",
+            "browse_name": "FillVolume_mm3",
+            "display_name": "Fill Volume Mm3",
+            "datatype": "REAL",
+            "size": 4,
+            "description": "",
+            "arr": 0,
+            "elem": 34,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Packaging.Conveyor.LoadBottle",
+            "browse_name": "LoadBottle",
+            "display_name": "Load Bottle",
+            "datatype": "BOOL",
+            "size": 1,
+            "description": "",
+            "arr": 0,
+            "elem": 40,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Packaging.Conveyor.BottleLoaded",
+            "browse_name": "BottleLoaded",
+            "display_name": "Bottle Loaded",
+            "datatype": "BOOL",
+            "size": 1,
+            "description": "",
+            "arr": 0,
+            "elem": 41,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          },
+          {
+            "node_id": "PLC.main.Packaging.Conveyor.LoadedCount",
+            "browse_name": "LoadedCount",
+            "display_name": "Loaded Count",
+            "datatype": "INT",
+            "size": 2,
+            "description": "",
+            "arr": 0,
+            "elem": 42,
+            "permissions": {
+              "viewer": "r",
+              "operator": "r",
+              "engineer": "rw"
+            }
+          }
+        ],
+        "structures": [],
+        "arrays": []
+      }
+    }
+  }
+]

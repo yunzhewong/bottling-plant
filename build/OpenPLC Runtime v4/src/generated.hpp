@@ -145,11 +145,11 @@ public:
 class FB_2_PACKAGING_CONVEYOR {
 public:
     // Inputs
-    IEC_DINT BOTTLEFULL;
+    IEC_BOOL BOTTLEFULL;
     // Local variables
-    IEC_DINT LOADBOTTLE;
-    IEC_DINT BOTTLELOADED;
-    IEC_DINT LOADEDCOUNT;
+    IEC_BOOL LOADBOTTLE;
+    IEC_BOOL BOTTLELOADED;
+    IEC_INT LOADEDCOUNT;
 
     // Implicit IEC 61131-3 ENO pin (mirrors EN)
     IEC_BOOL ENO = true;

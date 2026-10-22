@@ -120,12 +120,12 @@ END_PROGRAM
 
 FUNCTION_BLOCK FB_2_Packaging_Conveyor
   VAR_INPUT
-    BottleFull : DINT;
+    BottleFull : BOOL;
   END_VAR
   VAR
-    LoadBottle : DINT;
-    BottleLoaded : DINT;
-    LoadedCount : DINT;
+    LoadBottle : BOOL;
+    BottleLoaded : BOOL;
+    LoadedCount : INT;
   END_VAR
 
 END_FUNCTION_BLOCK

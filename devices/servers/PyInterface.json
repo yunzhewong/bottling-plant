@@ -232,6 +232,54 @@
             "engineer": "rw"
           },
           "nodeType": "variable"
+        },
+        {
+          "id": "8918bce4-7e98-4ec3-a0cc-70a9b01da750",
+          "pouName": "main",
+          "variablePath": "Packaging.Conveyor.LoadBottle",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Packaging.Conveyor.LoadBottle",
+          "browseName": "LoadBottle",
+          "displayName": "Load Bottle",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "78e13912-3901-47c6-bda2-642f4049112c",
+          "pouName": "main",
+          "variablePath": "Packaging.Conveyor.BottleLoaded",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Packaging.Conveyor.BottleLoaded",
+          "browseName": "BottleLoaded",
+          "displayName": "Bottle Loaded",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "40c09ef5-80cb-4a97-8b62-25a6b564f837",
+          "pouName": "main",
+          "variablePath": "Packaging.Conveyor.LoadedCount",
+          "variableType": "INT",
+          "nodeId": "PLC.main.Packaging.Conveyor.LoadedCount",
+          "browseName": "LoadedCount",
+          "displayName": "Loaded Count",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
         }
       ]
     }
