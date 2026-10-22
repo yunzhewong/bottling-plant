@@ -1,6 +1,7 @@
-from pysupervisor.opcua_cache import CachedOPCUA, NodeBuilder, OPCUALookupBranch
 from pysupervisor.sim.constants import SCAN_PERIOD_S
 from pysupervisor.sim.process.constants import OUTLET_FLOW_HEIGHT_RATE_M_S
+
+from pysupervisor import opcua_cache
 
 INLET_FLOW_HEIGHT_RATE_M_S = 0.1
 AMBIENT_TEMPERATURE = 25
@@ -37,7 +38,7 @@ def iterate_temperature(current_temp: float, heater_on: float):
 
 
 class SetpointReadback:
-    def __init__(self, node_builder: NodeBuilder):
+    def __init__(self, node_builder: opcua_cache.Builder):
         self.setpoint = node_builder.create_opcua_cache(
             suffix=".Setpoint", node_type=float
         )
@@ -50,8 +51,10 @@ class SetpointReadback:
         self.readback.set(initial_value)
 
 
-class MixingTank(OPCUALookupBranch):
-    def __init__(self, node_builder: NodeBuilder, outlet_open: CachedOPCUA):
+class MixingTank(opcua_cache.LookupBranch):
+    def __init__(
+        self, node_builder: opcua_cache.Builder, outlet_open: opcua_cache.Value
+    ):
         self.level_control = SetpointReadback(
             node_builder=node_builder.extend(".LevelControl")
         )

@@ -10,12 +10,12 @@ def iterate_level(current_level: float, mix_output_open: bool):
     return current_level + OUTLET_FLOW_HEIGHT_RATE_M_S * SCAN_PERIOD_S
 
 
-class TransferPump(opcua_cache.OPCUALookupBranch):
-    def __init__(self, node_builder: opcua_cache.NodeBuilder):
-        self.mix_output = node_builder.create_opcua_cache(
+class TransferPump(opcua_cache.LookupBranch):
+    def __init__(self, builder: opcua_cache.Builder):
+        self.mix_output = builder.create_opcua_cache(
             suffix=".MixOutletOpen", node_type=bool
         )
-        self.buffer_level = node_builder.create_opcua_cache(
+        self.buffer_level = builder.create_opcua_cache(
             suffix=".BufferLevelReadback", node_type=float
         )
 

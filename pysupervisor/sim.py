@@ -19,7 +19,7 @@ BASE_NODEID = "PLC.main"
 class Main(OPCUALookupBranch):
     def __init__(self, node_builder: NodeBuilder):
         self.transfer_pump = TransferPump(
-            node_builder=node_builder.extend(".Process.TransferPump")
+            builder=node_builder.extend(".Process.TransferPump")
         )
         self.mixing_tank = MixingTank(
             node_builder=node_builder.extend(".Process.MixingTank"),

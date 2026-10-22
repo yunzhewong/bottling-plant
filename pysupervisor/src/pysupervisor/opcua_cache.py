@@ -13,7 +13,7 @@ def get_variant_type(node_type: type):
 
 
 @dataclass
-class CachedOPCUA[T]:
+class Value[T]:
     node: Node
     last_read: Any
     last_write: Any
@@ -32,7 +32,7 @@ class CachedOPCUA[T]:
 
 
 @dataclass
-class NodeBuilder:
+class Builder:
     client: Client
     prefix: str
     idx: int
@@ -44,7 +44,7 @@ class NodeBuilder:
                 NamespaceIndex=ua.Int16(self.idx),
             )
         )
-        return CachedOPCUA(
+        return Value(
             node=node,
             node_type=node_type,
             last_read=None,
@@ -53,50 +53,48 @@ class NodeBuilder:
         )
 
     def extend(self, midfix: str):
-        return NodeBuilder(
-            client=self.client, prefix=self.prefix + midfix, idx=self.idx
-        )
+        return Builder(client=self.client, prefix=self.prefix + midfix, idx=self.idx)
 
 
-class OPCUALookupBranch:
+class LookupBranch:
     def __init__(self):
-        self._lookup: dict[int, CachedOPCUA] = {}
+        self._lookup: dict[int, Value] = {}
 
     def _list_objects(self):
         return [getattr(self, attr) for attr in dir(self) if not attr.startswith("_")]
 
-    def get_caches(self) -> list[CachedOPCUA]:
-        caches: list[CachedOPCUA] = []
+    def get_caches(self) -> list[Value]:
+        caches: list[Value] = []
         for obj in self._list_objects():
-            if isinstance(obj, CachedOPCUA):
+            if isinstance(obj, Value):
                 caches.append(obj)
-            if isinstance(obj, OPCUALookupBranch):
+            if isinstance(obj, LookupBranch):
                 caches += obj.get_caches()
         return caches
 
     def scan(self):
         for obj in self._list_objects():
-            if isinstance(obj, OPCUALookupBranch):
+            if isinstance(obj, LookupBranch):
                 obj.scan()
 
 
-class Caches:
-    def __init__(self, as_list: list[CachedOPCUA]):
-        self.items = as_list
+class ScanVariables:
+    def __init__(self, values: list[Value]):
+        self.values = values
 
     async def read(self, client: Client):
-        nodes = [item.node for item in self.items]
-        values = await client.read_values(nodes)
-        for i in range(len(values)):
-            self.items[i].last_read = values[i]
+        nodes = [item.node for item in self.values]
+        read_values = await client.read_values(nodes)
+        for i in range(len(read_values)):
+            self.values[i].last_read = read_values[i]
 
     async def write(self, client: Client):
         nodes: list[Node] = []
-        values: list[Any] = []
+        write_values: list[Any] = []
 
-        for item in self.items:
+        for item in self.values:
             if item.has_write:
                 nodes.append(item.node)
-                values.append(item.last_write)
+                write_values.append(item.last_write)
 
-        await client.write_values(nodes, values)
+        await client.write_values(nodes, write_values)
