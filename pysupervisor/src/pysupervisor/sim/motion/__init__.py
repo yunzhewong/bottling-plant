@@ -28,9 +28,6 @@ def calculate_resist_torque(angle: float):
 
 class Capper(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
-        self.bottle_in_position = builder.create_opcua_cache(
-            ".BottleInPosition", node_type=bool
-        )
         self.apply_torque = builder.create_opcua_cache(".ApplyTorque", node_type=float)
         self.angular_velocity_feedback = builder.create_opcua_cache(
             ".AngularVelocityFeedback", node_type=float
