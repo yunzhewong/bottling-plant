@@ -69,37 +69,25 @@ class PackState(Enum):
 
 class CasePacker(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
-        self.total_bottle_count = builder.create_opcua_cache(
-            ".TotalCount", node_type=int
-        )
-        self.packable_bottle_count = builder.create_opcua_cache(
-            ".PackableCount", node_type=int
-        )
-        self.pack_trigger = builder.create_opcua_cache(".PackTrigger", node_type=bool)
-        self.pack_complete = builder.create_opcua_cache(".PackComplete", node_type=bool)
+        self.initiate_pack = builder.create_opcua_cache(".InitiatePack", node_type=bool)
+        self.pack_state = builder.create_opcua_cache(".PackState", node_type=bool)
         self.case_count = builder.create_opcua_cache(".CaseCount", node_type=int)
-        self.state = PackState.Idle
         self.pack_complete_time = time.time()
 
     def scan(self):
-        match self.state:
-            case PackState.Idle:
-                if not self.pack_trigger.get():
+        match self.pack_state.get():
+            case PackState.Idle.value:
+                if not self.initiate_pack.get():
                     return
 
-                self.pack_complete.set(0)
+                self.pack_state.set(PackState.Packing.value)
                 self.pack_complete_time = time.time() + PACK_TIME
-                self.packable_bottle_count.set(
-                    self.packable_bottle_count.get() - PACK_AMOUNT
-                )  # TODO: throw error if not enough bottles to pack
-                self.state = PackState.Packing
-            case PackState.Packing:
+            case PackState.Packing.value:
                 if time.time() < self.pack_complete_time:
                     return
 
-                self.pack_complete.set(1)
-                self.case_count.set(self.case_count + 1)
-                self.state = PackState.Idle
+                self.pack_state.set(PackState.Idle.value)
+                self.case_count.set(self.case_count.get() + 1)
 
 
 class Motion(opcua_cache.LookupBranch):
