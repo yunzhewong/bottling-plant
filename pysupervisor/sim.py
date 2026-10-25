@@ -23,17 +23,17 @@ BASE_NODEID = "PLC.main"
 class Main(opcua_cache.LookupBranch):
     def __init__(self, node_builder: opcua_cache.Builder):
         self.utilities = Utilities(
-            node_builder=node_builder.extend(".Utilities"),
+            node_builder=node_builder.extend("Utilities"),
             on_utility_change=self._on_utility_change,
         )
 
-        self.process = Process(builder=node_builder.extend(".Process"))
+        self.process = Process(builder=node_builder.extend("Process"))
         self.packaging = Packaging(
-            builder=node_builder.extend(".Packaging"),
+            builder=node_builder.extend("Packaging"),
             on_fill_mm3=self.process.on_fill_mm3,
             on_conveyor_change=self._on_conveyor_change,
         )
-        self.motion = Motion(builder=node_builder.extend(".Motion"))
+        self.motion = Motion(builder=node_builder.extend("Motion"))
 
     def _on_utility_change(self, utility_state: UtilityState):
         print(utility_state)  # TODO: set values on all subitems

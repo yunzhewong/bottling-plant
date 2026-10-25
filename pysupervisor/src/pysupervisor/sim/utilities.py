@@ -14,11 +14,11 @@ class Utilities:
         self.utility_state = UtilityState(pressure=700, temperature=10)
 
         self.compressed_air = CompressedAir(
-            node_builder=node_builder.extend(".CompressedAir"),
+            node_builder=node_builder.extend("CompressedAir"),
             on_readback_pressure_change_kpa=self._on_pressure_change,
         )
         self.cooling_loop = CoolingLoop(
-            node_builder=node_builder.extend(".CoolingLoop"),
+            node_builder=node_builder.extend("CoolingLoop"),
             on_readback_temperature_c=self._on_cooling_change,
         )
         self._on_utility_change = on_utility_change
@@ -46,13 +46,13 @@ class FacilityUtility(opcua_cache.LookupBranch):
         get_target: Callable[[float], float],
     ):
         self.generation_setpoint = node_builder.create_opcua_cache(
-            suffix=".GenerationSetpoint", node_type=float
+            suffix="GenerationSetpoint", node_type=float
         )
         self.generation_readback = node_builder.create_opcua_cache(
-            suffix=".GenerationReadback", node_type=float
+            suffix="GenerationReadback", node_type=float
         )
         self.target_readback = node_builder.create_opcua_cache(
-            suffix=".TargetReadback", node_type=float
+            suffix="TargetReadback", node_type=float
         )
 
         self.get_target = get_target

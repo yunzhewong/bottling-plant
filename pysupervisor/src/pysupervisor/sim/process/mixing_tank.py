@@ -40,10 +40,10 @@ class SetpointReadback(opcua_cache.LookupBranch):
     def __init__(self, node_builder: opcua_cache.Builder, initial_value: float):
         self.initial_value = initial_value
         self.setpoint = node_builder.create_opcua_cache(
-            suffix=".Setpoint", node_type=float
+            suffix="Setpoint", node_type=float
         )
         self.readback = node_builder.create_opcua_cache(
-            suffix=".Readback", node_type=float
+            suffix="Readback", node_type=float
         )
 
     def initialise(self):
@@ -56,16 +56,16 @@ class MixingTank(opcua_cache.LookupBranch):
         self, node_builder: opcua_cache.Builder, outlet_open: opcua_cache.Value
     ):
         self.level_control = SetpointReadback(
-            node_builder=node_builder.extend(".LevelControl"), initial_value=5
+            node_builder=node_builder.extend("LevelControl"), initial_value=5
         )
         self.inlet_open = node_builder.create_opcua_cache(
-            suffix=".OpenInlet", node_type=bool
+            suffix="OpenInlet", node_type=bool
         )
         self.temp_control = SetpointReadback(
-            node_builder=node_builder.extend(".TempControl"), initial_value=50
+            node_builder=node_builder.extend("TempControl"), initial_value=50
         )
         self.heater_on = node_builder.create_opcua_cache(
-            suffix=".HeaterOn", node_type=bool
+            suffix="HeaterOn", node_type=bool
         )
 
         self._outlet_open = outlet_open

@@ -15,10 +15,10 @@ BUFFER_CROSS_SECTION_M2 = 0.1
 class TransferPump(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
         self.mix_output = builder.create_opcua_cache(
-            suffix=".MixOutletOpen", node_type=bool
+            suffix="MixOutletOpen", node_type=bool
         )
         self.buffer_level = builder.create_opcua_cache(
-            suffix=".BufferLevelReadback", node_type=float
+            suffix="BufferLevelReadback", node_type=float
         )
 
     def initialise(self):

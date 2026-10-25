@@ -47,7 +47,7 @@ class Builder:
     def create_opcua_cache(self, suffix: str, node_type: type):
         node = self.client.get_node(
             ua.NodeId(
-                Identifier=ua.String(f"{self.prefix}{suffix}"),
+                Identifier=ua.String(f"{self.prefix}.{suffix}"),
                 NamespaceIndex=ua.Int16(self.idx),
             )
         )
@@ -60,7 +60,9 @@ class Builder:
         )
 
     def extend(self, midfix: str):
-        return Builder(client=self.client, prefix=self.prefix + midfix, idx=self.idx)
+        return Builder(
+            client=self.client, prefix=self.prefix + "." + midfix, idx=self.idx
+        )
 
 
 class LookupBranch:

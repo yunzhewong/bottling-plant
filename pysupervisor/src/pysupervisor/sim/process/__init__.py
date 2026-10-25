@@ -5,9 +5,9 @@ from pysupervisor.sim.process.transfer_pump import TransferPump
 
 class Process(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
-        self.transfer_pump = TransferPump(builder=builder.extend(".TransferPump"))
+        self.transfer_pump = TransferPump(builder=builder.extend("TransferPump"))
         self.mixing_tank = MixingTank(
-            node_builder=builder.extend(".MixingTank"),
+            node_builder=builder.extend("MixingTank"),
             outlet_open=self.transfer_pump.mix_output,
         )
 

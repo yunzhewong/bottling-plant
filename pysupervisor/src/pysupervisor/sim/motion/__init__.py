@@ -28,15 +28,15 @@ def calculate_resist_torque(angle: float):
 
 class Capper(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
-        self.apply_torque = builder.create_opcua_cache(".ApplyTorque", node_type=float)
+        self.apply_torque = builder.create_opcua_cache("ApplyTorque", node_type=float)
         self.angular_velocity_feedback = builder.create_opcua_cache(
-            ".AngularVelocityFeedback", node_type=float
+            "AngularVelocityFeedback", node_type=float
         )
         self.angle_feedback = builder.create_opcua_cache(
-            ".AngleFeedback", node_type=float
+            "AngleFeedback", node_type=float
         )
         self.resist_torque_feedback = builder.create_opcua_cache(
-            ".ResistTorqueFeedback", node_type=float
+            "ResistTorqueFeedback", node_type=float
         )
 
     def scan(self):
@@ -72,10 +72,10 @@ class PackState(Enum):
 
 class CasePacker(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
-        self.initiate_pack = builder.create_opcua_cache(".InitiatePack", node_type=bool)
-        self.pack_state = builder.create_opcua_cache(".PackState", node_type=bool)
-        self.bottle_count = builder.create_opcua_cache(".BottleCount", node_type=int)
-        self.case_count = builder.create_opcua_cache(".CaseCount", node_type=int)
+        self.initiate_pack = builder.create_opcua_cache("InitiatePack", node_type=bool)
+        self.pack_state = builder.create_opcua_cache("PackState", node_type=bool)
+        self.bottle_count = builder.create_opcua_cache("BottleCount", node_type=int)
+        self.case_count = builder.create_opcua_cache("CaseCount", node_type=int)
         self.pack_complete_time = time.time()
 
     def scan(self):
@@ -99,8 +99,8 @@ class CasePacker(opcua_cache.LookupBranch):
 
 class Motion(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
-        self.capper = Capper(builder=builder.extend(".Capper"))
-        self.conveyor = CasePacker(builder=builder.extend(".CasePacker"))
+        self.capper = Capper(builder=builder.extend("Capper"))
+        self.conveyor = CasePacker(builder=builder.extend("CasePacker"))
 
     def on_conveyor_change(self):
         self.capper.clear_bottle_capping()

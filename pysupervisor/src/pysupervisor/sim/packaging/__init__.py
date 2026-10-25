@@ -22,14 +22,12 @@ class Filler(opcua_cache.LookupBranch):
         self, builder: opcua_cache.Builder, on_fill_mm3: Callable[[float], None]
     ):
         self.flow_rate_setpoint = builder.create_opcua_cache(
-            ".FlowRateSetpoint_mm3_s", node_type=float
+            "FlowRateSetpoint_mm3_s", node_type=float
         )
         self.flow_rate_readback = builder.create_opcua_cache(
-            ".FlowRateReadback_mm3_s", node_type=float
+            "FlowRateReadback_mm3_s", node_type=float
         )
-        self.fill_volume = builder.create_opcua_cache(
-            ".FillVolume_mm3", node_type=float
-        )
+        self.fill_volume = builder.create_opcua_cache("FillVolume_mm3", node_type=float)
 
         self.on_fill_mm3 = on_fill_mm3
 
@@ -62,8 +60,8 @@ class Conveyor(opcua_cache.LookupBranch):
     def __init__(
         self, builder: opcua_cache.Builder, on_bottle_change: Callable[[], None]
     ):
-        self.load_bottle = builder.create_opcua_cache(".LoadBottle", node_type=bool)
-        self.bottle_loaded = builder.create_opcua_cache(".BottleLoaded", node_type=bool)
+        self.load_bottle = builder.create_opcua_cache("LoadBottle", node_type=bool)
+        self.bottle_loaded = builder.create_opcua_cache("BottleLoaded", node_type=bool)
         self.state = ConveyorState.Idle
         self.bottle_loaded_time = time.time() + LOAD_TIME
 
@@ -95,12 +93,12 @@ class Packaging(opcua_cache.LookupBranch):
         on_fill_mm3: Callable[[float], None],
         on_conveyor_change: Callable[[], None],
     ):
-        self.filler = Filler(builder=builder.extend(".Filler"), on_fill_mm3=on_fill_mm3)
+        self.filler = Filler(builder=builder.extend("Filler"), on_fill_mm3=on_fill_mm3)
 
         def on_bottle_change():
             self.filler.clear_bottle_fill()
             on_conveyor_change()
 
         self.conveyor = Conveyor(
-            builder=builder.extend(".Conveyor"), on_bottle_change=on_bottle_change
+            builder=builder.extend("Conveyor"), on_bottle_change=on_bottle_change
         )
