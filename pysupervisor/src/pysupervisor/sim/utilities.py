@@ -2,23 +2,40 @@ from collections.abc import Callable
 
 from pysupervisor import opcua_cache
 from pysupervisor.sim.process.mixing_tank import AMBIENT_TEMPERATURE
+from pysupervisor.sim.shared import UtilityState
 
 
 class Utilities:
     def __init__(
         self,
         node_builder: opcua_cache.Builder,
-        on_readback_pressure_change_kpa: Callable[[float], None],
-        on_cooling_loop_change_c: Callable[[float], None],
+        on_utility_change: Callable[[UtilityState], None],
     ):
+        self.utility_state = UtilityState(pressure=700, temperature=10)
+
         self.compressed_air = CompressedAir(
             node_builder=node_builder.extend(".CompressedAir"),
-            on_readback_pressure_change_kpa=on_readback_pressure_change_kpa,
+            on_readback_pressure_change_kpa=self._on_pressure_change,
         )
         self.cooling_loop = CoolingLoop(
             node_builder=node_builder.extend(".CoolingLoop"),
-            on_readback_temperature_c=on_cooling_loop_change_c,
+            on_readback_temperature_c=self._on_cooling_change,
         )
+        self._on_utility_change = on_utility_change
+
+    def _on_pressure_change(self, pressure_kpa: float):
+        new_state = UtilityState(
+            pressure=pressure_kpa, temperature=self.utility_state.temperature
+        )
+        self.utility_state = new_state
+        self._on_utility_change(new_state)
+
+    def _on_cooling_change(self, temperature_c: float):
+        new_state = UtilityState(
+            pressure=self.utility_state.pressure, temperature=temperature_c
+        )
+        self.utility_state = new_state
+        self._on_utility_change(new_state)
 
 
 class FacilityUtility(opcua_cache.LookupBranch):
