@@ -4,6 +4,7 @@ from asyncua.client.client import Client
 
 from pysupervisor import opcua_cache
 from pysupervisor.sim.constants import SCAN_PERIOD_S
+from pysupervisor.sim.motion import Motion
 from pysupervisor.sim.packaging import Packaging
 from pysupervisor.sim.process import Process
 
@@ -20,7 +21,14 @@ BASE_NODEID = "PLC.main"
 class Main(opcua_cache.LookupBranch):
     def __init__(self, node_builder: opcua_cache.Builder):
         self.process = Process(builder=node_builder.extend(".Process"))
-        self.packaging = Packaging(builder=node_builder.extend(".Packaging"))
+        self.packaging = Packaging(
+            builder=node_builder.extend(".Packaging"),
+            on_conveyor_change=self._on_conveyor_change,
+        )
+        self.motion = Motion(builder=node_builder.extend(".Motion"))
+
+    def _on_conveyor_change(self):
+        self.motion.on_conveyor_change()
 
 
 async def main():

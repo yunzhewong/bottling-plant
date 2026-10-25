@@ -54,6 +54,12 @@ class Capper(opcua_cache.LookupBranch):
         self.angle_feedback.set(new_angle)
         self.resist_torque_feedback.set(resist_torque)
 
+    def clear_bottle_capping(self):
+        self.apply_torque.set(0)
+        self.angular_velocity_feedback.set(0)
+        self.angle_feedback.set(0)
+        self.resist_torque_feedback.set(0)
+
 
 PACK_AMOUNT = 10
 PACK_TIME = 5
@@ -68,6 +74,7 @@ class CasePacker(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
         self.initiate_pack = builder.create_opcua_cache(".InitiatePack", node_type=bool)
         self.pack_state = builder.create_opcua_cache(".PackState", node_type=bool)
+        self.bottle_count = builder.create_opcua_cache(".BottleCount", node_type=int)
         self.case_count = builder.create_opcua_cache(".CaseCount", node_type=int)
         self.pack_complete_time = time.time()
 
@@ -86,8 +93,15 @@ class CasePacker(opcua_cache.LookupBranch):
                 self.pack_state.set(PackState.Idle.value)
                 self.case_count.set(self.case_count.get() + 1)
 
+    def make_bottle_packable(self):
+        self.bottle_count.set(self.bottle_count.get() + 1)
+
 
 class Motion(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
         self.capper = Capper(builder=builder.extend(".Capper"))
         self.conveyor = CasePacker(builder=builder.extend(".CasePacker"))
+
+    def on_conveyor_change(self):
+        self.capper.clear_bottle_capping()
+        self.conveyor.make_bottle_packable()

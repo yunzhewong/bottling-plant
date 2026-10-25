@@ -36,7 +36,7 @@ class Filler(opcua_cache.LookupBranch):
         self.flow_rate_readback.set(self.flow_rate_readback.get() + readback_adjustment)
         self.fill_volume.set(self.fill_volume.get() + self.flow_rate_readback.get())
 
-    def clear_fill(self):
+    def clear_bottle_fill(self):
         self.fill_volume.set(0)
 
 
@@ -79,11 +79,14 @@ class Conveyor(opcua_cache.LookupBranch):
 
 
 class Packaging(opcua_cache.LookupBranch):
-    def __init__(self, builder: opcua_cache.Builder):
+    def __init__(
+        self, builder: opcua_cache.Builder, on_conveyor_change: Callable[[], None]
+    ):
         self.filler = Filler(builder=builder.extend(".Filler"))
 
         def on_bottle_change():
-            self.filler.clear_fill()
+            self.filler.clear_bottle_fill()
+            on_conveyor_change()
 
         self.conveyor = Conveyor(
             builder=builder.extend(".Conveyor"), on_bottle_change=on_bottle_change
