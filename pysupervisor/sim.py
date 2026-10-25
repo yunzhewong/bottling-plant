@@ -23,6 +23,7 @@ class Main(opcua_cache.LookupBranch):
         self.process = Process(builder=node_builder.extend(".Process"))
         self.packaging = Packaging(
             builder=node_builder.extend(".Packaging"),
+            on_fill_mm3=self.process.on_fill_mm3,
             on_conveyor_change=self._on_conveyor_change,
         )
         self.motion = Motion(builder=node_builder.extend(".Motion"))

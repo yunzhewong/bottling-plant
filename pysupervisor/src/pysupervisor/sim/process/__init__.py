@@ -10,3 +10,6 @@ class Process(opcua_cache.LookupBranch):
             node_builder=builder.extend(".MixingTank"),
             outlet_open=self.transfer_pump.mix_output,
         )
+
+    def on_fill_mm3(self, quantity: float):
+        self.transfer_pump.on_fill_mm3(quantity)

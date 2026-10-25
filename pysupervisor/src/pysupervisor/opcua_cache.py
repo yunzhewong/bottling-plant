@@ -24,13 +24,18 @@ class Value[T]:
     node_type: type[T]
 
     def set(self, value: T):
-        self.last_write = ua.DataValue(
-            Value=ua.Variant(value, get_variant_type(self.node_type))
-        )
+        self.last_write = value
         self.has_write = True
 
     def get(self) -> T:
+        if self.has_write:
+            return self.last_write
         return self.last_read
+
+    def get_ua_datavalue(self):
+        return ua.DataValue(
+            Value=ua.Variant(self.last_write, get_variant_type(self.node_type))
+        )
 
 
 @dataclass
@@ -103,6 +108,6 @@ class ScanVariables:
         for item in self.values:
             if item.has_write:
                 nodes.append(item.node)
-                write_values.append(item.last_write)
+                write_values.append(item.get_ua_datavalue())
 
         await client.write_values(nodes, write_values)

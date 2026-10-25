@@ -9,6 +9,9 @@ def iterate_level(current_level: float, mix_output_open: bool):
     return current_level + OUTLET_FLOW_HEIGHT_RATE_M_S * SCAN_PERIOD_S
 
 
+BUFFER_CROSS_SECTION_M2 = 0.1
+
+
 class TransferPump(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
         self.mix_output = builder.create_opcua_cache(
@@ -31,3 +34,9 @@ class TransferPump(opcua_cache.LookupBranch):
 
     def is_mix_output_open(self):
         return self.mix_output.get()
+
+    def on_fill_mm3(self, quantity: float):
+        quantity_m3 = quantity / (1e3**3)
+        change_in_height = quantity_m3 / BUFFER_CROSS_SECTION_M2
+
+        self.buffer_level.set(self.buffer_level.get() - change_in_height)

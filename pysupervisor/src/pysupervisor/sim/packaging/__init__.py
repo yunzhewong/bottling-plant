@@ -3,6 +3,7 @@ from collections.abc import Callable
 from enum import Enum
 
 from pysupervisor import opcua_cache
+from pysupervisor.sim.constants import SCAN_PERIOD_S
 
 FILL_RAMP_LIMIT = 0.01
 FILL_AMOUNT = 330
@@ -17,7 +18,9 @@ def limit_ramp(change: float, limit: float):
 
 
 class Filler(opcua_cache.LookupBranch):
-    def __init__(self, builder: opcua_cache.Builder):
+    def __init__(
+        self, builder: opcua_cache.Builder, on_fill_mm3: Callable[[float], None]
+    ):
         self.flow_rate_setpoint = builder.create_opcua_cache(
             ".FlowRateSetpoint_mm3_s", node_type=float
         )
@@ -28,13 +31,20 @@ class Filler(opcua_cache.LookupBranch):
             ".FillVolume_mm3", node_type=float
         )
 
+        self.on_fill_mm3 = on_fill_mm3
+
     def scan(self):
         readback_adjustment = limit_ramp(
             self.flow_rate_setpoint.get() - self.flow_rate_readback.get(),
             limit=FILL_RAMP_LIMIT,
         )
-        self.flow_rate_readback.set(self.flow_rate_readback.get() + readback_adjustment)
-        self.fill_volume.set(self.fill_volume.get() + self.flow_rate_readback.get())
+
+        new_flow_rate = self.flow_rate_readback.get() + readback_adjustment
+        self.flow_rate_readback.set(new_flow_rate)
+
+        volume_change = new_flow_rate * SCAN_PERIOD_S
+        self.on_fill_mm3(volume_change)
+        self.fill_volume.set(self.fill_volume.get() + volume_change)
 
     def clear_bottle_fill(self):
         self.fill_volume.set(0)
@@ -80,9 +90,12 @@ class Conveyor(opcua_cache.LookupBranch):
 
 class Packaging(opcua_cache.LookupBranch):
     def __init__(
-        self, builder: opcua_cache.Builder, on_conveyor_change: Callable[[], None]
+        self,
+        builder: opcua_cache.Builder,
+        on_fill_mm3: Callable[[float], None],
+        on_conveyor_change: Callable[[], None],
     ):
-        self.filler = Filler(builder=builder.extend(".Filler"))
+        self.filler = Filler(builder=builder.extend(".Filler"), on_fill_mm3=on_fill_mm3)
 
         def on_bottle_change():
             self.filler.clear_bottle_fill()
