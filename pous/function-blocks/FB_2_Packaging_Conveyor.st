@@ -2,12 +2,11 @@ FUNCTION_BLOCK FB_2_Packaging_Conveyor
   VAR
     LoadBottle : BOOL;
     BottleLoaded : BOOL;
-    LoadedCount : INT;
+    CompressedAirReadback : BOOL;
+    CoolingLoopReadback : BOOL;
   END_VAR
   VAR_INPUT
-    BottleFull : BOOL;
   END_VAR
-
 
 
 

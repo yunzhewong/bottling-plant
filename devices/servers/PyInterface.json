@@ -280,6 +280,1212 @@
             "engineer": "rw"
           },
           "nodeType": "variable"
+        },
+        {
+          "id": "b7d5f13e-0b4a-496d-b6a1-b1f7e0d06256",
+          "pouName": "main",
+          "variablePath": "Packaging.Conveyor.CompressedAirReadback",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Packaging.Conveyor.CompressedAirReadback",
+          "browseName": "CompressedAirReadback",
+          "displayName": "Compressed Air Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "e2292c5a-de27-422f-83e9-176035a259ff",
+          "pouName": "main",
+          "variablePath": "Packaging.Conveyor.CoolingLoopReadback",
+          "variableType": "BOOL",
+          "nodeId": "PLC.main.Packaging.Conveyor.CoolingLoopReadback",
+          "browseName": "CoolingLoopReadback",
+          "displayName": "Cooling Loop Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "db3acc15-6236-4654-8ccb-45eefa9819f0",
+          "pouName": "main",
+          "variablePath": "Packaging.Filler.CompressedAirReadback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Packaging.Filler.CompressedAirReadback",
+          "browseName": "CompressedAirReadback",
+          "displayName": "Compressed Air Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "093bf0ec-1fcf-4138-a344-627b2774826d",
+          "pouName": "main",
+          "variablePath": "Packaging.Filler.CoolingLoopReadback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Packaging.Filler.CoolingLoopReadback",
+          "browseName": "CoolingLoopReadback",
+          "displayName": "Cooling Loop Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "cc74a8d1-39b2-49df-93c0-fd78eba975b8",
+          "pouName": "main",
+          "variablePath": "Motion.Capper.ApplyTorque",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Motion.Capper.ApplyTorque",
+          "browseName": "ApplyTorque",
+          "displayName": "Apply Torque",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "7c1d23b1-db8a-4a48-ba01-6785662ab15f",
+          "pouName": "main",
+          "variablePath": "Motion.Capper.AngularVelocityFeedback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Motion.Capper.AngularVelocityFeedback",
+          "browseName": "AngularVelocityFeedback",
+          "displayName": "Angular Velocity Feedback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "a919dae1-dfc7-4cec-9fda-8746b914a5e6",
+          "pouName": "main",
+          "variablePath": "Motion.Capper.AngleFeedback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Motion.Capper.AngleFeedback",
+          "browseName": "AngleFeedback",
+          "displayName": "Angle Feedback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "3b582697-32c4-4d26-99e1-675e45ac7e52",
+          "pouName": "main",
+          "variablePath": "Motion.Capper.ResistTorqueFeedback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Motion.Capper.ResistTorqueFeedback",
+          "browseName": "ResistTorqueFeedback",
+          "displayName": "Resist Torque Feedback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "5fb8b8ac-56ed-45aa-ac99-778f27c4a75b",
+          "pouName": "main",
+          "variablePath": "Motion.Capper.CompressedAirReadback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Motion.Capper.CompressedAirReadback",
+          "browseName": "CompressedAirReadback",
+          "displayName": "Compressed Air Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "efe3d0c2-3f0a-46cb-bf1f-fb99b93ba8bd",
+          "pouName": "main",
+          "variablePath": "Motion.Capper.CoolingLoopReadback",
+          "variableType": "REAL",
+          "nodeId": "PLC.main.Motion.Capper.CoolingLoopReadback",
+          "browseName": "CoolingLoopReadback",
+          "displayName": "Cooling Loop Readback",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "variable"
+        },
+        {
+          "id": "1a9a2c99-a8ac-40f1-b3e1-f582495bebf3",
+          "pouName": "main",
+          "variablePath": "Motion.Capper",
+          "variableType": "FB_3_MOTION_CAPPER",
+          "nodeId": "PLC.main.Motion.Capper",
+          "browseName": "Capper",
+          "displayName": "Capper",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "structure",
+          "fields": [
+            {
+              "fieldPath": "ApplyTorque",
+              "displayName": "ApplyTorque",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "AngularVelocityFeedback",
+              "displayName": "AngularVelocityFeedback",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "AngleFeedback",
+              "displayName": "AngleFeedback",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "ResistTorqueFeedback",
+              "displayName": "ResistTorqueFeedback",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "CompressedAirReadback",
+              "displayName": "CompressedAirReadback",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "CoolingLoopReadback",
+              "displayName": "CoolingLoopReadback",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            }
+          ]
+        },
+        {
+          "id": "0f647e90-d2d7-404c-a7ee-76cd07b2fd69",
+          "pouName": "main",
+          "variablePath": "Motion.CasePacker",
+          "variableType": "FB_3_MOTION_CASEPACKER",
+          "nodeId": "PLC.main.Motion.CasePacker",
+          "browseName": "CasePacker",
+          "displayName": "Case Packer",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "structure",
+          "fields": [
+            {
+              "fieldPath": "InitiatePack",
+              "displayName": "InitiatePack",
+              "datatype": "BOOL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "PackState",
+              "displayName": "PackState",
+              "datatype": "BOOL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "BottleCount",
+              "displayName": "BottleCount",
+              "datatype": "DINT",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "CaseCount",
+              "displayName": "CaseCount",
+              "datatype": "DINT",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40e4be95-a8df-4fb3-8075-25d95f439bbb",
+          "pouName": "main",
+          "variablePath": "Utilities",
+          "variableType": "FB_4_Utilities",
+          "nodeId": "PLC.main.Utilities",
+          "browseName": "Utilities",
+          "displayName": "Utilities",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "structure",
+          "fields": [
+            {
+              "fieldPath": "CompressedAir",
+              "displayName": "CompressedAir",
+              "datatype": "FB_4_UTILITIES_FACILITYUTILITY",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "GenerationSetpoint",
+                  "displayName": "GenerationSetpoint",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "GenerationReadback",
+                  "displayName": "GenerationReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "TargetReadback",
+                  "displayName": "TargetReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            },
+            {
+              "fieldPath": "CoolingLoop",
+              "displayName": "CoolingLoop",
+              "datatype": "FB_4_UTILITIES_FACILITYUTILITY",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "GenerationSetpoint",
+                  "displayName": "GenerationSetpoint",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "GenerationReadback",
+                  "displayName": "GenerationReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "TargetReadback",
+                  "displayName": "TargetReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "527ce30d-4093-4682-a43b-055853556ac9",
+          "pouName": "main",
+          "variablePath": "Packaging",
+          "variableType": "FB_2_Packaging",
+          "nodeId": "PLC.main.Packaging",
+          "browseName": "Packaging",
+          "displayName": "Packaging",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "structure",
+          "fields": [
+            {
+              "fieldPath": "Filler",
+              "displayName": "Filler",
+              "datatype": "FB_2_PACKAGING_FILLER",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "FlowRateSetpoint_mm3_s",
+                  "displayName": "FlowRateSetpoint_mm3_s",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "FlowRateReadback_mm3_s",
+                  "displayName": "FlowRateReadback_mm3_s",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "FillVolume_mm3",
+                  "displayName": "FillVolume_mm3",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "CompressedAirReadback",
+                  "displayName": "CompressedAirReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "CoolingLoopReadback",
+                  "displayName": "CoolingLoopReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            },
+            {
+              "fieldPath": "Conveyor",
+              "displayName": "Conveyor",
+              "datatype": "FB_2_PACKAGING_CONVEYOR",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "LoadBottle",
+                  "displayName": "LoadBottle",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "BottleLoaded",
+                  "displayName": "BottleLoaded",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "CompressedAirReadback",
+                  "displayName": "CompressedAirReadback",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "CoolingLoopReadback",
+                  "displayName": "CoolingLoopReadback",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0088bb81-5fe7-4ae0-b0cc-1c8c33fa8671",
+          "pouName": "main",
+          "variablePath": "Motion",
+          "variableType": "FB_3_Motion",
+          "nodeId": "PLC.main.Motion",
+          "browseName": "Motion",
+          "displayName": "Motion",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "structure",
+          "fields": [
+            {
+              "fieldPath": "Capper",
+              "displayName": "Capper",
+              "datatype": "FB_3_MOTION_CAPPER",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "ApplyTorque",
+                  "displayName": "ApplyTorque",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "AngularVelocityFeedback",
+                  "displayName": "AngularVelocityFeedback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "AngleFeedback",
+                  "displayName": "AngleFeedback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "ResistTorqueFeedback",
+                  "displayName": "ResistTorqueFeedback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "CompressedAirReadback",
+                  "displayName": "CompressedAirReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "CoolingLoopReadback",
+                  "displayName": "CoolingLoopReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            },
+            {
+              "fieldPath": "CasePacker",
+              "displayName": "CasePacker",
+              "datatype": "FB_3_MOTION_CASEPACKER",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "InitiatePack",
+                  "displayName": "InitiatePack",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "PackState",
+                  "displayName": "PackState",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "BottleCount",
+                  "displayName": "BottleCount",
+                  "datatype": "DINT",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "CaseCount",
+                  "displayName": "CaseCount",
+                  "datatype": "DINT",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "416af3eb-3547-4358-80e0-3cef334e850d",
+          "pouName": "main",
+          "variablePath": "Process.TransferPump",
+          "variableType": "FB_12_TRANSFERPUMP",
+          "nodeId": "PLC.main.Process.TransferPump",
+          "browseName": "TransferPump",
+          "displayName": "Transfer Pump",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "structure",
+          "fields": [
+            {
+              "fieldPath": "RequestMixDrain",
+              "displayName": "RequestMixDrain",
+              "datatype": "BOOL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "MixOutletOpen",
+              "displayName": "MixOutletOpen",
+              "datatype": "BOOL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "MixLevelReadback",
+              "displayName": "MixLevelReadback",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "BufferLevelReadback",
+              "displayName": "BufferLevelReadback",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            },
+            {
+              "fieldPath": "LatchingFault",
+              "displayName": "LatchingFault",
+              "datatype": "LATCHINGFAULT",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "Active",
+                  "displayName": "Active",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "Reset",
+                  "displayName": "Reset",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "LatchedOutput",
+                  "displayName": "LatchedOutput",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e3a9082a-c5a0-4b23-93af-01283dd697ad",
+          "pouName": "main",
+          "variablePath": "Process",
+          "variableType": "FB_1_Process",
+          "nodeId": "PLC.main.Process",
+          "browseName": "Process",
+          "displayName": "Process",
+          "description": "",
+          "permissions": {
+            "viewer": "r",
+            "operator": "r",
+            "engineer": "rw"
+          },
+          "nodeType": "structure",
+          "fields": [
+            {
+              "fieldPath": "MixingTank",
+              "displayName": "MixingTank",
+              "datatype": "FB_11_MIXINGTANK",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "TempControl",
+                  "displayName": "TempControl",
+                  "datatype": "BANGBANGCONTROL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  },
+                  "fields": [
+                    {
+                      "fieldPath": "Hysteresis",
+                      "displayName": "Hysteresis",
+                      "datatype": "HYSTERESIS",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      },
+                      "fields": [
+                        {
+                          "fieldPath": "XIN1",
+                          "displayName": "XIN1",
+                          "datatype": "REAL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        },
+                        {
+                          "fieldPath": "XIN2",
+                          "displayName": "XIN2",
+                          "datatype": "REAL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        },
+                        {
+                          "fieldPath": "EPS",
+                          "displayName": "EPS",
+                          "datatype": "REAL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        },
+                        {
+                          "fieldPath": "Q",
+                          "displayName": "Q",
+                          "datatype": "BOOL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "fieldPath": "Setpoint",
+                      "displayName": "Setpoint",
+                      "datatype": "REAL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "Tolerance",
+                      "displayName": "Tolerance",
+                      "datatype": "REAL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "Readback",
+                      "displayName": "Readback",
+                      "datatype": "REAL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "ShouldActuate",
+                      "displayName": "ShouldActuate",
+                      "datatype": "DINT",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "fieldPath": "LevelControl",
+                  "displayName": "LevelControl",
+                  "datatype": "BANGBANGCONTROL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  },
+                  "fields": [
+                    {
+                      "fieldPath": "Hysteresis",
+                      "displayName": "Hysteresis",
+                      "datatype": "HYSTERESIS",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      },
+                      "fields": [
+                        {
+                          "fieldPath": "XIN1",
+                          "displayName": "XIN1",
+                          "datatype": "REAL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        },
+                        {
+                          "fieldPath": "XIN2",
+                          "displayName": "XIN2",
+                          "datatype": "REAL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        },
+                        {
+                          "fieldPath": "EPS",
+                          "displayName": "EPS",
+                          "datatype": "REAL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        },
+                        {
+                          "fieldPath": "Q",
+                          "displayName": "Q",
+                          "datatype": "BOOL",
+                          "permissions": {
+                            "viewer": "r",
+                            "operator": "r",
+                            "engineer": "rw"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "fieldPath": "Setpoint",
+                      "displayName": "Setpoint",
+                      "datatype": "REAL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "Tolerance",
+                      "displayName": "Tolerance",
+                      "datatype": "REAL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "Readback",
+                      "displayName": "Readback",
+                      "datatype": "REAL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "ShouldActuate",
+                      "displayName": "ShouldActuate",
+                      "datatype": "DINT",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "fieldPath": "RequestTempControl",
+                  "displayName": "RequestTempControl",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "RequestLevelControl",
+                  "displayName": "RequestLevelControl",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "LatchingFault",
+                  "displayName": "LatchingFault",
+                  "datatype": "LATCHINGFAULT",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  },
+                  "fields": [
+                    {
+                      "fieldPath": "Active",
+                      "displayName": "Active",
+                      "datatype": "BOOL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "Reset",
+                      "displayName": "Reset",
+                      "datatype": "BOOL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "LatchedOutput",
+                      "displayName": "LatchedOutput",
+                      "datatype": "BOOL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "fieldPath": "OpenInlet",
+                  "displayName": "OpenInlet",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "HeaterOn",
+                  "displayName": "HeaterOn",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "LevelReadback",
+                  "displayName": "LevelReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                }
+              ]
+            },
+            {
+              "fieldPath": "TransferPump",
+              "displayName": "TransferPump",
+              "datatype": "FB_12_TRANSFERPUMP",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              },
+              "fields": [
+                {
+                  "fieldPath": "RequestMixDrain",
+                  "displayName": "RequestMixDrain",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "MixOutletOpen",
+                  "displayName": "MixOutletOpen",
+                  "datatype": "BOOL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "MixLevelReadback",
+                  "displayName": "MixLevelReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "BufferLevelReadback",
+                  "displayName": "BufferLevelReadback",
+                  "datatype": "REAL",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  }
+                },
+                {
+                  "fieldPath": "LatchingFault",
+                  "displayName": "LatchingFault",
+                  "datatype": "LATCHINGFAULT",
+                  "permissions": {
+                    "viewer": "r",
+                    "operator": "r",
+                    "engineer": "rw"
+                  },
+                  "fields": [
+                    {
+                      "fieldPath": "Active",
+                      "displayName": "Active",
+                      "datatype": "BOOL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "Reset",
+                      "displayName": "Reset",
+                      "datatype": "BOOL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    },
+                    {
+                      "fieldPath": "LatchedOutput",
+                      "displayName": "LatchedOutput",
+                      "datatype": "BOOL",
+                      "permissions": {
+                        "viewer": "r",
+                        "operator": "r",
+                        "engineer": "rw"
+                      }
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "fieldPath": "BufferLevel",
+              "displayName": "BufferLevel",
+              "datatype": "REAL",
+              "permissions": {
+                "viewer": "r",
+                "operator": "r",
+                "engineer": "rw"
+              }
+            }
+          ]
         }
       ]
     }

@@ -1,0 +1,10 @@
+FUNCTION_BLOCK FB_3_Motion
+  VAR
+    Capper : FB_3_MOTION_CAPPER;
+    CasePacker : FB_3_MOTION_CASEPACKER;
+  END_VAR
+
+Capper();
+CasePacker();
+
+END_FUNCTION_BLOCK

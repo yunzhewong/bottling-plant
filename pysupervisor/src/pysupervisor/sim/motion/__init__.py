@@ -41,6 +41,9 @@ class Capper(opcua_cache.LookupBranch):
         )
         self.utility_readback = UtilityReadback(builder=builder)
 
+    def initialise(self):
+        self.clear_bottle_capping()
+
     def scan(self):
         resist_torque = calculate_resist_torque(angle=self.angle_feedback.get())
         movement_torque = APPLICATION_TORQUE - resist_torque

@@ -1,0 +1,10 @@
+FUNCTION_BLOCK FB_4_Utilities
+  VAR
+    CompressedAir : FB_4_UTILITIES_FACILITYUTILITY;
+    CoolingLoop : FB_4_UTILITIES_FACILITYUTILITY;
+  END_VAR
+
+CompressedAir();
+CoolingLoop();
+
+END_FUNCTION_BLOCK
