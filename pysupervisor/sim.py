@@ -36,7 +36,8 @@ class Main(opcua_cache.LookupBranch):
         self.motion = Motion(builder=node_builder.extend("Motion"))
 
     def _on_utility_change(self, utility_state: UtilityState):
-        print(utility_state)  # TODO: set values on all subitems
+        self.packaging.handle_utility_change(utility_state)
+        self.motion.handle_utility_change(utility_state)
 
     def _on_conveyor_change(self):
         self.motion.on_conveyor_change()

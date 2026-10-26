@@ -3,6 +3,7 @@ from enum import Enum
 
 from pysupervisor import opcua_cache
 from pysupervisor.sim.constants import SCAN_PERIOD_S
+from pysupervisor.sim.shared import UtilityReadback, UtilityState
 
 APPLICATION_TORQUE = 0.9
 CAP_MASS = 0.05
@@ -38,6 +39,7 @@ class Capper(opcua_cache.LookupBranch):
         self.resist_torque_feedback = builder.create_opcua_cache(
             "ResistTorqueFeedback", node_type=float
         )
+        self.utility_readback = UtilityReadback(builder=builder)
 
     def scan(self):
         resist_torque = calculate_resist_torque(angle=self.angle_feedback.get())
@@ -76,6 +78,7 @@ class CasePacker(opcua_cache.LookupBranch):
         self.pack_state = builder.create_opcua_cache("PackState", node_type=bool)
         self.bottle_count = builder.create_opcua_cache("BottleCount", node_type=int)
         self.case_count = builder.create_opcua_cache("CaseCount", node_type=int)
+        self.utility_readback = UtilityReadback(builder=builder)
         self.pack_complete_time = time.time()
 
     def scan(self):
@@ -100,8 +103,12 @@ class CasePacker(opcua_cache.LookupBranch):
 class Motion(opcua_cache.LookupBranch):
     def __init__(self, builder: opcua_cache.Builder):
         self.capper = Capper(builder=builder.extend("Capper"))
-        self.conveyor = CasePacker(builder=builder.extend("CasePacker"))
+        self.case_packer = CasePacker(builder=builder.extend("CasePacker"))
 
     def on_conveyor_change(self):
         self.capper.clear_bottle_capping()
-        self.conveyor.make_bottle_packable()
+        self.case_packer.make_bottle_packable()
+
+    def handle_utility_change(self, utility_state: UtilityState):
+        self.capper.utility_readback.handle_utility_change(utility_state)
+        self.case_packer.utility_readback.handle_utility_change(utility_state)
