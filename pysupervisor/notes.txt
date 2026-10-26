@@ -1,0 +1,3 @@
+full simulation
+create tags in openplc, see manual actuation works
+build plc links

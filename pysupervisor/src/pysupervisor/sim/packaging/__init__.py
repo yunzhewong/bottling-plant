@@ -7,15 +7,16 @@ from pysupervisor.sim.constants import SCAN_PERIOD_S
 from pysupervisor.sim.shared import UtilityReadback, UtilityState
 
 FILL_RAMP_LIMIT = 0.01
+FILL_RATE_LIMIT = 300
 FILL_AMOUNT = 330
 
 
-def limit_ramp(change: float, limit: float):
-    if change > limit:
+def saturate_limit(value: float, limit: float):
+    if value > limit:
         return limit
-    if change < -limit:
+    if value < -limit:
         return -limit
-    return change
+    return value
 
 
 class Filler(opcua_cache.LookupBranch):
@@ -34,15 +35,17 @@ class Filler(opcua_cache.LookupBranch):
         self.on_fill_mm3 = on_fill_mm3
 
     def scan(self):
-        readback_adjustment = limit_ramp(
+        readback_adjustment = saturate_limit(
             self.flow_rate_setpoint.get() - self.flow_rate_readback.get(),
             limit=FILL_RAMP_LIMIT,
         )
-
-        new_flow_rate = self.flow_rate_readback.get() + readback_adjustment
-        self.flow_rate_readback.set(new_flow_rate)
-
+        new_flow_rate = saturate_limit(
+            value=self.flow_rate_readback.get() + readback_adjustment,
+            limit=FILL_RATE_LIMIT,
+        )
         volume_change = new_flow_rate * SCAN_PERIOD_S
+
+        self.flow_rate_readback.set(new_flow_rate)
         self.on_fill_mm3(volume_change)
         self.fill_volume.set(self.fill_volume.get() + volume_change)
 
